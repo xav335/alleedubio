@@ -1,0 +1,131 @@
+/* Fonts */
+@font-face {
+    font-family: 'museo300';
+    src: url('fonts/Museo300-Regular-webfont.eot');
+    src: url('fonts/Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Museo300-Regular-webfont.woff2') format('woff2'),
+         url('fonts/Museo300-Regular-webfont.woff') format('woff'),
+         url('fonts/Museo300-Regular-webfont.ttf') format('truetype'),
+         url('fonts/Museo300-Regular-webfont.svg#museo300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* End Fonts */
+
+/* Communs */
+body {background:url('img/background.jpg') center top;font-family:'museo300';}
+h1, h2, h3, h4, h5, h6 {font-family:inherit;font-weight:normal;}
+h1 {border-bottom:1px solid #61a141;}
+button {font-family:inherit;}
+.fullwidth {max-width:100%;}
+.row .row.content {max-width:62.5rem;margin:0 auto;position:relative;display:block;height:100%;}
+/* End Communs */
+
+/* Header */
+.header, .footer {margin-top:1.75em;height:13.6875rem;background:url('img/bg-header.jpg') center center #295e34 repeat-x;-moz-box-shadow: 3px 4px 13px 3px rgba(138,107,67,.91);-webkit-box-shadow: 3px 4px 13px 3px rgba(138,107,67,.91);box-shadow: 3px 4px 13px 3px rgba(138,107,67,.91);}
+.header #date {font-size:0.75em;color:#fffc00;text-transform:uppercase;display:block;padding-top:2em;text-shadow: 3px 4px 0 rgba(41,94,52,.36);}
+.header .logo-ab {position:absolute;right:3.75em;top:-2.25em;z-index:1;}
+.header .columns {text-align:center;}
+.header ul {position:absolute;margin:0;bottom:-0.75em;}
+.header ul:before {content:url('img/menu-left.png');float:left;}
+.header ul:after {content:url('img/menu-right.png');float:left;}
+.header ul li {list-style-type:none;float:left;padding:0 1.45em;background:#fffc00;line-height:2.0625em;font-family:'museo300';}
+.header ul li a {font-family:'museo300';color:#295e34;padding-bottom:0.4em;}
+.header ul li a:hover, .header ul li.active a {color:#000;border-bottom:3px solid #000;}
+/* Fin Header */
+
+/* Footer */
+.footer {clear:both;color:#fff;font-size:1.125rem;text-align:center;padding-top:2rem;margin-top:3rem;}
+.footer:after {display:block;height:8.31rem;}
+.footer .logo-ab {position:absolute;right:3.75rem;margin-top:-2.5rem;}
+.footer .telephone {color:#fffc00;font-size:1.875rem;}
+.footer p {margin-bottom:0;}
+.footer a {display:block;font-size:0.9375rem;color:#fff;}
+.footer a:hover {color:#000;}
+/* Fin Footer */
+
+/* Contenu page */
+.encart, .produit, .contact, .actualites {background:rgba(255,255,255,0.78);padding-top:2.8125rem;padding-bottom:2.8125rem;margin-top:1rem;margin-bottom:1.2rem;}
+.produit h2 {font-size:1rem;}
+.produit img {width:100%;}
+.produit .thumb {margin-top:1rem;}
+.produit .plus-produit {background:#61a141;color:#fff;padding:1rem;}
+.actualites {padding:1rem;}
+.actualites h2 {font-size:2rem;}
+.actualites .row:nth-child(2n) {background:#fff;}
+.bt-plus {position:relative;background:url('img/bt-plus.png') repeat-x;color:#fff;display:inline-block;line-height:1.8rem;vertical-align:top;}
+.bt-plus:hover {color:#000;}
+.bt-plus:before {content:url('img/bt-plus-before.png');display:inline-block;}
+.bt-plus:after {content:url('img/bt-plus-after.png');display:inline-block;position:absolute;}
+/* Fin Contenu page */
+
+/* Liste de produits */
+.products-list {margin-top:1.8rem;}
+.products-list:nth-child(3n-4) {margin-top:3rem;}
+.products-list:nth-child(4n) {clear:both;}
+.products-list div {cursor:pointer;}
+.products-list h2 {color:#fff;padding-left:0.8125rem;padding-right:0.8125rem;font-size:1.8rem;}
+.products-list p {color:#fff;font-size:0.875rem;padding-left:0.8125rem;padding-right:0.8125rem;padding-bottom:1.5rem;margin-bottom:0;}
+.products-list span {position:absolute;width:37px;height:158px;top:-9px;left:35px;}
+.products-list.fuchsia div {background:#f1186f;}
+.products-list.fuchsia span {background-image:url('img/fuchsia.png');}
+.products-list.vert div {background:#84b927;}
+.products-list.vert span {background-image:url('img/vert.png');}
+.products-list.bleu div {background:#2bb3bc;}
+.products-list.bleu span {background-image:url('img/bleu.png');}
+/* Fin Liste de produits */
+
+/* Google maps */
+.gmaps {width:100%;height:300px;}
+/* Fin Google maps */
+
+/* Responsive */
+@media only screen and (max-width: 48.063em) {
+	.header ul li {padding:0 0.59em;}
+	.header .logo-ab, .footer .logo-ab {right: 1.75em;}
+	.header .logo {width:80%;margin-top:0.7rem;}
+}
+
+@media only screen and (max-width: 40.063em) {
+	.header ul li {padding:0 0.45em;line-height: 2em;}
+	.header ul li a {font-size:0.8rem;}
+	.header .logo {width:70%;margin-top:2rem;}
+	.header .logo-ab, .footer .logo-ab {right: 1.75em;}
+	.products-list:nth-child(3n-4) {margin-top:1.8rem;}
+	.products-list:nth-child(2n-4) {margin-top:3rem;}
+	.products-list:nth-child(4n) {clear:none;}
+	.products-list:nth-child(2n-3) {clear:both;}
+}
+
+@media only screen and (max-width: 30.063em) {
+	.header ul:before {content:none;}
+	.header ul:after {content:none;}
+	.header ul li {padding:0 0.55em;line-height: 2em;}
+	.header ul li a {font-size:0.71rem;}
+	.header .logo {width:90%;margin-top:2rem;}
+	.header .logo-ab {right:1.75em;width:15%;}
+	.footer .logo-ab {right:1.75em;width:70%;}
+	.products-list:nth-child(3n-4) {margin-top:1.8rem;}
+	.products-list:nth-child(2n-4) {margin-top:3rem;}
+	.products-list:nth-child(4n) {clear:none;}
+	.footer a {font-size:0.8rem;}
+	.encart div, .encart img, .produit div, .produit img, .contat div, .contact img {width:100%;}
+	.produit .thumb div {width:33.33333%;}
+}
+
+@media only screen and (max-width: 20.063em) {
+	.header ul:before {content:none;}
+	.header ul:after {content:none;}
+	.header ul {display:block;background:#fffc00;}
+	.header ul li {padding:0 0.70em;line-height: 2em;}
+	.header ul li a {font-size:0.71rem;}
+	.header .logo {width:100%;margin-top:2rem;}
+	.header .logo-ab {right:1.75em;width:15%;}
+	.footer .logo-ab {right:1.75em;width:70%;}
+	.footer div:first-child, .footer div:last-child {display:none;}
+	.footer div {width:100%;}
+	.products-list {clear:both!important;margin-top:1.8rem!important;float:none!important;width:100%;}
+	.actualites .row div {width:100%;}
+	.footer a {color:#fffc00;font-size:1.875rem;}
+}
+/* Fin Responsive */
