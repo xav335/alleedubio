@@ -12,7 +12,7 @@ class Authentication extends StorageManager {
 		$requete .= " WHERE login = '" . mysql_real_escape_string( $login ) . "'";
 		$requete .= " AND mdp = '" . mysql_real_escape_string( $mdp ) . "'";
 		//echo $requete . "<br><br>";
-		$result = mysql_query($requete);
+		$result = mysqli_query($this->mysqli,$requete);
 		$num_rows = mysql_num_rows($result);
 	
 		$this->dbDisConnect();

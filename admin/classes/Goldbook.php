@@ -11,8 +11,8 @@ class Goldbook extends StorageManager {
 		$requete = "SELECT count(*) as nb FROM `goldbook` WHERE online=0;" ;
 		//print_r($requete);
 		$new_array = null;
-		$result = mysql_query($requete);
-		while( $row = mysql_fetch_assoc( $result)){
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
 			$new_array[] = $row;
 		}
 		$this->dbDisConnect();
@@ -28,8 +28,8 @@ class Goldbook extends StorageManager {
 		}
 		//print_r($requete);
 		$new_array = null;
-		$result = mysql_query($requete);
-		while( $row = mysql_fetch_assoc( $result)){
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
 			$new_array[] = $row;
 		}
 		$this->dbDisConnect();
@@ -41,8 +41,8 @@ class Goldbook extends StorageManager {
 		$requete = "SELECT * FROM `goldbook` WHERE online=1 ORDER BY `date` DESC" ;
 		//print_r($requete);
 		$new_array = null;
-		$result = mysql_query($requete);
-		while( $row = mysql_fetch_assoc( $result)){
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
 			$new_array[] = $row;
 		}
 		$this->dbDisConnect();
@@ -66,12 +66,12 @@ class Goldbook extends StorageManager {
 						'". addslashes($value['message']) ."',
 						". $online ."
 					);";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 	
 			if (!$result) {
 				throw new Exception($sql);
 			}
-			$id_record = mysql_insert_id();
+			$id_record = mysqli_insert_id($this->mysqli);
 			$this->commit();
 	
 		} catch (Exception $e) {
@@ -99,7 +99,7 @@ class Goldbook extends StorageManager {
 					`message`='". addslashes($value['message']) ."',
 					`online`=". $online ."
 					WHERE `id`=". $value['id'] .";";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 	
 			if (!$result) {
 				throw new Exception($sql);
@@ -126,7 +126,7 @@ class Goldbook extends StorageManager {
 		try {
 			$sql = "DELETE FROM  .`goldbook`
 					WHERE `id`=". $value .";";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 	
 			if (!$result) {
 				throw new Exception($sql);

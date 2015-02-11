@@ -11,8 +11,8 @@ class Planning extends StorageManager {
 		$requete = "SELECT * FROM `planning` WHERE id=1";
 		//print_r($requete);
 		$new_array = null;
-		$result = mysql_query($requete);
-		while( $row = mysql_fetch_assoc( $result)){
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
 			$new_array[] = $row;
 		}
 		$this->dbDisConnect();
@@ -34,7 +34,7 @@ class Planning extends StorageManager {
 					`url`='". addslashes($value['url']) ."',
 					`pdf`='". addslashes($value['pdf']) ."'
 					WHERE `id`= 1;";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 	
 			if (!$result) {
 				throw new Exception($sql);

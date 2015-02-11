@@ -15,8 +15,8 @@ class Newsletter extends StorageManager {
 		}
 		//print_r($requete);
 		$new_array = null;
-		$result = mysql_query($requete);
-		while( $row = mysql_fetch_assoc( $result)){
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
 			$new_array[] = $row;
 		}
 		
@@ -30,16 +30,16 @@ class Newsletter extends StorageManager {
 		$requete = "SELECT * FROM `newsletter` WHERE `id`=". $id ;
 		//print_r($requete);
 		$new_array = null;
-		$result = mysql_query($requete);
-		while( $row = mysql_fetch_assoc( $result)){
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
 			$new_arraydetail = null;
 			$requete = "SELECT * FROM `newsletter_detail` as nld
 						WHERE `id_newsletter`=". $row['id'] ." ORDER BY `id` ASC" ;
 			//print_r($requete);
-			$resultdetail = mysql_query($requete);
+			$resultdetail = mysqli_query($this->mysqli,$requete);
 			
 			$row['newsletter_detail'] = null;
-			while( $rowdetail = mysql_fetch_assoc( $resultdetail)){
+			while( $rowdetail = mysqli_fetch_assoc( $resultdetail)){
 				$row['newsletter_detail'][] = $rowdetail;
 			}
 			
@@ -61,12 +61,12 @@ class Newsletter extends StorageManager {
 						'". addslashes($value['titre']) ."',
 						'". addslashes($value['bas_page']) ."'
 					);";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 				
 			if (!$result) {
 				throw new Exception($sql);
 			}
-			$id_record = mysql_insert_id();
+			$id_record = mysqli_insert_id($this->mysqli);
 			
 			$this->newsletterDetailAdd($value,$id_record);
 			
@@ -92,7 +92,7 @@ class Newsletter extends StorageManager {
 					`titre`='". addslashes($value['titre']) ."',
 					`bas_page`='". addslashes($value['bas_page']) ."'
 					WHERE `id`=". $value['id'] .";";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 			if (!$result) {
 				throw new Exception($sql);
 			}
@@ -125,7 +125,7 @@ class Newsletter extends StorageManager {
 						'". addslashes($value['link'.$i]) ."',
 						'". addslashes($value['texte'.$i]) ."'
 					);";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 		
 			if (!$result) {
 				throw new Exception($sql);
@@ -140,7 +140,7 @@ class Newsletter extends StorageManager {
 		try {
 			$sql = "DELETE FROM  .`newsletter_detail`
 					WHERE `id_newsletter`=". $id_newsletter .";";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 			if (!$result) {
 				throw new Exception($sql);
 			}
@@ -161,7 +161,7 @@ class Newsletter extends StorageManager {
 		try {
 		$sql = "DELETE FROM  .`newsletter_detail`
 					WHERE `id`=". $id .";";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 			if (!$result) {
 				throw new Exception($sql);
 			}
@@ -183,7 +183,7 @@ class Newsletter extends StorageManager {
 		try {
 			$sql = "DELETE FROM  .`newsletter`
 					WHERE `id`=". $value .";";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 	
 			if (!$result) {
 				throw new Exception($sql);

@@ -16,7 +16,7 @@ if (!empty($_GET)){ //Modif
 		$name=  			$result[0]['name'];
 		$email=  		$result[0]['email'];
 		$firstname= 	$result[0]['firstname'];
-		($result[0]['newsletter']=='1') ? $online = 1 : $online = '';
+		($result[0]['newsletter']=='1') ? $online = 'checked' : $online = '';
 		($result[0]['fromcontact']=='1') ? $fromcontact = "origine: formulaire de contact" : $fromcontact = '';
 		($result[0]['fromgoldbook']=='1') ? $fromgoldbook = "origine: livre d'or" : $fromgoldbook = '';
 	}

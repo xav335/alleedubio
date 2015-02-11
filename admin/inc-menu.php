@@ -34,14 +34,19 @@
 					          	</ul>
 					        </li>
 	                        <li class="dropdown">
-					          	<a href="newsletter-list.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Newsletter<span class="caret"></span></a>
+					          	<a href="produit-list.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Produits<span class="caret"></span></a>
 					          	<ul class="dropdown-menu" role="menu">
-					            	<li><a href="newsletter-edit.php">Ajout Newsletter</a></li>
-					            	<li><a href="newsletter-list.php">Modif / Suppr / Envoi</a></li>
+					          		<li><a href="category-edit.php">Ajout Catégorie</a></li>
+					            	<li><a href="category-list.php">Modif / Suppr</a></li>
+					          		<li class="divider"></li>
+					            	<li><a href="produit-edit.php">Ajout Produits</a></li>
+					            	<li><a href="produit-list.php">Modif / Suppr</a></li>
+					            	<li class="divider"></li>
+					            	<li><a href="produit-edit.php">Produit/evenment Home</a></li>
 					          	</ul>
 					        </li>
 					         <li class="dropdown">
-					          	<a href="planning.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Planning <span class="caret"></span></a>
+					          	<a href="bdc.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bon de commande <span class="caret"></span></a>
 					          	<ul class="dropdown-menu" role="menu">
 					            	<li><a href="planning.php">Modification</a></li>
 					          	</ul>

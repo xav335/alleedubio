@@ -1,6 +1,8 @@
 <?php
 class StorageManager{
 
+	protected $mysqli;
+	
 	public function __construct(){
 	
 	}
@@ -18,26 +20,29 @@ class StorageManager{
 		$bdd = "alleedubio";
 			
 		// connexion
-		mysql_connect($host, $user, $pass)
-		or die("Impossible de se connecter (Probleme de connexion)");
-		mysql_select_db($bdd)
-		or die("Impossible de se connecter (Probleme de base)");
-		mysql_query("SET NAMES UTF8");
+		try {
+			$this->mysqli = new mysqli ($host, $user, $pass, $bdd) ;
+			mysqli_query($this->mysqli,"SET NAMES UTF8");
+		} catch (Exception $e) {
+			throw new Exception("Erreur Connexion DB ". $e->getMessage());
+		}
+		
+		
 	}
 	
 	
 	protected function dbDisConnect() {
-		mysql_close();
+		mysqli_close($this->mysqli);
 	}
 	
 	protected function begin() {
-		mysql_query("BEGIN");
+		mysqli_query($this->mysqli,"BEGIN");
 	}
 	protected function commit() {
-		mysql_query("COMMIT");
+		mysqli_query($this->mysqli,"COMMIT");
 	}
 	protected function rollback() {
-		mysql_query("ROLLBACK");
+		mysqli_query($this->mysqli,"ROLLBACK");
 	}
 
 }

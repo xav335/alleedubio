@@ -20,8 +20,8 @@ class Contact extends StorageManager {
 			}
 			//print_r($requete);
 			$new_array = null;
-			$result = mysql_query($requete);
-			while( $row = mysql_fetch_assoc( $result)){
+			$result = mysqli_query($this->mysqli,$requete);
+			while( $row = mysqli_fetch_assoc( $result)){
 				$new_array[] = $row;
 			}
 			$this->dbDisConnect();
@@ -38,8 +38,8 @@ class Contact extends StorageManager {
 			$requete = "SELECT count(*) as nb FROM `contact`;" ;
 			//print_r($requete);
 			$new_array = null;
-			$result = mysql_query($requete);
-			while( $row = mysql_fetch_assoc( $result)){
+			$result = mysqli_query($this->mysqli,$requete);
+			while( $row = mysqli_fetch_assoc( $result)){
 				$new_array[] = $row;
 			}
 			$this->dbDisConnect();
@@ -71,12 +71,12 @@ class Contact extends StorageManager {
 						". $fromcontact ."
 					);";
 			//error_log(date("Y-m-d H:i:s") ." : ".$sql."\n", 3, "../log/spy.log");
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 	
 			if (!$result) {
 				throw new Exception($sql);
 			}
-			$id_record = mysql_insert_id();
+			$id_record = mysqli_insert_id($this->mysqli);
 			$this->commit();
 	
 		} catch (Exception $e) {
@@ -107,7 +107,7 @@ class Contact extends StorageManager {
 					`fromgoldbook`=". $fromgoldbook .",
 					`fromcontact`=". $fromcontact ."
 					WHERE `id`=". $value['id'] .";";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 	
 			if (!$result) {
 				throw new Exception($sql);
@@ -134,7 +134,7 @@ class Contact extends StorageManager {
 		$this->begin();
 		try {
 			$sql = "DELETE FROM  .`contact` WHERE `id`=". $value .";";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 	
 			if (!$result) {
 				throw new Exception($sql);
@@ -172,7 +172,7 @@ class Contact extends StorageManager {
 				FROM contact;";
 			echo $sql;
 				
-			$result = mysql_query($sql) or die(mysql_error());
+			$result = mysqli_query($this->mysqli,$sql) or die(mysql_error());
 			if (!$result) {
 				throw new Exception($sql);
 			}
@@ -208,7 +208,7 @@ class Contact extends StorageManager {
 				(`firstname`,`name`,`email`,`newsletter`) ;";
 			//echo $sql;
 			
-			$result = mysql_query($sql) or die(mysql_error());
+			$result = mysqli_query($this->mysqli,$sql) or die(mysql_error());
 			if (!$result) {
 				throw new Exception($sql);
 			}
@@ -227,7 +227,7 @@ class Contact extends StorageManager {
 	protected function contactDeleteALL(){
 		try {
 			$sql = "DELETE FROM  .`contact` WHERE fromcontact=0 AND fromgoldbook=0 ;";
-			$result = mysql_query($sql);
+			$result = mysqli_query($this->mysqli,$sql);
 	
 			if (!$result) {
 				throw new Exception($sql);

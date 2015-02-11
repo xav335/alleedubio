@@ -26,20 +26,20 @@
 	}
 	
 	function traitement_date_insert($date) {
-		$tab = split("/", $date);
+		$tab = explode("/", $date);
 		
 	   	return $tab[2] . "-" . $tab[0] . "-" . $tab[1];
 	}
 	
 	function inserer_date($date) {
-		$tab = split("/", $date);
+		$tab = explode("/", $date);
 		
 	   	return $tab[2] . "-" . $tab[1] . "-" . $tab[0];
 	}
 	
 	function traitement_date_affiche($date) {
 		if ( $date != "" ) {
-			$tab = split("-", $date);
+			$tab = explode("-", $date);
 			
 		   	return $tab[2] . "/" . $tab[1] . "/" . $tab[0];
 		}
@@ -48,7 +48,7 @@
 	}
 	
 	function traitement_heure_affiche($heure, $affichage_seconde=false) {
-		$tab = split(":", $heure);
+		$tab = explode(":", $heure);
 		
 		/*$heure = ($tab[0] < 10) ? "0" . $tab[0] : $tab[0];
 		$minute = ($tab[1] < 10) ? "0" . $tab[1] : $tab[1];
@@ -65,8 +65,8 @@
 	
 	function traitement_datetime_affiche($date) {
 		if ( $date != "" ) {
-			$tab = split(" ", $date);
-			$tab2 = split("-", $tab[0]);
+			$tab = explode(" ", $date);
+			$tab2 = explode("-", $tab[0]);
 			
 		   	return $tab2[2] . "/" . $tab2[1] . "/" . $tab2[0] ;
 		}
@@ -76,8 +76,8 @@
 	
 	function traitement_datetime_affiche_bis($date) {
 		if ( $date != "" ) {
-			$tab = split(" ", $date);
-			$tab2 = split("-", $tab[0]);
+			$tab = explode(" ", $date);
+			$tab2 = explode("-", $tab[0]);
 			
 		   	return $tab2[2] . "/" . $tab2[1] . "/" . $tab2[0] . " " . $tab[1];
 		}
@@ -89,7 +89,7 @@
 	function melanger( $tab ) {
 		$tab_final = array();
 		if ( mysql_num_rows( $tab ) != 0 ) {
-			while($data = mysql_fetch_assoc( $tab )) {
+			while($data = mysqli_fetch_assoc( $tab )) {
 				//echo "--> " . $data["num_produit"] . "<br>";
 				$tab_final[] = $data;
 			}
