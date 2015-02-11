@@ -14,7 +14,7 @@
 			<img src="img/produit-du-mois.jpg" alt="" class="img-produit" />
 			<div class="row thumb">
 				<div class="large-4 medium-4 small-4 columns">
-					<a href="img/produit-du-mois.jpg" class="fancybox" data-fancybox-group="produit"><img src="img/produit-du-mois.jpg" alt="" /></a>
+					<a href="img/produits-frais.jpg" class="fancybox" data-fancybox-group="produit"><img src="img/produits-frais.jpg" alt="" /></a>
 				</div>
 				<div class="large-4 medium-4 small-4 columns">
 					<a href="img/produit-du-mois.jpg" class="fancybox" data-fancybox-group="produit"><img src="img/produit-du-mois.jpg" alt="" /></a>
