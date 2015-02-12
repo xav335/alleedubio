@@ -11,6 +11,17 @@
                 	<div class="col-md-6 collapse navbar-collapse">
 	           			<ul class="nav navbar-nav">
 	           				<li class="dropdown">
+					          	<a href="produit-list.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Produits<span class="caret"></span></a>
+					          	<ul class="dropdown-menu" role="menu">
+					            	<li><a href="catproduct-list.php">Catégories</a></li>
+					          		<li class="divider"></li>
+					            	<li><a href="produit-edit.php">Ajout Produits</a></li>
+					            	<li><a href="produit-list.php">Modif / Suppr</a></li>
+					            	<li class="divider"></li>
+					            	<li><a href="produit-edit.php">Produit/evenment Home</a></li>
+					          	</ul>
+					        </li>
+	           				<li class="dropdown">
 					          	<a href="news-list.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Actualités <span class="caret"></span></a>
 					          	<ul class="dropdown-menu" role="menu">
 					            	<li><a href="news-edit.php">Ajout</a></li>
@@ -33,18 +44,7 @@
 					            	<li><a href="contact-import.php">Import / Export</a></li>
 					          	</ul>
 					        </li>
-	                        <li class="dropdown">
-					          	<a href="produit-list.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Produits<span class="caret"></span></a>
-					          	<ul class="dropdown-menu" role="menu">
-					          		<li><a href="category-edit.php">Ajout Catégorie</a></li>
-					            	<li><a href="category-list.php">Modif / Suppr</a></li>
-					          		<li class="divider"></li>
-					            	<li><a href="produit-edit.php">Ajout Produits</a></li>
-					            	<li><a href="produit-list.php">Modif / Suppr</a></li>
-					            	<li class="divider"></li>
-					            	<li><a href="produit-edit.php">Produit/evenment Home</a></li>
-					          	</ul>
-					        </li>
+	                      
 					         <li class="dropdown">
 					          	<a href="bdc.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bon de commande <span class="caret"></span></a>
 					          	<ul class="dropdown-menu" role="menu">

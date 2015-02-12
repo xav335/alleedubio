@@ -45,12 +45,7 @@ if (!empty($result)) {
 		            	<h3><a id="customRoxyImagepdf" href="<?php echo $pdf ?>" target="_blank"><?php echo $pdf ?></a></h3>
 					<br>
 					</div>
-					 <div class="form-group" style=" border:6px ridge white; padding: 30px 10px 30px 10px; ">
-					 	<input type="hidden"  name="url"  id="url1" value="<?php echo $url ?>"><br>
-						<h4>La résolution de l'image doit dans l'idéal être 1624 x 726 :</h4>
-		           		<a href="javascript:openCustomRoxy(1)"><img src="<?php echo $url ?>" id="customRoxyImage1" style="max-width:700px;"></a>
-						<br>
-					</div>	
+					
 		 		</div>
 		    	<div class="col-md-3">
 		    		<br><br><br><br><br><br>
