@@ -2,8 +2,7 @@
 require 'classes/Authentication.php';
 require 'classes/News.php';
 require 'classes/Goldbook.php';
-require 'classes/Newsletter.php';
-require 'classes/Contact.php';
+require 'classes/Catproduct.php';
 require 'classes/Planning.php';
 session_start();
 
@@ -88,80 +87,35 @@ if (!empty($_POST)){
 		}
 	}
 	
-	// traitement des Contact
-	if ($_POST['reference'] == 'contact'){
-		$contact = new Contact();
+	// traitement des Categorie
+	if ($_POST['reference'] == 'categorie'){
+		$catproduct = new Catproduct();
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {
-				$result = $contact->contactModify($_POST);
-				$contact = null;
-				header('Location: /admin/contact-list.php');
+				$result = $catproduct->catproductModify($_POST);
+				$catproduct = null;
+				header('Location: /admin/catproduct-list.php');
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
-				$contact = null;
+				$catproduct = null;
 				exit();
 			}
 	
 		} else {  //ajouter
 			try {
-				$result = $contact->contactAdd($_POST);
-				$contact = null;
-				header('Location: /admin/contact-edit.php?id='.$result);
+				//print_r($_POST);exit();
+				$result = $catproduct->catproductAdd($_POST);
+				$catproduct = null;
+				header('Location: /admin/catproduct-list.php');
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
-				$contact = null;
+				$catproduct = null;
 				exit();
 			}
 		}
 	}
 	
-	// traitement des newsletters
-	if ($_POST['reference'] == 'newsletter'){
-		//print_r($_POST); exit();
-		$newsletter = new Newsletter();
-		if ($_POST['action'] == 'modif' ) { //Modifier
-			try {
-				if ($_POST['postaction'] !='delBloc') {
-					$result = $newsletter->newsletterModify($_POST);
-				}
-				if ($_POST['postaction'] == 'preview' ) {
-					$newsletter = null;
-					header('Location: /admin/mailnewslettercore.php?postaction=preview&id='. $_POST['id']);
-				} elseif ($_POST['postaction']=='addBloc') {
-					$newsletter = null;
-					header('Location: /admin/newsletter-edit.php?addBloc=1&id='. $_POST['id']);
-				} elseif ($_POST['postaction']=='delBloc') {
-					$newsletter->newsletterDetailUniqueDelete($_POST['idbloc']);
-					$newsletter = null;
-					header('Location: /admin/newsletter-edit.php?id='. $_POST['id']);
-				} else {
-					header('Location: /admin/newsletter-list.php');
-				}	
-				
-			} catch (Exception $e) {
-				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
-				$newsletter = null;
-				exit();
-			}
-		} elseif ($_POST['action'] == 'envoi' ) {  //ajouter
-			if ($_POST['postaction'] == 'envoi' ) {
-				header('Location: /admin/mailnewslettercore.php?action=envoi&postaction=envoi&id='. $_POST['id']);
-			} else {
-				header('Location: /admin/mailnewslettercore.php?action=envoi&postaction=preview&id='. $_POST['id']);
-			}	
-			
-		} else {  //ajouter
-			try {
-				$result = $newsletter->newsletterAdd($_POST);
-				$newsletter = null;
-				header('Location: /admin/newsletter-edit.php?id='.$result);
-			} catch (Exception $e) {
-				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
-				$newsletter = null;
-				exit();
-			}
-		}
-	}
+	
 	
 } elseif (!empty($_GET)) { // GET GET GET
 	if ($_GET['reference'] == 'news'){ //supprimer
@@ -192,17 +146,20 @@ if (!empty($_POST)){
 			}
 		}
 	}
-	if ($_GET['reference'] == 'contact'){ //supprimer
-		$contact = new Contact();
+	if ($_GET['reference'] == 'categorie'){ //supprimer
+		$catproduct = new Catproduct();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$result = $contact->contactDelete($_GET['id']);
+				$result = $catproduct->catproductDelete($_GET['id']);
 				$contact = null;
-				header('Location: /admin/contact-list.php');
+				header('Location: /admin/catproduct-list.php');
 			} catch (Exception $e) {
-				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
-				$contact = null;
-				exit();
+					echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
+					$contact = null;
+					if($e->getCode() == 1234){
+						header('Location: /admin/catproduct-list.php?message='.$e->getCode());
+					}
+					exit();
 			}
 		}
 	}

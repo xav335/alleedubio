@@ -23,6 +23,23 @@ class Catproduct extends StorageManager {
 		return $new_array;
 	}
 	
+	public function getProductsByCategorie($id){
+		$this->dbConnect();
+		$requete = "SELECT pdt.id, pdt.label 
+				FROM product as pdt 
+				INNER JOIN product_categorie as cp 
+				WHERE cp.id_categorie=". $id ;
+		//print_r($requete);exit();
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		$this->dbDisConnect();
+		return $new_array;
+	}
+	
+	
 	public function catproduitViewIterative($result){
 		if ($this->i==0){
 			$result = $this->catproductByParentGet(0);
@@ -48,12 +65,8 @@ class Catproduct extends StorageManager {
 	}
 	
 	public function catproductGet($id){
-		 $this->dbConnect();
-		if (!isset($id)){
-			$requete = "SELECT * FROM `catproduct` ORDER BY parent, level DESC" ;
-		} else {
-			$requete = "SELECT * FROM `catproduct` WHERE id=". $id ;
-		}
+		$this->dbConnect();
+		$requete = "SELECT * FROM `catproduct` WHERE id=". $id ;
 		//print_r($requete);
 		$new_array = null;
 		$result = mysqli_query($this->mysqli,$requete);
@@ -65,18 +78,23 @@ class Catproduct extends StorageManager {
 	}
 	
 	public function catproductAdd($value){
-		//print_r($value);
-		//exit();
-		 $this->dbConnect();
+		if ($value['parent'] != 0){
+			$parent = $this->catproductGet($value['parent']);
+			$level = $parent[0]['level']+1;
+		} else {
+			$level = 0;
+		}
+		//print_r($value);exit();
+		
+		$this->dbConnect();
 		$this->begin();
 		try {
 			$sql = "INSERT INTO  .`catproduct`
-						(`date_catproduct`, `titre`, `accroche`, `contenu`)
+						(`label`, `parent`, `level`)
 						VALUES (
-						'". $this->inserer_date($value['datepicker']) ."', 
-						'". addslashes($value['titre']) ."',
-						'". addslashes($value['accroche']) ."',
-						'". addslashes($value['contenu']) ."' 	
+						'". addslashes($value['label']) ."',
+						'". addslashes($value['parent']) ."',
+						". $level ." 	
 					);";
 			$result = mysqli_query($this->mysqli,$sql);
 			
@@ -127,14 +145,19 @@ class Catproduct extends StorageManager {
 	}
 	
 	public function catproductDelete($value){
-		//print_r($value);
-		//exit();
-	
-		 $this->dbConnect();
+		
+		//Check if the categorie is empty !
+		$prod = $this->getProductsByCategorie($value);
+		print_r($prod);
+		if (!empty($prod)){
+			throw new Exception("La categorie n'est pas vide ! ",1234);
+		}
+		
+		$this->dbConnect();
 		$this->begin();
 		try {
 			$sql = "DELETE FROM  .`catproduct` 
-					WHERE `id_catproduct`=". $value .";";
+					WHERE `id`=". $value .";";
 			$result = mysqli_query($this->mysqli,$sql);
 				
 			if (!$result) {

@@ -3,11 +3,23 @@ require 'Catproduct.php';
 
 
 $catproduct = new Catproduct();
+$result = $catproduct->getProductsByCategorie(8);
+
+print_r($result);
+/*
+$catproduct = new Catproduct();
 $catproduct->catproduitViewIterative(null);
 
-print_r($catproduct->tabView);
-$catproduct=null;
+//print_r($catproduct->tabView);
 
+foreach ($catproduct->tabView as $value) {
+	$decalage="";
+	for ($j=0; $j<($value['level'] * 5); $j++) $decalage .= " ";
+	echo $decalage  . $value['label']." ". $value['id'] ." Lev:". $value['level'] . "\n";
+}
+
+$catproduct=null;
+*/
 //$GLOBALS['i']=0;
 //$GLOBALS['tabView']=null;
 

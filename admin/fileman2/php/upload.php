@@ -52,6 +52,10 @@ if(is_dir(fixPath($path))){
       }
       if($isUploaded && RoxyFile::IsImage($filename) && (intval(MAX_IMAGE_WIDTH) > 0 || intval(MAX_IMAGE_HEIGHT) > 0)){
         RoxyImage::Resize($filePath, $filePath, intval(MAX_IMAGE_WIDTH), intval(MAX_IMAGE_HEIGHT));
+        error_log(date("Y-m-d H:i:s") ." : ".  $_SERVER[PHP_SELF] ."\n", 3, "../../../log/spy.log");
+        $dest = $_SERVER["DOCUMENT_ROOT"]."thumbs/". $filename;
+        error_log(date("Y-m-d H:i:s") ." : ".  $dest ."\n", 3, "../../../log/spy.log");
+        RoxyImage::Resize($filePath, $dest, 200, 200);
       }
     }
     if($errors && $errorsExt)
