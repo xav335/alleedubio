@@ -9,5 +9,7 @@
 	<link rel="stylesheet" href="js/vendor/fancybox/jquery.fancybox.css" />
 	<link rel="stylesheet" href="js/vendor/fancybox/helpers/jquery.fancybox-buttons.css" />
 	<link rel="stylesheet" href="js/vendor/fancybox/helpers/jquery.fancybox-thumbs.css" />
+	<link rel="stylesheet" type="text/css" href="js/vendor/slick/slick.css"/>
 	<link rel="stylesheet" href="style.css" />
 	<script src="js/vendor/modernizr.js"></script>
+	

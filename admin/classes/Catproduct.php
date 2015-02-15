@@ -54,6 +54,7 @@ class Catproduct extends StorageManager {
 				$this->tabView[$this->i]['label'] = $value['label'];
 				$this->tabView[$this->i]['id'] = $value['id'];
 				$this->tabView[$this->i]['level'] = $value['level'];
+				$this->tabView[$this->i]['description'] = $value['description'];
 				$this->tabView[$this->i]['image'] = $value['image'];
 				$result = $this->catproductByParentGet($value['id']);
 				//print_r($result);
@@ -114,18 +115,15 @@ class Catproduct extends StorageManager {
 	}
 	
 	public function catproductModify($value){
-		//print_r($value);
-		//exit();
-		
-		 $this->dbConnect();
+		//print_r($value);exit();
+		$this->dbConnect();
 		$this->begin();
 		try {
 			$sql = "UPDATE  .`catproduct` SET
-					`date_catproduct`='". $this->inserer_date($value['datepicker']) ."', 
-					`titre`='". addslashes($value['titre']) ."', 
-					`accroche`='". addslashes($value['accroche']) ."', 
-					`contenu`='". addslashes($value['contenu']) ."' 
-					WHERE `id_catproduct`=". $value['id'] .";";
+					`label`='". addslashes($value['label']) ."', 
+					`description`='". addslashes($value['description']) ."', 
+					`image`='". addslashes($value['url1']) ."' 
+					WHERE `id`=". $value['id'] .";";
 			$result = mysqli_query($this->mysqli,$sql);
 			
 			if (!$result) {

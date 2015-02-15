@@ -38,7 +38,7 @@ require 'classes/Catproduct.php';
 
 		<div class="row">
 
-			<div class="col-md-6">
+			<div class="col-md-8">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">Choisissez la catégorie parent puis indiquez le nom de la catégorie fille</h3>
@@ -92,8 +92,14 @@ require 'classes/Catproduct.php';
 				<table class="table table-hover table-bordered table-condensed table-striped" >
 					<thead>
 						<tr>
+							<th class="col-md-1" style="">
+								
+							</th>
 							<th class="col-md-4" style="">
 								Liste des Categories
+							</th>
+							<th class="col-md-1" style="">
+								desciption
 							</th>
 							<th class="col-md-1" style="">
 								Image
@@ -115,8 +121,10 @@ require 'classes/Catproduct.php';
 							$i++;
 							?>
 							<tr class="<?php if ($value['level']==0) echo 'info';  if ($value['level']==1) echo 'success';?>">
+								<td><input type="checkbox" name="online" ></td>
 								<td><?php echo $decalage.$value['label']?></td>
-								<td><?php echo $value['image']?></td>
+								<td><?php if(isset($value['description'])) echo 'texte OK' ?></td>
+								<td><?php if(isset($value['image'])) echo 'image OK' ?></td>
 								<td><a href="catproduct-edit.php?id=<?php echo $value['id'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a></td>
 								<td>
 									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">

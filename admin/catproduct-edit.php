@@ -16,6 +16,13 @@ if (!empty($_GET)){ //Modif
 		$label=  		$result[0]['label'];
 		$description= 		$result[0]['description'];
 		$image= 	$result[0]['image'];
+		if(empty($image) || !isset($image)){
+			$img = 'img/favicon.png';
+			$imgval = '';
+		} else {
+			$img = $image;
+			$imgval = $image;
+		}
 	}
 }
 ?>
@@ -33,27 +40,27 @@ if (!empty($_GET)){ //Modif
 			<h3><?php echo $labelTitle ?></h3>
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<form name="formulaire" class="form-horizontal" method="POST"  action="formprocess.php">
-					<input type="hidden" name="reference" value="news">
+					<input type="hidden" name="reference" value="categorie">
 					<input type="hidden" name="action" value="<?php echo $action ?>">
 					<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
-					<input type="text"  name="idImage"  id="idImage" value="">
+					<input type="hidden"  name="idImage"  id="idImage" value="">
 					<div class="form-group" >
 						<label class="col-sm-1" for="titre">Titre :</label>
 					    <input type="text" class="col-sm-11" name="label" required  value="<?php echo $label ?>">
 					</div>
 					<div class="form-group">
 						<label for="accroche">Description :</label><br>
-		           		<textarea class="editme" name="description" id="contenu" rows="10" ><?php echo $description ?></textarea>
+		           		<textarea class="editme" name="description" id="contenu" rows="6" ><?php echo $description ?></textarea>
 		            </div>
 		            <div class="form-group"><br>
 						<label  for="titre">Choisissez une image pour la catégorie: </label>
 					</div>	
 					<div class="col-md-4">
-						<?php for ($i=1;$i<4;$i++) {?>
-						<input type="text"  name="url<?php echo $i ?>"  id="url<?php echo $i ?>" value=""><br>
-            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img  src="img/favicon.png"" id="customRoxyImage<?php echo $i ?>" style="max-width:200px;"></a>
+						<?php for ($i=1;$i<2;$i++) {?>
+						<input type="hidden"  name="url<?php echo $i ?>"  id="url<?php echo $i ?>" value="<?php echo $imgval?>"><br>
+            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img  src="<?php echo $img?>" id="customRoxyImage<?php echo $i ?>" style="max-width:200px;"></a>
 						<img src="img/del.png" width="20" alt="Supprimer" onclick="clearImage(<?php echo $i ?>)"/>
-						<br>
+						<br><br>
 						<?php }?>
 					</div>	
 		            <div id="roxyCustomPanel" style="display: none;">
@@ -75,8 +82,9 @@ if (!empty($_GET)){ //Modif
 						}
 						
 					</script>
-		            <button class="btn btn-success col-sm-12" type="submit" class="btn btn-default"> Valider </button>
-		            
+					<div class="form-group">
+		            	<button class="btn btn-success col-sm-12" type="submit" class="btn btn-default"> Valider </button>
+		            </div>
 					<script type="text/javascript">
 						tinymce.init({
 						selector: "textarea.editme",

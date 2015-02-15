@@ -89,6 +89,7 @@ if (!empty($_POST)){
 	
 	// traitement des Categorie
 	if ($_POST['reference'] == 'categorie'){
+		//print_r($_POST);exit();
 		$catproduct = new Catproduct();
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {

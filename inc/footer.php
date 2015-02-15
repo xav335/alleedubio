@@ -30,3 +30,44 @@
 	<script src="js/vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 	<script src="js/vendor/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
 	<script src="js/scripts.js"></script>
+	<script src="js/vendor/slick/slick.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			/* Slider références */
+			$('.autoplay').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				pauseOnHover: true,
+				speed:1000
+			});
+
+			$('.autoplay2').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				pauseOnHover: true,
+				speed:1000
+			});
+
+			$('.fade').slick({
+				  dots: true,
+				  autoplay: true,
+				  infinite: true,
+				  speed: 500,
+				  fade: true,
+				  slide: 'div',
+				  cssEase: 'linear'
+			});
+
+			
+		});
+
+	</script>

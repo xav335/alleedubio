@@ -10,19 +10,50 @@
 	
 	<!-- Produit du mois -->
 	<div class="row encart">
-		<div class="large-7 medium-7 small-7 columns">
-			<h1>Le produit du mois</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet. Sed finibus nibh porta tortor finibus tincidunt. Donec iaculis accumsan odio eu aliquet. Integer vel libero eu urna tristique fringilla. Donec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.
-			</p>
-			<a href="produit.php" class="bt-plus">en savoir +</a>
-		</div>
-		<div class="large-5 medium-5 small-5 columns">
-			<img src="img/produit-du-mois.jpg" alt="" />
+		<div class=" slider autoplay">
+			<div>
+				<div class="large-7 medium-7 small-7 columns">
+		
+					<h1>Promotion exeptionnelle</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet. Sed finibus nibh porta tortor finibus tincidunt. Donec iaculis accumsan odio eu aliquet. Integer vel libero eu urna tristique fringilla. Donec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.
+					</p>
+					<a href="produit.php" class="bt-plus">en savoir +</a>
+				</div>
+				<div class="large-5 medium-5 small-5 columns">
+					<img src="img/complements.jpg" alt="" />
+				</div>
+			</div>
+			<div>
+				<div class="large-7 medium-7 small-7 columns">
+		
+					<h1>L'actu du mois</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet. Sed finibus nibh porta tortor finibus tincidunt. Donec iaculis accumsan odio eu aliquet. Integer vel libero eu urna tristique fringilla. Donec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.
+					</p>
+					<a href="produit.php" class="bt-plus">en savoir +</a>
+				</div>
+				<div class="large-5 medium-5 small-5 columns">
+					<img src="img/produits-frais.jpg" alt="" />
+				</div>
+			</div>
+			<div>
+				<div class="large-7 medium-7 small-7 columns">
+		
+					<h1>Le produit du mois</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet. Sed finibus nibh porta tortor finibus tincidunt. Donec iaculis accumsan odio eu aliquet. Integer vel libero eu urna tristique fringilla. Donec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.
+					</p>
+					<a href="produit.php" class="bt-plus">en savoir +</a>
+				</div>
+				<div class="large-5 medium-5 small-5 columns">
+					<img src="img/produit-du-mois.jpg" alt="" />
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- Fin Produit du mois -->
-	
+
 	<!-- Listing produits -->
 	<div class="row">
 		<div class="large-4 medium-4 small-6 columns products-list fuchsia">
