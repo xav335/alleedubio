@@ -3,9 +3,9 @@ require 'Catproduct.php';
 
 
 $catproduct = new Catproduct();
-$result = $catproduct->getProductsByCategorie(8);
-
+$result = $catproduct->getCategorieByProduct(1);
 print_r($result);
+
 /*
 $catproduct = new Catproduct();
 $catproduct->catproduitViewIterative(null);

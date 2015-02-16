@@ -39,6 +39,21 @@ class Catproduct extends StorageManager {
 		return $new_array;
 	}
 	
+	public function getCategorieByProduct($id){
+		$requete = "SELECT catproduct.label as catlabel,catproduct.id as catid
+					FROM product 
+					INNER JOIN product_categorie ON product.id=product_categorie.id_product 
+					INNER JOIN catproduct ON catproduct.id = product_categorie.id_categorie 
+					WHERE product.id=". $id ;
+		//print_r($requete);exit();
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		return $new_array;
+	}
+	
 	
 	public function catproduitViewIterative($result){
 		if ($this->i==0){
@@ -174,5 +189,101 @@ class Catproduct extends StorageManager {
 		$this->dbDisConnect();
 	}
 	
+	public function productNumberGet(){
+		$this->dbConnect();
+		try {
+			$requete = "SELECT count(*) as nb FROM `product`;" ;
+			//print_r($requete);
+			$new_array = null;
+			$result = mysqli_query($this->mysqli,$requete);
+			while( $row = mysqli_fetch_assoc( $result)){
+				$new_array[] = $row;
+			}
+			$this->dbDisConnect();
+			return $new_array[0]['nb'];
+		} catch (Exception $e) {
+			throw new Exception("Erreur Mysql contactGet ". $e->getMessage());
+			return "errrrrrrooooOOor";
+		}
+	}
+	
+	public function productGet($id, $offset, $count){
+		$this->dbConnect();
+		try {
+			if (!isset($id)){
+				if (isset($offset) && isset($count)) {
+					$requete = "SELECT product.id,product.reference,product.prix,product.label
+								FROM product 
+								ORDER BY  product.label
+								ASC LIMIT ". $offset .",". $count .";" ;
+				} else {
+					$requete = "SELECT * FROM `product` ORDER BY `label`;" ;
+				}
+			} else {
+				$requete = "SELECT product.*
+							FROM product 
+							WHERE product.id=". $id;
+			}
+			//print_r($requete);
+			$new_array = null;
+			$result = mysqli_query($this->mysqli,$requete);
+			while( $row = mysqli_fetch_assoc( $result)){
+				$resultdetail = $this->getCategorieByProduct($row['id']);
+				$row['categories'] = $resultdetail;
+				$new_array[] = $row;
+			}
+			
+			
+			
+			$this->dbDisConnect();
+			return $new_array;
+		} catch (Exception $e) {
+			die('Erreur : ' . $e->getMessage());
+			//throw new Exception("Erreur Mysql productGet ". $e->getMessage());
+			return "errrrrrrooooOOor";
+		}
+	}
+	
+	/*[reference] => product
+	[action] => modif
+	[id] => 1
+	[idImage] =>
+	[label] => huile d'olive
+    [ref] => T4534
+    [prix] => 13.51
+    [accroche] => <p>lorem ipsum dolor</p>
+    [description] => <p>huile d'olivehuile d'olivehuile d'olivehuile d'olivehuile d'olivehuile d'olive</p>
+	    [url1] => /uploads/Images categories/IMG_1008.jpg
+	    [url2] => /uploads/Images categories/IMG_1014 - Copy 1.jpg
+	    [url3] => /uploads/Images categories/IMG_1008.jpg
+	    )*/
+	
+	public function productModify($value){
+		print_r($value);exit();
+		$this->dbConnect();
+		$this->begin();
+		try {
+			$sql = "UPDATE  .`product` SET
+					`label`='". addslashes($value['label']) ."',
+					`description`='". addslashes($value['description']) ."',
+					`image`='". addslashes($value['url1']) ."'
+					WHERE `id`=". $value['id'] .";";
+			$result = mysqli_query($this->mysqli,$sql);
+				
+			if (!$result) {
+				throw new Exception($sql);
+			}
+	
+			$this->commit();
+	
+		} catch (Exception $e) {
+			$this->rollback();
+			throw new Exception("Erreur Mysql ". $e->getMessage());
+			return "errrrrrrooooOOor";
+		}
+	
+	
+		$this->dbDisConnect();
+	}
 	
 }

@@ -17,8 +17,7 @@ if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
 	}
 }
 
-//print_r($_POST);
-//exit();
+//print_r($_POST);exit();
 //Forms processing
 if (!empty($_POST)){
 	
@@ -94,6 +93,35 @@ if (!empty($_POST)){
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {
 				$result = $catproduct->catproductModify($_POST);
+				$catproduct = null;
+				header('Location: /admin/catproduct-list.php');
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+				$catproduct = null;
+				exit();
+			}
+	
+		} else {  //ajouter
+			try {
+				//print_r($_POST);exit();
+				$result = $catproduct->catproductAdd($_POST);
+				$catproduct = null;
+				header('Location: /admin/catproduct-list.php');
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+				$catproduct = null;
+				exit();
+			}
+		}
+	}
+	
+	// traitement des Produit
+	if ($_POST['reference'] == 'product'){
+		//print_r($_POST);exit();
+		$catproduct = new Catproduct();
+		if ($_POST['action'] == 'modif') { //Modifier
+			try {
+				$result = $catproduct->productModify($_POST);
 				$catproduct = null;
 				header('Location: /admin/catproduct-list.php');
 			} catch (Exception $e) {

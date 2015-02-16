@@ -15,10 +15,10 @@
 					          	<ul class="dropdown-menu" role="menu">
 					            	<li><a href="catproduct-list.php">Catégories</a></li>
 					          		<li class="divider"></li>
-					            	<li><a href="produit-edit.php">Ajout Produits</a></li>
-					            	<li><a href="produit-list.php">Modif / Suppr</a></li>
+					            	<li><a href="product-edit.php">Ajout Produits</a></li>
+					            	<li><a href="product-list.php">Modif / Suppr</a></li>
 					            	<li class="divider"></li>
-					            	<li><a href="produit-edit.php">Produit/evenment Home</a></li>
+					            	<li><a href="product-edit.php">Produit/evenment Home</a></li>
 					          	</ul>
 					        </li>
 	           				<li class="dropdown">
