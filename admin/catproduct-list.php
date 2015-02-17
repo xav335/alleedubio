@@ -92,9 +92,6 @@ require 'classes/Catproduct.php';
 				<table class="table table-hover table-bordered table-condensed table-striped" >
 					<thead>
 						<tr>
-							<th class="col-md-1" style="">
-								
-							</th>
 							<th class="col-md-4" style="">
 								Liste des Categories
 							</th>
@@ -121,7 +118,6 @@ require 'classes/Catproduct.php';
 							$i++;
 							?>
 							<tr class="<?php if ($value['level']==0) echo 'info';  if ($value['level']==1) echo 'success';?>">
-								<td><input type="checkbox" name="online" ></td>
 								<td><?php echo $decalage.$value['label']?></td>
 								<td><?php if(isset($value['description'])) echo 'texte OK' ?></td>
 								<td><?php if(isset($value['image'])) echo 'image OK' ?></td>

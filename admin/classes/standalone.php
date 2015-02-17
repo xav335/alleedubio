@@ -2,9 +2,19 @@
 require 'Catproduct.php';
 
 
+$categories = array( 11 ,9 ,2 ,33  );
+
+
+
+
 $catproduct = new Catproduct();
-$result = $catproduct->getCategorieByProduct(1);
-print_r($result);
+try {
+	$result = $catproduct->categoriesProductModify($categories, 3);
+	print_r($result);
+	
+} catch (Exception $e) {
+	echo $e->getMessage();
+}
 
 /*
 $catproduct = new Catproduct();

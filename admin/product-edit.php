@@ -7,8 +7,13 @@ if (!empty($_GET)){ //Modif
 	$action = 'modif';
 	$catproduct = new Catproduct();
 	$result = $catproduct->productGet($_GET['id'],null,null);
-	//print_r($result[0]['categories']);
 	//print_r($result);exit();
+	//Recup des categories
+	$catproduct->catproduitViewIterative(null);
+	$resultCat = $catproduct->tabView;
+	$catproduct=null;
+	//print_r($result[0]['categories']);
+	
 	
 	if (empty($result)) {
 		$message = 'Aucun enregistrements';
@@ -17,9 +22,17 @@ if (!empty($_GET)){ //Modif
 		$id= 			$_GET['id'];
 		$label=  		$result[0]['label'];
 		$prix=  		$result[0]['prix'];
-		$reference=  		$result[0]['reference'];
+		$reference=  	$result[0]['reference'];
 		$accroche= 		$result[0]['accroche'];
-		$description= 		$result[0]['description'];
+		$description= 	$result[0]['description'];
+		
+		
+		$categories= 	null;
+		foreach ($result[0]['categories'] as $value) {
+			$categories[]=$value['catid'];
+		}
+		//print_r($categories);exit();
+		//print_r($categories);exit();
 		for ($i=1;$i<4;$i++) {
 			$image[$i] = 	$result[0]['image'.$i];
 			if(empty($image[$i]) || !isset($image[$i])){
@@ -77,7 +90,7 @@ if (!empty($_GET)){ //Modif
 				
 						<?php for ($i=1;$i<4;$i++) {?>
 							<div class="col-md-4">
-						<input type="text"  name="url<?php echo $i ?>"  id="url<?php echo $i ?>" value="<?php echo $imgval[$i]?>"><br>
+						<input type="hidden"  name="url<?php echo $i ?>"  id="url<?php echo $i ?>" value="<?php echo $imgval[$i]?>"><br>
             			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img  src="<?php echo $img[$i]?>" id="customRoxyImage<?php echo $i ?>" style="max-width:200px;"></a>
 						<img src="img/del.png" width="20" alt="Supprimer" onclick="clearImage(<?php echo $i ?>)"/>
 						<br><br>
@@ -103,6 +116,38 @@ if (!empty($_GET)){ //Modif
 						}
 						
 					</script>
+					
+					
+					<table class="table table-hover table-bordered table-condensed table-striped" >
+						<thead>
+							<tr>
+								<th class="col-md-12"  colspan="2">
+									Cochez les catégories auquelles le produit appartient :
+								</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<?php 
+							if (!empty($resultCat)) {
+								$i=0;
+								foreach ($resultCat as $value) { 
+									$decalage = "";
+									for ($i=0; $i<($value['level'] * 10); $i++) {
+										$decalage .= "&nbsp;";
+									}
+								$i++;
+								(in_array($value['id'], $categories) )? $check = 'checked':$check = '';
+								?>
+								<tr class="<?php if ($value['level']==0) echo 'info';  if ($value['level']==1) echo 'success';?>">
+									<td><input type="checkbox"  name="categories[]" value="<?php echo $value['id'] ?>" <?php echo $check ?>></td>
+									<td><?php echo $decalage.$value['label']?></td>
+								</tr>
+								<?php } ?>
+							<?php } ?>	
+						</tbody>
+					</table>
+					
 					<div class="form-group">
 		            	<button class="btn btn-success col-sm-12" type="submit" class="btn btn-default"> Valider </button>
 		            </div>

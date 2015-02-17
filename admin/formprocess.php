@@ -123,7 +123,7 @@ if (!empty($_POST)){
 			try {
 				$result = $catproduct->productModify($_POST);
 				$catproduct = null;
-				header('Location: /admin/catproduct-list.php');
+				header('Location: /admin/product-list.php');
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$catproduct = null;

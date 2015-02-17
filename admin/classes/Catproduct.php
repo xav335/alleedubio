@@ -104,27 +104,23 @@ class Catproduct extends StorageManager {
 		
 		$this->dbConnect();
 		$this->begin();
-		try {
-			$sql = "INSERT INTO  .`catproduct`
-						(`label`, `parent`, `level`)
-						VALUES (
-						'". addslashes($value['label']) ."',
-						'". addslashes($value['parent']) ."',
-						". $level ." 	
-					);";
-			$result = mysqli_query($this->mysqli,$sql);
-			
-			if (!$result) {
-				throw new Exception($sql);
-			}
-			$id_record = mysqli_insert_id($this->mysqli);
-			$this->commit();
 		
-		} catch (Exception $e) {
+		$sql = "INSERT INTO  .`catproduct`
+					(`label`, `parent`, `level`)
+					VALUES (
+					'". addslashes($value['label']) ."',
+					'". addslashes($value['parent']) ."',
+					". $level ." 	
+				);";
+		$result = mysqli_query($this->mysqli,$sql);
+		
+		if (!$result) {
 			$this->rollback();
-			throw new Exception("Erreur Mysql ". $e->getMessage());
-			return "errrrrrrooooOOor";
+			throw new Exception('Erreur Mysql catproductAdd sql = : '.$sql);
 		}
+		$id_record = mysqli_insert_id($this->mysqli);
+		$this->commit();
+		
 		$this->dbDisConnect();
 		return $id_record;
 	}
@@ -161,30 +157,24 @@ class Catproduct extends StorageManager {
 		
 		//Check if the categorie is empty !
 		$prod = $this->getProductsByCategorie($value);
-		print_r($prod);
+		//print_r($prod);
 		if (!empty($prod)){
 			throw new Exception("La categorie n'est pas vide ! ",1234);
 		}
 		
 		$this->dbConnect();
 		$this->begin();
-		try {
-			$sql = "DELETE FROM  .`catproduct` 
-					WHERE `id`=". $value .";";
-			$result = mysqli_query($this->mysqli,$sql);
-				
-			if (!$result) {
-				throw new Exception($sql);
-			}
-	
-			$this->commit();
-	
-		} catch (Exception $e) {
+		
+		$sql = "DELETE FROM  .`catproduct` 
+				WHERE `id`=". $value .";";
+		$result = mysqli_query($this->mysqli,$sql);
+			
+		if (!$result) {
 			$this->rollback();
-			throw new Exception("Erreur Mysql ". $e->getMessage());
-			return "errrrrrrooooOOor";
+			throw new Exception('Erreur Mysql catproductDelete sql = : '.$sql);
 		}
-	
+
+		$this->commit();
 	
 		$this->dbDisConnect();
 	}
@@ -244,46 +234,60 @@ class Catproduct extends StorageManager {
 		}
 	}
 	
-	/*[reference] => product
-	[action] => modif
-	[id] => 1
-	[idImage] =>
-	[label] => huile d'olive
-    [ref] => T4534
-    [prix] => 13.51
-    [accroche] => <p>lorem ipsum dolor</p>
-    [description] => <p>huile d'olivehuile d'olivehuile d'olivehuile d'olivehuile d'olivehuile d'olive</p>
-	    [url1] => /uploads/Images categories/IMG_1008.jpg
-	    [url2] => /uploads/Images categories/IMG_1014 - Copy 1.jpg
-	    [url3] => /uploads/Images categories/IMG_1008.jpg
-	    )*/
 	
 	public function productModify($value){
-		print_r($value);exit();
+		//print_r($value);exit();
 		$this->dbConnect();
 		$this->begin();
-		try {
-			$sql = "UPDATE  .`product` SET
-					`label`='". addslashes($value['label']) ."',
-					`description`='". addslashes($value['description']) ."',
-					`image`='". addslashes($value['url1']) ."'
-					WHERE `id`=". $value['id'] .";";
-			$result = mysqli_query($this->mysqli,$sql);
-				
-			if (!$result) {
-				throw new Exception($sql);
-			}
-	
-			$this->commit();
-	
-		} catch (Exception $e) {
+		
+		$sql = "UPDATE  .`product` SET
+				`label`='". addslashes($value['label']) ."',
+				`accroche`='". addslashes($value['accroche']) ."',
+				`prix`='". addslashes($value['prix']) ."',
+				`description`='". addslashes($value['description']) ."',
+				`image1`='". addslashes($value['url1']) ."',
+				`image2`='". addslashes($value['url2']) ."',
+				`image3`='". addslashes($value['url3']) ."'
+				WHERE `id`=". $value['id'] .";";
+		$result = mysqli_query($this->mysqli,$sql);
+			
+		if (!$result) {
 			$this->rollback();
-			throw new Exception("Erreur Mysql ". $e->getMessage());
-			return "errrrrrrooooOOor";
+			throw new Exception('Erreur Mysql productModify sql = : '.$sql);
 		}
-	
+		
+		$this->categoriesProductModify($_POST['categories'], $value['id']);
+		
+		$this->commit();
 	
 		$this->dbDisConnect();
+	}
+	
+	private function categoriesProductModify($categories,$id){
+		
+		$sql = "DELETE FROM  `product_categorie`  
+				WHERE `id_product`=". $id .";";
+		$result = mysqli_query($this->mysqli,$sql);
+		
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql categoriesProductModify sql = : '.$sql);
+		}
+		$sql = "INSERT INTO  `product_categorie`
+				(`id_product`, `id_categorie`)
+				VALUES "; 
+		foreach ($categories as $values){
+			$sql .= "(". $id .",". $values ."),";
+		}	
+		$sql = substr($sql, 0, strlen($sql)-1);
+		$sql .= ";";
+		$result = mysqli_query($this->mysqli,$sql);
+
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql categoriesProductModify sql = : '.$sql);
+		}
+		
 	}
 	
 }
