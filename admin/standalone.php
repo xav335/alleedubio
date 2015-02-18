@@ -1,21 +1,17 @@
 <?php
-require 'Catproduct.php';
+require 'classes/Catproduct.php';
 
 
 $categories = array( 11 ,9 ,2 ,33  );
 
 
-
-
 $catproduct = new Catproduct();
-try {
-	$result = $catproduct->categoriesProductModify($categories, 3);
-	print_r($result);
-	
-} catch (Exception $e) {
-	echo $e->getMessage();
-}
+$url ='/uploads/Images categories/IMG_1008.jpg';
 
+$ch=explode('.', strrchr($url,'/'));
+$filename = $ch[0].'-234.'.$ch[1];
+
+if(strstr($url,'uploads')) print_r('dfdff');
 /*
 $catproduct = new Catproduct();
 $catproduct->catproduitViewIterative(null);

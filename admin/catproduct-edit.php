@@ -20,7 +20,7 @@ if (!empty($_GET)){ //Modif
 			$img = 'img/favicon.png';
 			$imgval = '';
 		} else {
-			$img = $image;
+			$img ='/photos/categories/thumbs'. $image;
 			$imgval = $image;
 		}
 	}

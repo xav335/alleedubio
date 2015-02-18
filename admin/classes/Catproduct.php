@@ -1,5 +1,6 @@
 <?php
 require_once("StorageManager.php");
+require_once("Zebra_Image.php");
 
 class Catproduct extends StorageManager {
 
@@ -7,7 +8,57 @@ class Catproduct extends StorageManager {
 	var $i = 0;
 	
 	public function __construct(){
-
+		
+		
+	}
+	
+	public function imageResize($source, $destination, $width, $height){
+		$image = new Zebra_Image();
+		
+		$image->source_path = $source;
+		$image->target_path = $destination;
+		$image->jpeg_quality = 90;
+		
+		$image->preserve_aspect_ratio = true;
+		$image->enlarge_smaller_images = true;
+		$image->preserve_time = true;
+		
+		if (!$image->resize($width, $height, ZEBRA_IMAGE_NOT_BOXED, '#FFFFFF')) {
+		
+			// if there was an error, let's see what the error is about
+			switch ($image->error) {
+		
+				case 1:
+					echo 'Source file could not be found!';
+					break;
+				case 2:
+					echo 'Source file is not readable!';
+					break;
+				case 3:
+					echo 'Could not write target file!';
+					break;
+				case 4:
+					echo 'Unsupported source file format!';
+					break;
+				case 5:
+					echo 'Unsupported target file format!';
+					break;
+				case 6:
+					echo 'GD library version does not support target file format!';
+					break;
+				case 7:
+					echo 'GD library is not installed!';
+					break;
+		
+			}
+		
+			// if no errors
+		} else {
+		
+			echo 'Success!';
+		
+		}
+		
 	}
 	
 	public function catproductByParentGet($id){
@@ -25,10 +76,10 @@ class Catproduct extends StorageManager {
 	
 	public function getProductsByCategorie($id){
 		$this->dbConnect();
-		$requete = "SELECT pdt.id, pdt.label 
-				FROM product as pdt 
-				INNER JOIN product_categorie as cp 
-				WHERE cp.id_categorie=". $id ;
+		$requete = "SELECT product.id,product.reference,product.prix,product.label
+				FROM product 
+				INNER JOIN product_categorie 
+				WHERE product_categorie.id_categorie=". $id ;
 		//print_r($requete);exit();
 		$new_array = null;
 		$result = mysqli_query($this->mysqli,$requete);
@@ -197,33 +248,41 @@ class Catproduct extends StorageManager {
 		}
 	}
 	
-	public function productGet($id, $offset, $count){
+	public function productGet($id, $offset, $count, $categorie){
 		$this->dbConnect();
 		try {
 			if (!isset($id)){
-				if (isset($offset) && isset($count)) {
-					$requete = "SELECT product.id,product.reference,product.prix,product.label
+				if (empty($categorie) && isset($offset) && isset($count)) {
+					$sql = "SELECT product.id,product.reference,product.prix,product.label
 								FROM product 
 								ORDER BY  product.label
 								ASC LIMIT ". $offset .",". $count .";" ;
+					
+				} elseif (!empty($categorie) && isset($offset) && isset($count)) {
+					$sql = "SELECT product.id,product.reference,product.prix,product.label
+								FROM product
+								INNER JOIN product_categorie 
+								ON product_categorie.id_product=product.id
+								WHERE product_categorie.id_categorie=". $categorie . "
+								ORDER BY  product.label
+								ASC LIMIT ". $offset .",". $count .";" ;
+					
 				} else {
-					$requete = "SELECT * FROM `product` ORDER BY `label`;" ;
+					$sql = "SELECT * FROM `product` ORDER BY `label`;" ;
 				}
 			} else {
-				$requete = "SELECT product.*
+				$sql = "SELECT product.*
 							FROM product 
 							WHERE product.id=". $id;
 			}
-			//print_r($requete);
+			//print_r($sql);
 			$new_array = null;
-			$result = mysqli_query($this->mysqli,$requete);
+			$result = mysqli_query($this->mysqli,$sql);
 			while( $row = mysqli_fetch_assoc( $result)){
 				$resultdetail = $this->getCategorieByProduct($row['id']);
 				$row['categories'] = $resultdetail;
 				$new_array[] = $row;
 			}
-			
-			
 			
 			$this->dbDisConnect();
 			return $new_array;
@@ -263,16 +322,23 @@ class Catproduct extends StorageManager {
 		$this->dbDisConnect();
 	}
 	
-	private function categoriesProductModify($categories,$id){
-		
-		$sql = "DELETE FROM  `product_categorie`  
+	private function categoriesProductDel($id){
+	
+		$sql = "DELETE FROM  `product_categorie`
 				WHERE `id_product`=". $id .";";
 		$result = mysqli_query($this->mysqli,$sql);
-		
+	
 		if (!$result) {
 			$this->rollback();
-			throw new Exception('Erreur Mysql categoriesProductModify sql = : '.$sql);
+			throw new Exception('Erreur Mysql categoriesProductDel sql = : '.$sql);
 		}
+	
+	}
+	
+	private function categoriesProductModify($categories,$id){
+		
+		$this->categoriesProductDel($id);
+		
 		$sql = "INSERT INTO  `product_categorie`
 				(`id_product`, `id_categorie`)
 				VALUES "; 
@@ -290,4 +356,59 @@ class Catproduct extends StorageManager {
 		
 	}
 	
+	
+	public function productAdd($value){
+		//print_r($value);exit();
+	
+		$this->dbConnect();
+		$this->begin();
+	
+		$sql = "INSERT INTO  .`product`
+					(`label`, `reference`, `accroche`, `description`, `image1`, `image2`, `image3`,`prix`)
+					VALUES (
+					'". addslashes($value['label']) ."',
+					'". addslashes($value['ref']) ."',
+					'". addslashes($value['accroche']) ."',
+					'". addslashes($value['description']) ."',
+					'". addslashes($value['url1']) ."',
+					'". addslashes($value['url2']) ."',
+					'". addslashes($value['url3']) ."',
+					". $value['prix'] ."
+				);";
+		$result = mysqli_query($this->mysqli,$sql);
+	
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql productAdd sql = : '.$sql);
+		}
+		$id_record = mysqli_insert_id($this->mysqli);
+		
+		$this->categoriesProductModify($value['categories'], $id_record);
+		
+		$this->commit();
+	
+		$this->dbDisConnect();
+		return $id_record;
+	}
+	
+	public function productDelete($value){
+	
+		$this->dbConnect();
+		$this->begin();
+		
+		$this->categoriesProductDel($value);
+	
+		$sql = "DELETE FROM  .`product`
+				WHERE `id`=". $value .";";
+		$result = mysqli_query($this->mysqli,$sql);
+			
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql productDelete sql = : '.$sql);
+		}
+	
+		$this->commit();
+	
+		$this->dbDisConnect();
+	}
 }

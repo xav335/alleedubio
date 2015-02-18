@@ -3,33 +3,33 @@
 <?php 
 require 'classes/Catproduct.php';
 
+$catproduct = new Catproduct();
+//Recup des categories
+$catproduct->catproduitViewIterative(null);
+$resultCat = $catproduct->tabView;
+
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
-	$catproduct = new Catproduct();
-	$result = $catproduct->productGet($_GET['id'],null,null);
+	$result = $catproduct->productGet($_GET['id'],null,null,null);
 	//print_r($result);exit();
-	//Recup des categories
-	$catproduct->catproduitViewIterative(null);
-	$resultCat = $catproduct->tabView;
-	$catproduct=null;
 	//print_r($result[0]['categories']);
-	
+	$catproduct=null;
 	
 	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
-		$labelTitle = 'Produit N°: '. $_GET['id'];
+		$labelTitle= 	'Produit N°: '. $_GET['id'];
 		$id= 			$_GET['id'];
 		$label=  		$result[0]['label'];
 		$prix=  		$result[0]['prix'];
 		$reference=  	$result[0]['reference'];
 		$accroche= 		$result[0]['accroche'];
 		$description= 	$result[0]['description'];
-		
-		
 		$categories= 	null;
-		foreach ($result[0]['categories'] as $value) {
-			$categories[]=$value['catid'];
+		if (!empty($result[0]['categories'])){
+			foreach ($result[0]['categories'] as $value) {
+				$categories[]=$value['catid'];
+			}
 		}
 		//print_r($categories);exit();
 		//print_r($categories);exit();
@@ -39,11 +39,26 @@ if (!empty($_GET)){ //Modif
 				$img[$i]  = '/img/favicon.png';
 				$imgval[$i]  = '';
 			} else {
-				$img[$i]  = $image[$i];
+				$img[$i]  = '/photos/products/thumbs'. $image[$i];
 				$imgval[$i]  = $image[$i];
 			}
 		}	
 	}
+} else { //ajout 
+	$action= 		'add';
+	$labelTitle= 	'Edition Produit ';
+	$id= 			null;
+	$label=  		null;
+	$prix=  		null;
+	$reference=  	null;
+	$accroche= 		null;
+	$description= 	null;
+	$categories= 	null;
+	for ($i=1;$i<4;$i++) {
+		$img[$i]  = '/img/favicon.png';
+		$imgval[$i]  = '';
+	}
+	$catproduct=	null;
 }
 ?>
 <!doctype html>
@@ -137,7 +152,7 @@ if (!empty($_GET)){ //Modif
 										$decalage .= "&nbsp;";
 									}
 								$i++;
-								(in_array($value['id'], $categories) )? $check = 'checked':$check = '';
+								(!empty($categories) && in_array($value['id'], $categories)) ? $check = 'checked' : $check = '';
 								?>
 								<tr class="<?php if ($value['level']==0) echo 'info';  if ($value['level']==1) echo 'success';?>">
 									<td><input type="checkbox"  name="categories[]" value="<?php echo $value['id'] ?>" <?php echo $check ?>></td>

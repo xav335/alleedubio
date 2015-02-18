@@ -92,6 +92,21 @@ if (!empty($_POST)){
 		$catproduct = new Catproduct();
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {
+				//Gestion des images
+				$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url1'];
+
+				if (strstr($source,'uploads')){
+					$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url1'];
+					$ch=explode('.', strrchr($_POST['url1'],'/'));
+					$filenameDest = $ch[0].'-'. $_POST['id'] .'.'.$ch[1];
+					//Image
+					$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/categories'.$filenameDest;
+					$catproduct->imageResize($source, $destination, null, 650);
+					//Vignette
+					$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/categories/thumbs'.$filenameDest;
+					$catproduct->imageResize($source, $destination, null, 250);
+					$_POST['url1']=$filenameDest;
+				}
 				$result = $catproduct->catproductModify($_POST);
 				$catproduct = null;
 				header('Location: /admin/catproduct-list.php');
@@ -119,6 +134,23 @@ if (!empty($_POST)){
 	if ($_POST['reference'] == 'product'){
 		//print_r($_POST);exit();
 		$catproduct = new Catproduct();
+		
+		for ($i=1;$i<4;$i++){
+			$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
+			if(strstr($source,'uploads')){
+				$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
+				$ch=explode('.', strrchr($_POST['url'.$i],'/'));
+				$filenameDest = $ch[0].'-'. $_POST['id'] .'.'.$ch[1];
+				//Image
+				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/products'.$filenameDest;
+				$catproduct->imageResize($source, $destination, null, 650);
+				//Vignette
+				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/products/thumbs'.$filenameDest;
+				$catproduct->imageResize($source, $destination, null, 250);
+				$_POST['url'.$i]=$filenameDest;
+			}
+		}
+		
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {
 				$result = $catproduct->productModify($_POST);
@@ -133,9 +165,9 @@ if (!empty($_POST)){
 		} else {  //ajouter
 			try {
 				//print_r($_POST);exit();
-				$result = $catproduct->catproductAdd($_POST);
+				$result = $catproduct->productAdd($_POST);
 				$catproduct = null;
-				header('Location: /admin/catproduct-list.php');
+				header('Location: /admin/product-list.php');
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$catproduct = null;
@@ -180,15 +212,32 @@ if (!empty($_POST)){
 		if ($_GET['action'] == 'delete'){
 			try {
 				$result = $catproduct->catproductDelete($_GET['id']);
-				$contact = null;
+				$catproduct = null;
 				header('Location: /admin/catproduct-list.php');
 			} catch (Exception $e) {
 					echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
-					$contact = null;
+					$catproduct = null;
 					if($e->getCode() == 1234){
 						header('Location: /admin/catproduct-list.php?message='.$e->getCode());
 					}
 					exit();
+			}
+		}
+	}
+	if ($_GET['reference'] == 'product'){ //supprimer
+		$catproduct = new Catproduct();
+		if ($_GET['action'] == 'delete'){
+			try {
+				$result = $catproduct->productDelete($_GET['id']);
+				$catproduct = null;
+				header('Location: /admin/product-list.php');
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
+				$catproduct = null;
+				if($e->getCode() == 1234){
+					header('Location: /admin/catproduct-list.php?message='.$e->getCode());
+				}
+				exit();
 			}
 		}
 	}

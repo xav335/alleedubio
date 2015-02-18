@@ -4,6 +4,7 @@
 <?php 
 require 'classes/Catproduct.php';
 
+
 	$catproduct = new Catproduct();
 	
 	$total = $catproduct->productNumberGet();
@@ -32,8 +33,18 @@ require 'classes/Catproduct.php';
 	// $start est la valeur de départ du LIMIT dans notre requête SQL (dépend de la page courante)
 	$start = ($current * $epp - $epp);
 	
+
+	if (!empty($_POST)){
+		$categ = $_POST['categorie'];
+	} else {
+		$categ = null;
+	}	
+	//print_r($categ);
 	// Récupération des données à afficher pour la page courante
-	$result = $catproduct->productGet(null, $start, $epp);
+	$result = $catproduct->productGet(null, $start, $epp,$categ);
+	
+	$catproduct->catproduitViewIterative(null);
+	$catresult = $catproduct->tabView;
 	//print_r($result);
 	$catproduct =null;
 	
@@ -58,6 +69,36 @@ require 'classes/Catproduct.php';
 				<?php echo paginate('contact-list.php', '?p=', $nbPages, $current); ?>
 			</div>
 		</div>
+		<div class="row">
+			<div class="row">
+				<form name="formulaire" class="form-horizontal" method="POST"  action="product-list.php" >
+				<div class="col-md-3">	
+					<label  >&nbsp;Filtez par catégorie :</label>
+				</div>
+				<div class="col-md-6">		
+					<select name="categorie" id="categorie">
+					<option value="" selected>-- afficher tout --</option>
+					<?
+					foreach ($catresult as $value) { 
+						$decalage = "";
+						for ($i=0; $i<($value['level'] * 5); $i++) {
+							$decalage .= "&nbsp;";
+						}
+						?>
+						<option value="<?php echo $value['id'] ?>" <? if ( $categ ==  $value['id'] ) { ?> selected <? } ?>>
+							<?=$decalage?><?php echo $value['label'] ?>
+						</option>
+						<?
+					}
+					?>
+					</select>	
+				</div>	
+				<div class="col-md-3">		
+					<button class="btn btn-success col-sm-3" type="submit" >Filtrer</button>
+				</div>
+				<br><br>
+			</div>	
+		</div>	
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
 
