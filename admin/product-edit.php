@@ -78,7 +78,7 @@ if (!empty($_GET)){ //Modif
 					<input type="hidden" name="reference" value="product">
 					<input type="hidden" name="action" value="<?php echo $action ?>">
 					<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
-					<input type="hidden"  name="idImage"  id="idImage" value="">
+					
 					<div class="form-group" >
 						<label class="col-sm-2" for="titre">Nom produit :</label>
 					    <input type="text" class="col-sm-8" name="label" required  value="<?php echo $label ?>">
@@ -101,6 +101,7 @@ if (!empty($_GET)){ //Modif
 		            </div>
 		            <div class="form-group"><br>
 						<label  for="titre">Choisissez les photos du produit: </label>
+						<input type="hidden"  name="idImage"  id="idImage" value="">
 					</div>	
 				
 						<?php for ($i=1;$i<4;$i++) {?>

@@ -30,11 +30,12 @@ class News extends StorageManager {
 		$this->begin();
 		try {
 			$sql = "INSERT INTO  .`news`
-						(`date_news`, `titre`, `accroche`, `contenu`)
+						(`date_news`, `titre`, `accroche`, `image1` `contenu`)
 						VALUES (
 						'". $this->inserer_date($value['datepicker']) ."', 
 						'". addslashes($value['titre']) ."',
 						'". addslashes($value['accroche']) ."',
+						'". addslashes($value['url1']) ."',
 						'". addslashes($value['contenu']) ."' 	
 					);";
 			$result = mysqli_query($this->mysqli,$sql);
@@ -65,6 +66,7 @@ class News extends StorageManager {
 					`date_news`='". $this->inserer_date($value['datepicker']) ."', 
 					`titre`='". addslashes($value['titre']) ."', 
 					`accroche`='". addslashes($value['accroche']) ."', 
+					`image1`='". addslashes($value['url1']) ."',
 					`contenu`='". addslashes($value['contenu']) ."' 
 					WHERE `id_news`=". $value['id'] .";";
 			$result = mysqli_query($this->mysqli,$sql);

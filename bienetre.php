@@ -9,16 +9,32 @@
 <?php include('inc/header.php'); ?>
 	
 	<!-- Produit du mois -->
-	<div class="row encart">
-		<div class="large-7 medium-7 small-7 columns">
-			<h1>Le produit du mois</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet. Sed finibus nibh porta tortor finibus tincidunt. Donec iaculis accumsan odio eu aliquet. Integer vel libero eu urna tristique fringilla. Donec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.
-			</p>
-			<a href="produit.php" class="bt-plus">en savoir +</a>
+	<div class="row ">
+		<div class="large-9 medium-9 small-12 columns encart">
+			<div class="large-7 medium-7 small-7 columns">
+				<h1>Le produit du mois</h1>
+				<p>
+					r imperdiet. Sed finibusec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.r imperdiet. Sed finibusec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.r imperdiet. Sed finibusec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.r imperdiet. Sed finibusec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.
+				</p>
+				<a href="produit.php" class="bt-plus">en savoir +</a>
+			</div>
+			<div class="large-5 medium-5 small-5 columns">
+				<img src="img/produit-du-mois.jpg" alt="" />
+			</div>
 		</div>
-		<div class="large-5 medium-5 small-5 columns">
-			<img src="img/produit-du-mois.jpg" alt="" />
+		
+		<div class="large-3 medium-3 small-12 columns encart" style="width:15rem; background-color: #FFF;">
+			<h4>Bon de commande</h4>
+			Un bon de commande est à votre disposition afin de commander des articles sur le site. (Toutes les informations pratiques sont détaillées sur le bon de commande)
+			<br><br>
+			<div class="row ">
+				<div class="large-9 medium-9 small-9 columns">
+				<a href="" >Télécharger le bon de commande : </a>
+				</div>
+				<div >
+					<a href="" ><img src="img/pdf-icon.png" width="50" alt="" /></a>
+				</div>	
+			</div>	
 		</div>
 	</div>
 	<!-- Fin Produit du mois -->

@@ -230,22 +230,30 @@ class Catproduct extends StorageManager {
 		$this->dbDisConnect();
 	}
 	
-	public function productNumberGet(){
+	public function productNumberGet($categorie){
 		$this->dbConnect();
-		try {
-			$requete = "SELECT count(*) as nb FROM `product`;" ;
-			//print_r($requete);
-			$new_array = null;
-			$result = mysqli_query($this->mysqli,$requete);
-			while( $row = mysqli_fetch_assoc( $result)){
-				$new_array[] = $row;
-			}
-			$this->dbDisConnect();
-			return $new_array[0]['nb'];
-		} catch (Exception $e) {
-			throw new Exception("Erreur Mysql contactGet ". $e->getMessage());
-			return "errrrrrrooooOOor";
+		
+		if (empty($categorie)) {
+			$sql = "SELECT count(*) as nb FROM `product`;" ;
+		} else {
+			$sql = "SELECT count(*) as nb
+					FROM product
+					INNER JOIN product_categorie 
+					ON product_categorie.id_product=product.id
+					WHERE product_categorie.id_categorie=". $categorie . ";" ;
+				
+		}	
+		//print_r($requete);
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$sql);
+		if (!$result) {
+			throw new Exception('Erreur Mysql productNumberGet sql = : '.$sql);
 		}
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		$this->dbDisConnect();
+		return $new_array[0]['nb'];
 	}
 	
 	public function productGet($id, $offset, $count, $categorie){

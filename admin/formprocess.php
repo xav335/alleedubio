@@ -4,6 +4,7 @@ require 'classes/News.php';
 require 'classes/Goldbook.php';
 require 'classes/Catproduct.php';
 require 'classes/Planning.php';
+require 'classes/ImageManager.php';
 session_start();
 
 $authentication = new Authentication();
@@ -38,6 +39,25 @@ if (!empty($_POST)){
 	// traitement des news
 	$news = new News();
 	if ($_POST['reference'] == 'news'){
+		//print_r($_POST);exit();
+		$imageManager = New ImageManager();
+		for ($i=1;$i<2;$i++){
+			$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
+			if(strstr($source,'uploads')){
+				$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
+				$ch=explode('.', strrchr($_POST['url'.$i],'/'));
+				$filenameDest = $ch[0].'-'. $_POST['id'] .'.'.$ch[1];
+				//Image
+				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/news'.$filenameDest;
+				$imageManager->imageResize($source, $destination, null, 650);
+				//Vignette
+				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/news/thumbs'.$filenameDest;
+				$imageManager->imageResize($source, $destination, null, 250);
+				$_POST['url'.$i]=$filenameDest;
+			}
+		}
+		$imageManager =null;
+		
 		if ($_POST['action'] == 'modif') { //Modifier la news
 			try {
 				$result = $news->newsModify($_POST);
@@ -89,6 +109,7 @@ if (!empty($_POST)){
 	// traitement des Categorie
 	if ($_POST['reference'] == 'categorie'){
 		//print_r($_POST);exit();
+		$imageManager = New ImageManager();
 		$catproduct = new Catproduct();
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {
@@ -101,12 +122,14 @@ if (!empty($_POST)){
 					$filenameDest = $ch[0].'-'. $_POST['id'] .'.'.$ch[1];
 					//Image
 					$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/categories'.$filenameDest;
-					$catproduct->imageResize($source, $destination, null, 650);
+					$imageManager->imageResize($source, $destination, null, 650);
 					//Vignette
 					$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/categories/thumbs'.$filenameDest;
-					$catproduct->imageResize($source, $destination, null, 250);
+					$imageManager->imageResize($source, $destination, null, 250);
 					$_POST['url1']=$filenameDest;
 				}
+				$imageManager =null;
+				
 				$result = $catproduct->catproductModify($_POST);
 				$catproduct = null;
 				header('Location: /admin/catproduct-list.php');
@@ -150,7 +173,7 @@ if (!empty($_POST)){
 				$_POST['url'.$i]=$filenameDest;
 			}
 		}
-		
+
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {
 				$result = $catproduct->productModify($_POST);

@@ -79,7 +79,7 @@ CREATE TABLE `catproduct` (
   `image` varchar(250) DEFAULT NULL,
   `level` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +88,7 @@ CREATE TABLE `catproduct` (
 
 LOCK TABLES `catproduct` WRITE;
 /*!40000 ALTER TABLE `catproduct` DISABLE KEYS */;
-INSERT INTO `catproduct` VALUES (1,'Les Huiles Essentielles, Huiles Végétales, Eaux Florales ','<p>Notre large gamme est issue de plantes cultiv&eacute;es et r&eacute;colt&eacute;es en Dr&ocirc;me et en Ard&egrave;che.<br />(60% de plantes fran&ccedil;aises et 50% cultiv&eacute;es dans la Dr&ocirc;me et l\'Ard&egrave;che.)<br />Nos huiles essentielles et eaux florales sont 100% pures et bio et sont distill&eacute;e en France.</p>',0,'/uploads/Images categories/IMG_1008.jpg',0),(2,'Huiles végétales',NULL,1,NULL,1),(3,'Huiles florales',NULL,1,NULL,1),(4,'Les plantes médicinales','<p>Un v&eacute;ritable comptoir d\'herboristerie, au mille fleurs et couleurs.<br />Nos tisanes sont toutes labellis&eacute;es &laquo;&nbsp;Nature et Progr&egrave;s&nbsp;&raquo;<br />Vous trouverez les plantes en racines, fleurs, feuilles, graines ou &eacute;corce et vous pourrez<br />les d&eacute;guster en m&eacute;langes ou seules apr&egrave;s le repas ou au petit d&eacute;jeuner.<br />Elles sont le fruit de Dame Nature et nous apportent soins, bien-&ecirc;tre et r&eacute;confort.</p>',0,'/uploads/Images categories/IMG_1008.jpg',0),(5,'Plantes ',NULL,4,NULL,1),(7,'Huiles olive',NULL,2,NULL,2),(9,'huile pensées',NULL,3,NULL,2),(11,'Huile de violette',NULL,3,NULL,2),(13,'Les Pains','<p>Nos pains sont faits au levain, ils sont complets ou demi-complet, avec des graines de tournesol, de lins, de courge &hellip;<br />Vous trouverez aussi nos sp&eacute;cialit&eacute;s : pain au kamut, petit &eacute;peautre, seigle, brioches au beurre, aux fruits secs &hellip;<br />Vous d&eacute;gusterez notre gamme de biscuits en vrac : citron, amandes, noisettes, nougatine, &eacute;peautre &hellip; <br /><br />Le magasin propose &eacute;galement le pain Montignac, con&ccedil;u avec de la farine int&eacute;grale, et dont l\'index glyc&eacute;mique est tr&egrave;s bas.<br />Il est disponible en 1kg, miche ou moul&eacute;, tranch&eacute; ou non, Sur Commande.</p>',0,'/uploads/Images categories/IMG_1014 - Copy 1.jpg',0),(14,'Baguettes',NULL,13,NULL,1),(15,'Biscottes',NULL,13,NULL,1),(33,'huile d\'arachide',NULL,2,NULL,2);
+INSERT INTO `catproduct` VALUES (1,'Les Huiles Essentielles, Huiles Végétales, Eaux Florales ','<p>Notre large gamme est issue de plantes cultiv&eacute;es et r&eacute;colt&eacute;es en Dr&ocirc;me et en Ard&egrave;che.<br />(60% de plantes fran&ccedil;aises et 50% cultiv&eacute;es dans la Dr&ocirc;me et l\'Ard&egrave;che.)<br />Nos huiles essentielles et eaux florales sont 100% pures et bio et sont distill&eacute;e en France.</p>',0,'/IMG_1014 - Copy 1-1.jpg',0),(4,'Les plantes médicinales','<p>Un v&eacute;ritable comptoir d\'herboristerie, au mille fleurs et couleurs.<br />Nos tisanes sont toutes labellis&eacute;es &laquo;&nbsp;Nature et Progr&egrave;s&nbsp;&raquo;<br />Vous trouverez les plantes en racines, fleurs, feuilles, graines ou &eacute;corce et vous pourrez<br />les d&eacute;guster en m&eacute;langes ou seules apr&egrave;s le repas ou au petit d&eacute;jeuner.<br />Elles sont le fruit de Dame Nature et nous apportent soins, bien-&ecirc;tre et r&eacute;confort.</p>',0,'/IMG_1005-4.jpg',0),(13,'Les Pains','<p>Nos pains sont faits au levain, ils sont complets ou demi-complet, avec des graines de tournesol, de lins, de courge &hellip;<br />Vous trouverez aussi nos sp&eacute;cialit&eacute;s : pain au kamut, petit &eacute;peautre, seigle, brioches au beurre, aux fruits secs &hellip;<br />Vous d&eacute;gusterez notre gamme de biscuits en vrac : citron, amandes, noisettes, nougatine, &eacute;peautre &hellip; <br /><br />Le magasin propose &eacute;galement le pain Montignac, con&ccedil;u avec de la farine int&eacute;grale, et dont l\'index glyc&eacute;mique est tr&egrave;s bas.<br />Il est disponible en 1kg, miche ou moul&eacute;, tranch&eacute; ou non, Sur Commande.</p>',0,'/IMG_1014-13.jpg',0);
 /*!40000 ALTER TABLE `catproduct` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +109,7 @@ CREATE TABLE `contact` (
   `fromgoldbook` tinyint(4) NOT NULL DEFAULT '0',
   `fromcontact` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24408 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25437 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,7 +118,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (3344,'','Gonzalez','xavier@gonzalez.pm',NULL,1,1,0),(24400,'Jav','gonz','jav_gonz@yahoo.fr',NULL,1,0,0),(24401,'xav','gonza','xavier.gonzalez@free.fr',NULL,1,0,0),(24402,'x','gg','xavier.gonzalez@laposte.net',NULL,1,0,0),(24403,'xavi','gonz','xavier@gonzalez.pm',NULL,1,0,0),(24404,'xavier','gonzalez','fjavi.gonzalez@gmail.com',NULL,1,0,0),(24405,'x','g','xav335@hotmail.com',NULL,1,0,0),(24407,'Xavier','Xavier Gonzalez (Latresne)','xavier@gonzalez.pm',NULL,0,0,0);
+INSERT INTO `contact` VALUES (3344,'','Gonzalez','xavier@gonzalez.pm',NULL,1,1,0),(25431,'Jav','gonz','jav_gonz@yahoo.fr',NULL,1,0,0),(25432,'xav','gonza','xavier.gonzalez@free.fr',NULL,1,0,0),(25433,'x','gg','xavier.gonzalez@laposte.net',NULL,1,0,0),(25434,'xavi','gonz','xavier@gonzalez.pm',NULL,1,0,0),(25435,'xavier','gonzalez','fjavi.gonzalez@gmail.com',NULL,1,0,0),(25436,'x','g','xav335@hotmail.com',NULL,1,0,0);
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +159,7 @@ CREATE TABLE `goldbook` (
   `message` text,
   `online` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -211,8 +211,9 @@ CREATE TABLE `news` (
   `titre` varchar(250) NOT NULL,
   `accroche` text,
   `contenu` text,
+  `image1` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id_news`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,7 +222,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (10,'2015-01-01 00:00:00','Trés bonne année à tous !','Cette année Votre club modifie complètement son image avec une communication à l\'image du club moderne et dynamique. Suivez notre actualité et les évenements du club. ','<p><strong>Nouveau site</strong></p>\r\n<p>Votre club modifie compl&egrave;tement son image avec une communication &agrave; l\'image du club moderne et dynamique. Suivez notre actualit&eacute; et les &eacute;venements du club.</p>\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p>&nbsp;</p>'),(16,'2015-02-11 00:00:00','Ceci est la toute nouvelle actu','ceci est une actu','<p><img src=\"/uploads/IMG_1005.jpg\" alt=\"\" width=\"326\" height=\"245\" /></p>');
+INSERT INTO `news` VALUES (10,'2015-01-01 00:00:00','Trés bonne année à tous !','Cette année Votre club modifie complètement son image avec une communication à l\'image du club moderne et dynamique. Suivez notre actualité et les évenements du club. ','<p><strong>Nouveau site</strong></p>\r\n<p>Votre club modifie compl&egrave;tement son image avec une communication &agrave; l\'image du club moderne et dynamique. Suivez notre actualit&eacute; et les &eacute;venements du club.</p>\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p>&nbsp;</p>','/IMG_1005-10.jpg'),(16,'2015-02-11 00:00:00','Ceci est la toute nouvelle actubbb','ceci est une actu','<p>kjljk</p>','/IMG_1007-16.jpg');
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -301,7 +302,7 @@ CREATE TABLE `planning` (
 
 LOCK TABLES `planning` WRITE;
 /*!40000 ALTER TABLE `planning` DISABLE KEYS */;
-INSERT INTO `planning` VALUES (1,'Période 2014 - 2015','','/uploads/BCD/Cheque_reste_Provision.pdf');
+INSERT INTO `planning` VALUES (1,'Période 2014 - 2015','','/uploads/BCD/bon_de_commande.pdf');
 /*!40000 ALTER TABLE `planning` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -314,11 +315,16 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `reference` varchar(250) DEFAULT NULL,
+  `prix` decimal(10,2) DEFAULT NULL,
   `label` varchar(250) NOT NULL,
+  `accroche` text,
   `description` text,
-  `image` varchar(250) DEFAULT NULL,
+  `image1` varchar(250) DEFAULT NULL,
+  `image2` varchar(250) DEFAULT NULL,
+  `image3` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -327,7 +333,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'huile d\'olive','huile d\'olivehuile d\'olivehuile d\'olivehuile d\'olivehuile d\'olivehuile d\'olive',NULL);
+INSERT INTO `product` VALUES (4,'23ZE',12.00,'huile d\'arachide','<p>czzdczc</p>','<p>qsdqsdqsd</p>','/IMG_1005-4.jpg','/IMG_0998-4.jpg','/IMG_1003-4.jpg');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -351,7 +357,7 @@ CREATE TABLE `product_categorie` (
 
 LOCK TABLES `product_categorie` WRITE;
 /*!40000 ALTER TABLE `product_categorie` DISABLE KEYS */;
-INSERT INTO `product_categorie` VALUES (1,9);
+INSERT INTO `product_categorie` VALUES (4,1);
 /*!40000 ALTER TABLE `product_categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -364,4 +370,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-02-15 19:36:58
+-- Dump completed on 2015-02-19 18:44:27

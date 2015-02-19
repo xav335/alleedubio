@@ -30,9 +30,6 @@ require 'classes/News.php';
 					<thead>
 						<tr>
 							<th class="col-md-1" style="">
-								ID
-							</th>
-							<th class="col-md-1" style="">
 								Date
 							</th>
 							<th class="col-md-1" style="">
@@ -43,6 +40,9 @@ require 'classes/News.php';
 							</th>
 							<th class="col-md-5" style="">
 								Contenu
+							</th>
+							<th class="col-md-1" style="">
+								Photo
 							</th>
 							<th class="col-md-1" colspan="2" style="">
 								Actions
@@ -58,11 +58,12 @@ require 'classes/News.php';
 							$i++;
 							?>
 							<tr class="<?php if ($i%2!=0) echo 'info'?>">
-								<td><?php echo $value['id_news']?></td>
+								
 								<td><?php echo traitement_datetime_affiche($value['date_news'])?></td>
 								<td><?php echo $value['titre']?></td>
 								<td><?php echo $value['accroche']?></td>
 								<td><?php echo $value['contenu']?></td>
+								<td><?php if(isset($value['image1'])) echo 'image OK' ?></td>
 								<td><a href="news-edit.php?id=<?php echo $value['id_news'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a></td>
 								<td>
 									<div style="display: none;" class="supp<?php echo $value['id_news']?> alert alert-warning alert-dismissible fade in" role="alert">

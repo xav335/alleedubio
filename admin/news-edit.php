@@ -17,6 +17,16 @@ if (!empty($_GET)){ //Modif
 		$date_news= 	traitement_datetime_affiche($result[0]['date_news']);
 		$accroche= 		$result[0]['accroche'];
 		$contenu= 	$result[0]['contenu'];
+		for ($i=1;$i<2;$i++) {
+			$image[$i] = 	$result[0]['image'.$i];
+			if(empty($image[$i]) || !isset($image[$i])){
+				$img[$i]  = '/img/favicon.png';
+				$imgval[$i]  = '';
+			} else {
+				$img[$i]  = '/photos/news/thumbs'. $image[$i];
+				$imgval[$i]  = $image[$i];
+			}
+		}
 	}
 } else { //ajout News
 	$action = 'add';
@@ -26,6 +36,10 @@ if (!empty($_GET)){ //Modif
 	$date_news= 	null;
 	$accroche= 		null;
 	$contenu= 	null;
+	for ($i=1;$i<2;$i++) {
+		$img[$i]  = '/img/favicon.png';
+		$imgval[$i]  = '';
+	}
 }
 ?>
 <!doctype html>
@@ -60,8 +74,41 @@ if (!empty($_GET)){ //Modif
 		            </div> 
 					<div class="form-group">
 						<label for="accroche">Contenu :</label><br>
-		           		<textarea class="editme" name="contenu" id="contenu" rows="15" ><?php echo $contenu ?></textarea>
+		           		<textarea class="editme" name="contenu" id="contenu" rows="5" ><?php echo $contenu ?></textarea>
 		            </div>
+		            <div class="form-group"><br>
+						<label  for="titre">Choisissez la photos </label>
+						<input type="hidden"  name="idImage"  id="idImage" value="">
+					</div>	
+				
+						<?php for ($i=1;$i<2;$i++) {?>
+							<div class="col-md-4">
+						<input type="hidden"  name="url<?php echo $i ?>"  id="url<?php echo $i ?>" value="<?php echo $imgval[$i]?>"><br>
+            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img  src="<?php echo $img[$i]?>" id="customRoxyImage<?php echo $i ?>" style="max-width:200px;"></a>
+						<img src="img/del.png" width="20" alt="Supprimer" onclick="clearImage(<?php echo $i ?>)"/>
+						<br><br>
+						</div>	
+						<?php }?>
+					
+		            <div id="roxyCustomPanel" style="display: none;">
+  							<iframe src="/admin/fileman2/index.html?integration=custom" style="width:100%;height:100%" frameborder="0"></iframe>
+					</div>
+					
+					<script type="text/javascript">
+						function openCustomRoxy(idImage){
+							$('#idImage').val(idImage);
+						 	$('#roxyCustomPanel').dialog({modal:true, width:875,height:600});
+						}
+						function closeCustomRoxy(){
+						  	$('#roxyCustomPanel').dialog('close');
+						}
+	
+						function clearImage(idImage){
+							$('#customRoxyImage'+idImage).attr('src', '/img/favicon.png');
+							$('#url'+idImage).val('');
+						}
+						
+					</script>
 		            <button class="btn btn-success col-sm-12" type="submit" class="btn btn-default"> Valider </button>
 		            
 					<script type="text/javascript">
