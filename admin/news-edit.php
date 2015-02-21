@@ -17,6 +17,11 @@ if (!empty($_GET)){ //Modif
 		$date_news= 	traitement_datetime_affiche($result[0]['date_news']);
 		$accroche= 		$result[0]['accroche'];
 		$contenu= 	$result[0]['contenu'];
+		if($result[0]['online']=='1') {
+			$online = 'checked';
+		} else {
+			$online = '';
+		}
 		for ($i=1;$i<2;$i++) {
 			$image[$i] = 	$result[0]['image'.$i];
 			if(empty($image[$i]) || !isset($image[$i])){
@@ -35,7 +40,8 @@ if (!empty($_GET)){ //Modif
 	$titre=  		null;
 	$date_news= 	null;
 	$accroche= 		null;
-	$contenu= 	null;
+	$contenu= 		null;
+	$online = 		null;
 	for ($i=1;$i<2;$i++) {
 		$img[$i]  = '/img/favicon.png';
 		$imgval[$i]  = '';
@@ -64,18 +70,25 @@ if (!empty($_GET)){ //Modif
 						<label class="col-sm-1">Date :</label>
 					    <input class="col-sm-2" type="text" name="datepicker" required id="datepicker" value="<?php echo $date_news?>" >
 					</div>
+					 <div class="form-group" >
+						<label for="titre">Actu à la une :</label>
+					    <input type="checkbox" name="online" <?php echo  $online ?>>
+					</div>
 					<div class="form-group" >
 						<label class="col-sm-1" for="titre">Titre :</label>
 					    <input type="text" class="col-sm-11" name="titre" required  value="<?php echo $titre ?>">
 					</div>
-					<div class="form-group" >
-						<label for="accroche">Accroche :</label><br>
-		           		<textarea class="col-sm-12"  name="accroche" required id="accroche" rows="3" ><?php echo $accroche ?></textarea>
-		            </div> 
+					
 					<div class="form-group">
 						<label for="accroche">Contenu :</label><br>
 		           		<textarea class="editme" name="contenu" id="contenu" rows="5" ><?php echo $contenu ?></textarea>
 		            </div>
+		            
+		            <div class="form-group" >
+						<label for="accroche">Lien vers produit ou page du site :</label><br>
+		           		<input class="col-sm-8"  name="accroche"  id="accroche" value="<?php echo $accroche ?>" />
+		            </div> 
+		           
 		            <div class="form-group"><br>
 						<label  for="titre">Choisissez la photos </label>
 						<input type="hidden"  name="idImage"  id="idImage" value="">

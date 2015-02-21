@@ -22,7 +22,9 @@ if (!empty($_GET)){ //Modif
 		$id= 			$_GET['id'];
 		$label=  		$result[0]['label'];
 		$prix=  		$result[0]['prix'];
+		$libprix=  		$result[0]['libprix'];
 		$reference=  	$result[0]['reference'];
+		$titreaccroche= $result[0]['titreaccroche'];
 		$accroche= 		$result[0]['accroche'];
 		$description= 	$result[0]['description'];
 		$categories= 	null;
@@ -50,7 +52,9 @@ if (!empty($_GET)){ //Modif
 	$id= 			null;
 	$label=  		null;
 	$prix=  		null;
+	$libprix=  		'€';
 	$reference=  	null;
+	$titreaccroche= 'Les + produit';
 	$accroche= 		null;
 	$description= 	null;
 	$categories= 	null;
@@ -90,14 +94,20 @@ if (!empty($_GET)){ //Modif
 					<div class="form-group" >
 						<label class="col-sm-2" for="titre">Prix :</label>
 					    <input type="number" step="0.01" class="col-sm-2" name="prix" required  value="<?php echo $prix ?>">
+					     <input type="text" class="col-sm-4" name="libprix" required  value="<?php echo $libprix ?>">
 					</div>
-					<div class="form-group">
-						<label for="accroche">Accroche :</label><br>
-		           		<textarea class="editme" name="accroche" id="accroche" rows="3" ><?php echo $accroche ?></textarea>
-		            </div>
+					
 					<div class="form-group">
 						<label for="accroche">Description :</label><br>
 		           		<textarea class="editme" name="description" id="description" rows="6" ><?php echo $description ?></textarea>
+		            </div>
+		            <div class="form-group" >
+						<label class="col-sm-2" for="titre">Titre encard Vert. :</label>
+					    <input type="text" class="col-sm-4" name="titreaccroche" required  value="<?php echo $titreaccroche ?>">
+					</div>
+		            <div class="form-group">
+						<label for="accroche">Encart Vert :</label><br>
+		           		<textarea class="editme" name="accroche" id="accroche" rows="3" ><?php echo $accroche ?></textarea>
 		            </div>
 		            <div class="form-group"><br>
 						<label  for="titre">Choisissez les photos du produit: </label>

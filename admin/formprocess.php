@@ -22,13 +22,30 @@ if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
 //Forms processing
 if (!empty($_POST)){
 	
-	// traitement du planning
+	// traitement du Bon de commande /planning
 	$planning = new Planning();
 	if ($_POST['reference'] == 'planning'){
+		$imageManager = New ImageManager();
+			$source = $_SERVER['DOCUMENT_ROOT'].$_POST['pdf'];
+			if(strstr($source,'uploads')){
+				$source = $_SERVER['DOCUMENT_ROOT'].$_POST['pdf'];
+				$filenameDest = $imageManager->fileDestManagement($source,date('Ymd'));
+				//Image
+				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/bdc'.$filenameDest;
+				//print_r($source);exit();
+				if (!copy($source, $destination)) {
+					throw new Exception('Erreur contactez votre administrateur <br> Le PDF error:',  $e->getMessage(), "\n");
+					exit;
+				}
+				 
+				//Vignette
+				$_POST['pdf']=$filenameDest;
+			}
+		$imageManager =null;
 		if ($_POST['action'] == 'modif') { //Modifier la news
 			try {
 				$result = $planning->planningModify($_POST);
-				header('Location: /admin/home.php');
+				header('Location: /admin/planning.php');
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				exit();
@@ -45,10 +62,10 @@ if (!empty($_POST)){
 			$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
 			if(strstr($source,'uploads')){
 				$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
-				$ch=explode('.', strrchr($_POST['url'.$i],'/'));
-				$filenameDest = $ch[0].'-'. $_POST['id'] .'.'.$ch[1];
+				$filenameDest = $imageManager->fileDestManagement($source,$_POST['id']);
 				//Image
 				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/news'.$filenameDest;
+				//print_r($destination);exit();
 				$imageManager->imageResize($source, $destination, null, 650);
 				//Vignette
 				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/news/thumbs'.$filenameDest;
@@ -118,14 +135,13 @@ if (!empty($_POST)){
 
 				if (strstr($source,'uploads')){
 					$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url1'];
-					$ch=explode('.', strrchr($_POST['url1'],'/'));
-					$filenameDest = $ch[0].'-'. $_POST['id'] .'.'.$ch[1];
+					$filenameDest = $imageManager->fileDestManagement($source,$_POST['id']);
 					//Image
 					$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/categories'.$filenameDest;
 					$imageManager->imageResize($source, $destination, null, 650);
 					//Vignette
 					$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/categories/thumbs'.$filenameDest;
-					$imageManager->imageResize($source, $destination, null, 250);
+					$imageManager->imageResize($source, $destination, null, 350);
 					$_POST['url1']=$filenameDest;
 				}
 				$imageManager =null;
@@ -157,19 +173,18 @@ if (!empty($_POST)){
 	if ($_POST['reference'] == 'product'){
 		//print_r($_POST);exit();
 		$catproduct = new Catproduct();
-		
+		$imageManager = New ImageManager();
 		for ($i=1;$i<4;$i++){
 			$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
 			if(strstr($source,'uploads')){
 				$source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
-				$ch=explode('.', strrchr($_POST['url'.$i],'/'));
-				$filenameDest = $ch[0].'-'. $_POST['id'] .'.'.$ch[1];
+				$filenameDest = $imageManager->fileDestManagement($source,$_POST['id']);
 				//Image
 				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/products'.$filenameDest;
-				$catproduct->imageResize($source, $destination, null, 650);
+				$imageManager->imageResize($source, $destination, null, 650);
 				//Vignette
 				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/products/thumbs'.$filenameDest;
-				$catproduct->imageResize($source, $destination, null, 250);
+				$imageManager->imageResize($source, $destination, null, 250);
 				$_POST['url'.$i]=$filenameDest;
 			}
 		}

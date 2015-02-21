@@ -10,87 +10,39 @@
 	
 	<!-- Produit du mois -->
 	<div class="row ">
-		<div class="large-9 medium-9 small-12 columns encart">
+		<div class="large-12 medium-12 small-12 columns actualites">
+			<h1>Le magasin vous propose 2 espaces soins et bien-être</h1>
+			<h5>Cet espace est à votre disposition <strong>du mardi au samedi sur rendez-vous.</strong> 
+			Vous pouvez contacter directement les praticiennes pour de plus amples renseignements
+			et connaître leurs disponibilités.</h5>
+		</div>
+		<div class="large-12 medium-12 small-12 columns actualites">
+			<div class="row actualites">
+					<h2>La médecine traditionnelle chinoise avec Chloé Castelnau</h2><h4>Tél. 05 56 56 56 56</h4>
+					<p>
+						La médecine traditionnelle chinoise (zhōng yī – 中医) existe environ depuis 3000 ans. C’est un système médical complet, cohérent qui possède une représentation globale de l’être humain. Elle est née de l’observation de la nature, de l’homme et de l’expérience de nombreuses générations de médecins.
+						La médecine traditionnelle chinoise englobe une théorie fondamentale qui explique comment un être humain fonctionne lorsque tout va bien (anatomie, physiologie, psychologie…), qu’elles sont les différentes causes des maladies et les mécanismes pathologiques qui en découlent.
+					</p>
+			</div>
+			<div class="row actualites">	
+					<img src="img/china.jpg" alt="" />
+			</div>	
+		</div>
+		<div class="large-12 medium-12 small-12 columns actualites">
 			<div class="large-7 medium-7 small-7 columns">
-				<h1>Le produit du mois</h1>
+				<h2>Des massages relaxants avec Nathalie Pulon</h2><h4>Tél. 05 56 56 56 56</h4>
 				<p>
-					r imperdiet. Sed finibusec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.r imperdiet. Sed finibusec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.r imperdiet. Sed finibusec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.r imperdiet. Sed finibusec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.
+					Le massage relaxation s'illustre comme une véritable source de détente, en enlevant les nœuds musculaires et en optimisant la circulation sanguine et lymphatique, il élimine stress et anxiété.
 				</p>
-				<a href="produit.php" class="bt-plus">en savoir +</a>
 			</div>
 			<div class="large-5 medium-5 small-5 columns">
-				<img src="img/produit-du-mois.jpg" alt="" />
+				<img src="img/massage.jpg" alt="" />
 			</div>
-		</div>
-		
-		<div class="large-3 medium-3 small-12 columns encart" style="width:15rem; background-color: #FFF;">
-			<h4>Bon de commande</h4>
-			Un bon de commande est à votre disposition afin de commander des articles sur le site. (Toutes les informations pratiques sont détaillées sur le bon de commande)
-			<br><br>
-			<div class="row ">
-				<div class="large-9 medium-9 small-9 columns">
-				<a href="" >Télécharger le bon de commande : </a>
-				</div>
-				<div >
-					<a href="" ><img src="img/pdf-icon.png" width="50" alt="" /></a>
-				</div>	
-			</div>	
 		</div>
 	</div>
 	<!-- Fin Produit du mois -->
 	
-	<!-- Listing produits -->
-	<div class="row">
-		<div class="large-4 medium-4 small-6 columns products-list fuchsia">
-			<div onclick="javascript:location.href='#';">
-				<span></span>
-				<img src="img/pain.jpg" alt="" />
-				<h2>nos pains</h2>
-				<p>Découvrez un choix particulier de pains : céréales, maïs, tournesol...</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list vert">
-			<div onclick="javascript:location.href='#';">
-				<span></span>
-				<img src="img/produits-frais.jpg" alt="" />
-				<h2>produits frais</h2>
-				<p>Légumes ou fruits de saison, produits laitiers...</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list bleu">
-			<div onclick="javascript:location.href='#';">
-				<span></span>
-				<img src="img/epicerie.jpg" alt="" />
-				<h2>épicerie</h2>
-				<p>Découvrez notre épicerie avec un large choix d’huile, épices, pâtes...</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list bleu">
-			<div onclick="javascript:location.href='#';">
-				<span></span>
-				<img src="img/beaute.jpg" alt="" />
-				<h2>beauté</h2>
-				<p>Crème de jour, de nuit, soin du visage, soin des mains...</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list fuchsia">
-			<div onclick="javascript:location.href='#';">
-				<span></span>
-				<img src="img/tisanes.jpg" alt="" />
-				<h2>tisanes, thé ou café</h2>
-				<p>Nous avons sélectionne un très large choix de mélanges afin de satisfaire toutes les envies.</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list vert">
-			<div onclick="javascript:location.href='#';">
-				<span></span>
-				<img src="img/complements.jpg" alt="" />
-				<h2>compléments alimentaires</h2>
-				<p>Découvrez un large choix de compléments pour améliorer votre quotidien...</p>
-			</div>
-		</div>
-	</div>
-	<!-- Fin Listing produits -->
+	
 	
 <?php include('inc/footer.php'); ?>
 	<script>

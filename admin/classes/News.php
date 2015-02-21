@@ -6,6 +6,20 @@ class News extends StorageManager {
 
 	}
 	
+	public function newsValidGet(){
+		$this->dbConnect();
+		$requete = "SELECT * FROM `news` WHERE online=1 ORDER BY `date_news` DESC" ;
+		//print_r($requete);
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		$this->dbDisConnect();
+		return $new_array;
+	}
+	
+	
 	public function newsGet($id){
 		 $this->dbConnect();
 		if (!isset($id)){
@@ -28,15 +42,18 @@ class News extends StorageManager {
 		//exit();
 		 $this->dbConnect();
 		$this->begin();
+		
 		try {
-			$sql = "INSERT INTO  .`news`
-						(`date_news`, `titre`, `accroche`, `image1` `contenu`)
+			($value['$online']=='on') ? $online = 1 : $online = 0;
+			$sql = "INSERT INTO  `news`
+						(`date_news`, `titre`, `accroche`, `image1`, `contenu`, `online`)
 						VALUES (
 						'". $this->inserer_date($value['datepicker']) ."', 
 						'". addslashes($value['titre']) ."',
 						'". addslashes($value['accroche']) ."',
 						'". addslashes($value['url1']) ."',
-						'". addslashes($value['contenu']) ."' 	
+						'". addslashes($value['contenu']) ."',
+						". $online ." 	
 					);";
 			$result = mysqli_query($this->mysqli,$sql);
 			
@@ -62,12 +79,14 @@ class News extends StorageManager {
 		 $this->dbConnect();
 		$this->begin();
 		try {
+			($value['online']=='on') ? $online = 1 : $online = 0;
 			$sql = "UPDATE  .`news` SET
 					`date_news`='". $this->inserer_date($value['datepicker']) ."', 
 					`titre`='". addslashes($value['titre']) ."', 
 					`accroche`='". addslashes($value['accroche']) ."', 
 					`image1`='". addslashes($value['url1']) ."',
-					`contenu`='". addslashes($value['contenu']) ."' 
+					`contenu`='". addslashes($value['contenu']) ."',
+					`online`=". $online ."		 
 					WHERE `id_news`=". $value['id'] .";";
 			$result = mysqli_query($this->mysqli,$sql);
 			

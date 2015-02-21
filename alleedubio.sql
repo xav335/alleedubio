@@ -79,7 +79,7 @@ CREATE TABLE `catproduct` (
   `image` varchar(250) DEFAULT NULL,
   `level` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +88,7 @@ CREATE TABLE `catproduct` (
 
 LOCK TABLES `catproduct` WRITE;
 /*!40000 ALTER TABLE `catproduct` DISABLE KEYS */;
-INSERT INTO `catproduct` VALUES (1,'Les Huiles Essentielles, Huiles Végétales, Eaux Florales ','<p>Notre large gamme est issue de plantes cultiv&eacute;es et r&eacute;colt&eacute;es en Dr&ocirc;me et en Ard&egrave;che.<br />(60% de plantes fran&ccedil;aises et 50% cultiv&eacute;es dans la Dr&ocirc;me et l\'Ard&egrave;che.)<br />Nos huiles essentielles et eaux florales sont 100% pures et bio et sont distill&eacute;e en France.</p>',0,'/IMG_1014 - Copy 1-1.jpg',0),(4,'Les plantes médicinales','<p>Un v&eacute;ritable comptoir d\'herboristerie, au mille fleurs et couleurs.<br />Nos tisanes sont toutes labellis&eacute;es &laquo;&nbsp;Nature et Progr&egrave;s&nbsp;&raquo;<br />Vous trouverez les plantes en racines, fleurs, feuilles, graines ou &eacute;corce et vous pourrez<br />les d&eacute;guster en m&eacute;langes ou seules apr&egrave;s le repas ou au petit d&eacute;jeuner.<br />Elles sont le fruit de Dame Nature et nous apportent soins, bien-&ecirc;tre et r&eacute;confort.</p>',0,'/IMG_1005-4.jpg',0),(13,'Les Pains','<p>Nos pains sont faits au levain, ils sont complets ou demi-complet, avec des graines de tournesol, de lins, de courge &hellip;<br />Vous trouverez aussi nos sp&eacute;cialit&eacute;s : pain au kamut, petit &eacute;peautre, seigle, brioches au beurre, aux fruits secs &hellip;<br />Vous d&eacute;gusterez notre gamme de biscuits en vrac : citron, amandes, noisettes, nougatine, &eacute;peautre &hellip; <br /><br />Le magasin propose &eacute;galement le pain Montignac, con&ccedil;u avec de la farine int&eacute;grale, et dont l\'index glyc&eacute;mique est tr&egrave;s bas.<br />Il est disponible en 1kg, miche ou moul&eacute;, tranch&eacute; ou non, Sur Commande.</p>',0,'/IMG_1014-13.jpg',0);
+INSERT INTO `catproduct` VALUES (1,'Les Huiles Essentielles, Huiles Végétales, Eaux Florales ','<p>Notre large gamme est issue de plantes cultiv&eacute;es et r&eacute;colt&eacute;es en Dr&ocirc;me et en Ard&egrave;che.<br />(60% de plantes fran&ccedil;aises et 50% cultiv&eacute;es dans la Dr&ocirc;me et l\'Ard&egrave;che.)<br />Nos huiles essentielles et eaux florales sont 100% pures et bio et sont distill&eacute;e en France.</p>',0,'/IMG_0998-1.jpg',0),(4,'Les plantes médicinales','<p>Un v&eacute;ritable comptoir d\'herboristerie, au mille fleurs et couleurs.<br />Nos tisanes sont toutes labellis&eacute;es &laquo;&nbsp;Nature et Progr&egrave;s&nbsp;&raquo;<br />Vous trouverez les plantes en racines, fleurs, feuilles, graines ou &eacute;corce et vous pourrez<br />les d&eacute;guster en m&eacute;langes ou seules apr&egrave;s le repas ou au petit d&eacute;jeuner.<br />Elles sont le fruit de Dame Nature et nous apportent soins, bien-&ecirc;tre et r&eacute;confort.</p>',0,'/IMG_1003-4.jpg',0),(13,'Les Pains','<p>Nos pains sont faits au levain, ils sont complets ou demi-complet, avec des graines de tournesol, de lins, de courge &hellip;<br />Vous trouverez aussi nos sp&eacute;cialit&eacute;s : pain au kamut, petit &eacute;peautre, seigle, brioches au beurre, aux fruits secs &hellip;<br />Vous d&eacute;gusterez notre gamme de biscuits en vrac : citron, amandes, noisettes, nougatine, &eacute;peautre &hellip; <br /><br />Le magasin propose &eacute;galement le pain Montignac, con&ccedil;u avec de la farine int&eacute;grale, et dont l\'index glyc&eacute;mique est tr&egrave;s bas.<br />Il est disponible en 1kg, miche ou moul&eacute;, tranch&eacute; ou non, Sur Commande.</p>',0,'/a08a8401-13.jpg',0),(35,'Les Elixirs Floraux','<p>Toute la gamme est pr&eacute;sente dans le magasin.<br />Nos fleurs sont recueillis dans les Pyr&eacute;n&eacute;es Orientales, sur les flancs du Mont Canigou o&ugrave; se trouve un site<br />tr&egrave;s riche d\'une nature encore sauvage.<br />Les Elixirs r&eacute;tablissent un &eacute;quilibre psychologique en profitant au maximum de l\'&eacute;nergie des fleurs.<br />C\'est un soutien non n&eacute;gligeable dans les cas de d&eacute;s&eacute;quilibres externes ou internes</p>',0,'/IMG_1003-35.jpg',0),(36,'Les produits à base de Propolis','<p>Toutes les formes de Propolis sont pr&eacute;sentent dans le magasin : extrait, sirop, spray .....<br />La Propolis provient d\'une substance r&eacute;sineuse collect&eacute;e par les abeilles sur les bourgeons de<br />certains arbres. Les abeilles m&eacute;langes ensuite cette substance &agrave; leurs propres s&eacute;cr&eacute;tions salivaires, <br />&agrave; la cire et aux pollens pour donner naissance &agrave; la Propolis.<br />La Propolis prot&egrave;ge des germes, des bact&eacute;ries et autres envahisseurs. Elle prot&egrave;ge ainsi les voies ORL.</p>',0,'/Les_bienfaits_des_produits_de_la-36.jpg',0),(37,'Les Compléments Alimentaires','<p>Je suis &agrave; votre disposition pour vous conseiller sur les compl&eacute;ments alimentaires n&eacute;cessaires &agrave; votre bonne sant&eacute;.<br />Pr&eacute;servez-vous de l\'hiver avec l\'extrait de p&eacute;pins de pamplemousse (antibiotique naturel) ou avec la vitamine C <br />naturelle (cynorrhodon) barri&egrave;re contre les virus et bact&eacute;ries. <br />Vous d&eacute;couvrirez les vertus de l\'aloe vera (d&eacute;purative, anti-inflammatoire et cicatrisante) et de l\'aloe arborescens.<br />Faites appel au Quinton pour relancer votre organisme en cas d\'&eacute;puisement.<br />Nettoyer votre foie avec le Desmodium , votre organisme avec la s&egrave;ve de bouleau.<br />Assouplissez vos articulations avec le silicium organique .<br />Je peux aussi vous parlez de l\'argent collo&iuml;dal ........<br /><br />Bienvenue chez moi ! Dans le monde de la sant&eacute; au naturel, dans la caverne de M&egrave;re Nature.</p>',0,'/complement_alimentaire-37.jpg',0),(38,'Epicerie','<p>De nombreux produits &agrave; disposition : produits sans gluten, huiles, chocolats, p&acirc;tes, riz, vins, jus fruits, bi&egrave;res .....</p>',0,'/IMG_0996-38.jpg',0),(39,'Cosmétique','<p>Alors qu\' Ecocert n\'oblige qu\'&agrave; 10% d\'ingr&eacute;dients biologiques dans les cosm&eacute;tiques, nous avons choisi des gammes <br />qui contiennent entre 35 et 87% d\'ingr&eacute;dients biologiques, dans un souci d\'efficacit&eacute; et de respect de la peau.</p>',0,'/homepage_logo-39.jpg',0),(40,'Fruits et Légumes','<p>Les fruits et l&eacute;gumes sont frais et de saison.</p>',0,'/legumes_fruits-40.jpg',0);
 /*!40000 ALTER TABLE `catproduct` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,8 +212,9 @@ CREATE TABLE `news` (
   `accroche` text,
   `contenu` text,
   `image1` varchar(250) DEFAULT NULL,
+  `online` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_news`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,7 +223,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (10,'2015-01-01 00:00:00','Trés bonne année à tous !','Cette année Votre club modifie complètement son image avec une communication à l\'image du club moderne et dynamique. Suivez notre actualité et les évenements du club. ','<p><strong>Nouveau site</strong></p>\r\n<p>Votre club modifie compl&egrave;tement son image avec une communication &agrave; l\'image du club moderne et dynamique. Suivez notre actualit&eacute; et les &eacute;venements du club.</p>\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p>&nbsp;</p>','/IMG_1005-10.jpg'),(16,'2015-02-11 00:00:00','Ceci est la toute nouvelle actubbb','ceci est une actu','<p>kjljk</p>','/IMG_1007-16.jpg');
+INSERT INTO `news` VALUES (10,'2015-01-01 00:00:00','Nouveau ! Les lotions ','/produit-detail.php?categorie=39','<p>100 % cultiv&eacute;es et distill&eacute;es dans <strong>la Dr&ocirc;me</strong> Achill&eacute;e millefeuille antibact&eacute;rien et &eacute;quilibrant Carotte sauvage apaise irritations et rougeurs revigore les peaux ternes Camomille romaine purifie et redonne du tonus Rose astringeant, tonifie la peau.&nbsp;</p>','/lotion_espiegle-10.jpg',0),(17,'2015-02-27 00:00:00','Ouverture du site Internet','','<p>Vous pouvez d&eacute;sormais visiter notre boutique en ligne, Faire des commandes gr&acirc;ce au bon de commande que vous pouvez t&eacute;l&eacute;charger et imprimer.</p>\r\n<p>Voir les nouveaux arrivages et les nouveaut&eacute;s, voir les &eacute;venements de la boutique.</p>','/IMG_1013-.jpg',1),(18,'2015-02-19 00:00:00','Livraison à domicile','','<p>All&eacute;e du Bio vous propose la livraison de vos commandes <strong>&agrave; domicile.</strong></p>\r\n<p>Commandez par t&eacute;l&eacute;phone ou bien sur le site &agrave; l\'aide du bon de commande et nous assurons la livraison des produits.</p>','/Screen_Shot_2015_02_20_at_09.55.23-18.png',1);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -302,7 +303,7 @@ CREATE TABLE `planning` (
 
 LOCK TABLES `planning` WRITE;
 /*!40000 ALTER TABLE `planning` DISABLE KEYS */;
-INSERT INTO `planning` VALUES (1,'Période 2014 - 2015','','/uploads/BCD/bon_de_commande.pdf');
+INSERT INTO `planning` VALUES (1,'Période 2014 - 2015','','/CV2015_V1.8-20150220.pdf');
 /*!40000 ALTER TABLE `planning` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -317,14 +318,16 @@ CREATE TABLE `product` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `reference` varchar(250) DEFAULT NULL,
   `prix` decimal(10,2) DEFAULT NULL,
+  `libprix` varchar(120) DEFAULT NULL,
   `label` varchar(250) NOT NULL,
+  `titreaccroche` varchar(250) DEFAULT NULL,
   `accroche` text,
   `description` text,
   `image1` varchar(250) DEFAULT NULL,
   `image2` varchar(250) DEFAULT NULL,
   `image3` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -333,7 +336,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (4,'23ZE',12.00,'huile d\'arachide','<p>czzdczc</p>','<p>qsdqsdqsd</p>','/IMG_1005-4.jpg','/IMG_0998-4.jpg','/IMG_1003-4.jpg');
+INSERT INTO `product` VALUES (4,'23ZE',12.00,'€ ','huile d\'arachide','Les + produit','<p>L\'huile d\'arachide industrielle &eacute;tant hautement raffin&eacute;e, elle ne contient plus de prot&eacute;ine allerg&eacute;nique et n\'est g&eacute;n&eacute;ralement pas d&eacute;conseill&eacute;e aux personnes allergiques aux cacahu&egrave;tes<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"http://fr.wikipedia.org/wiki/Huile_d%27arachide#cite_note-2\">2</a></sup>.</p>','<p>L\'<strong>huile d\'arachide</strong> est une <a title=\"Huile alimentaire\" href=\"http://fr.wikipedia.org/wiki/Huile_alimentaire\">huile v&eacute;g&eacute;tale</a> pr&eacute;par&eacute;e et extraite &agrave; partir d\'arachide (<a title=\"Arachide\" href=\"http://fr.wikipedia.org/wiki/Arachide\">arachides</a>, <em>arachis hypogaea</em>) au moyen d\'une <a title=\"Presse hydraulique\" href=\"http://fr.wikipedia.org/wiki/Presse_hydraulique\">presse hydraulique</a>. Il s\'agit d\'une <a title=\"Huile alimentaire\" href=\"http://fr.wikipedia.org/wiki/Huile_alimentaire\">huile alimentaire</a> d\'apparence tr&egrave;s limpide et id&eacute;ale pour les cuissons &agrave; haute temp&eacute;rature. Particuli&egrave;rement appropri&eacute;e pour faire frire les aliments, elle peut aussi &ecirc;tre employ&eacute;e pour la pr&eacute;paration de <a title=\"Mayonnaise\" href=\"http://fr.wikipedia.org/wiki/Mayonnaise\">mayonnaises</a> ou encore de <a title=\"Vinaigrette (sauce)\" href=\"http://fr.wikipedia.org/wiki/Vinaigrette_%28sauce%29\">vinaigrettes</a> pour assaisonnement.&nbsp;</p>','/IMG_1005-4.jpg','/IMG_0998-4.jpg',''),(23,'Uniquement en magasin',12.45,'€','Extrait de violette','Promo : 1+1 = 3','<p>Se Conserve &agrave; l\'abri de la lumi&egrave;re et de la chaleur. Se consomme dilu&eacute;.</p>','<h4>Description ar&ocirc;me alimentaire naturel violette</h4>\r\n<div class=\"text1\">L\'ar&ocirc;me alimentaire naturel violette donnera &agrave; tous vos desserts une saveur originale. Utilis&eacute; par les chefs, l\'ar&ocirc;me alimentaire naturel permet une grande possibilit&eacute; de cr&eacute;ation, un gain de temps et une garantie de r&eacute;sultat.<br />L\'ar&ocirc;me alimentaire naturel violette a un fort pouvoir aromatisant, quelques gouttes suffisent.</div>\r\n<div class=\"clear\">&nbsp;L\'ar&ocirc;me alimentaire naturel violette donnera &agrave; tous vos desserts une saveur originale. Utilis&eacute; par les chefs, l\'ar&ocirc;me alimentaire naturel permet une grande..</div>\r\n<h4>Caract&eacute;ristiques ar&ocirc;me alimentaire naturel violette</h4>\r\n<div class=\"text1\">Contenance 50 ml. Ingr&eacute;dients : Sirop de sucre inverti, farine de graine de guar, gomme de xanthane, ar&ocirc;me naturel violette.<br />Pour aromatiser vos g&acirc;teaux, cr&egrave;mes, entremets, macarons, chocolats ou glaces.<br />Se Conserve &agrave; l\'abri de la lumi&egrave;re et de la chaleur. Se consomme dilu&eacute;.</div>','/none_4384_350x350-.jpg','',''),(24,'C37782',11.10,'€ les 2 flacons','Crême de nuit ','Les + produit','<p>Sans paraben sans oxydants</p>','<p>Super produit</p>','/IMG_0994-24.jpg','/IMG_0995-24.jpg',''),(25,'Dispo en magasin seulement',23.56,'€','Lotion bio ','Promo : 1+1 = 3','<p>Pour 2 produits acht&eacute;s un deuxi&egrave;me est offert .</p>','<p>q sdqsdqsd qsdqsdq sdqsdq sd</p>','/HF_sieste_e1385893223675-.jpg','',''),(26,'PA2345',12.00,'€ au lieu de 24€','Pain aux noix','PROMO','<div class=\"copy-paste-block\">Pour 2 achet&eacute;s le 2&egrave;me offert !</div>','<div class=\"copy-paste-block\">Un pain tr&egrave;s gourmand pour accompagner toutes vos envies.</div>','/IMG_1014-.jpg','/IMG_0996-26.jpg',''),(27,'Dispo en magasin seulement',2.50,'€ / Kg','Bananes','Les + produit','<p>Tr&egrave;s belle vari&eacute;t&eacute;</p>','<p>Bananes bio cultiv&eacute;es dasn les r&egrave;gles de l\'agriculture raisonn&eacute;e.</p>','/Screen_Shot_2015_02_21_at_17.35.39-.png','','');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -357,7 +360,7 @@ CREATE TABLE `product_categorie` (
 
 LOCK TABLES `product_categorie` WRITE;
 /*!40000 ALTER TABLE `product_categorie` DISABLE KEYS */;
-INSERT INTO `product_categorie` VALUES (4,1);
+INSERT INTO `product_categorie` VALUES (4,1),(23,1),(24,1),(25,39),(26,13),(27,40);
 /*!40000 ALTER TABLE `product_categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -370,4 +373,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-02-19 18:44:27
+-- Dump completed on 2015-02-21 19:00:01

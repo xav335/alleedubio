@@ -1,11 +1,13 @@
 $(document).foundation();
 
 $(document).ready(function() {
-	$('.fancybox').fancybox();
-	
-	$('.thumb a img').mouseover(function() {
-		var lien = $(this).attr('src');
-		$('.img-produit').attr('src', lien);
+	$('.fancybox').fancybox({
+		  padding: 0,
+		  helpers: {
+		    overlay: {
+		      locked: false
+		    }
+		  }
 	});
 });
 

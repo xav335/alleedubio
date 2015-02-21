@@ -17,8 +17,6 @@
 					          		<li class="divider"></li>
 					            	<li><a href="product-edit.php">Ajout Produits</a></li>
 					            	<li><a href="product-list.php">Modif / Suppr</a></li>
-					            	<li class="divider"></li>
-					            	<li><a href="product-edit.php">Produit/evenment Home</a></li>
 					          	</ul>
 					        </li>
 	           				<li class="dropdown">

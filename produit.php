@@ -1,82 +1,96 @@
+<?php 
+require 'admin/classes/utils.php';
+require 'admin/classes/Catproduct.php';
+require 'admin/classes/Planning.php';
+session_start();
+
+$catproduct = new Catproduct();
+$catproduct->catproduitViewIterative(null);
+$result = $catproduct->tabView;
+$catproduct = null;
+
+
+$planning = new Planning();
+$result2 = $planning->planningGet();
+//print_r($result);
+$planning = null;
+
+$titre= null;
+$url= null;
+$pdf= null;
+if (!empty($result)) {
+	$titre= $result2[0]['titre'];
+	$url= $result2[0]['url'];
+	$pdf= '/photos/bdc'. $result2[0]['pdf'];
+}
+	
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio | Produit</title>
+	<title>Allée du Bio - Actualités</title>
 <?php include('inc/meta.php'); ?>
 </head>
 <body>
 	
 <?php include('inc/header.php'); ?>
 	
-	<!-- Produit -->
-	<div class="row produit">
-		<div class="large-5 medium-5 small-5 columns">
-			<img src="img/produit-du-mois.jpg" alt="" class="img-produit" />
-			<div class="row thumb">
-				<div class="large-4 medium-4 small-4 columns">
-					<a href="img/produits-frais.jpg" class="fancybox" data-fancybox-group="produit"><img src="img/produits-frais.jpg" alt="" /></a>
+	<!-- Actualités -->
+	<div class="row actualites">
+		<h1>Nos Produits</h1>
+		<div class="row" style="border-bottom:1px solid #61a141; margin-bottom: 20px;">
+				
+				<div class="large-9 medium-9 small-9 columns" >
+					<h3>Téléchargez notre bon de commande</h2>
+					<p>
+						Vous avez un bon de commande à votre disposition afin de commancer en ligne.
+						Il suffit de l'imprimer et de renseigner la réference et la quantité des produits que vous souhaitez commander, joindre un chéque et hop c'est fait !
+						Vous trouverez les conditions de vente et toutes les information pour le paiement et
+						 la livraison sur le bon de commande 
+						 à télécharger ici  :  <a href="<?php echo $pdf ?>" target="_blank"><img src="img/pdf-icon.png" width="50" alt="" /></a>  <br>
+						<strong>Livraison à domicile possible</strong>, contacter nous par téléphone au : 05 56 30 55 08
+					</p>
+					
 				</div>
-				<div class="large-4 medium-4 small-4 columns">
-					<a href="img/produit-du-mois.jpg" class="fancybox" data-fancybox-group="produit"><img src="img/produit-du-mois.jpg" alt="" /></a>
-				</div>
-				<div class="large-4 medium-4 small-4 columns">
-					<a href="img/produit-du-mois.jpg" class="fancybox" data-fancybox-group="produit"><img src="img/produit-du-mois.jpg" alt="" /></a>
+				<div class="large-3 medium-3 small-3 columns">
+					<img src="/img/bdc.jpg"  alt="" style="max-width: 220px; padding: 20px 20px 20px 20px; " />
 				</div>
 			</div>
-		</div>
-		<div class="large-7 medium-7 small-7 columns">
-			<h1>Nom du produit</h1>
-			<h2>Réf</h2>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet. Sed finibus nibh porta tortor finibus tincidunt. Donec iaculis accumsan odio eu aliquet. Integer vel libero eu urna tristique fringilla. Donec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.
-			</p>
-			<a href="#" class="bt-plus">30,15 € TTC</a>
-			<div class="plus-produit">
-				<h3>Les + du produit</h3>
+		<?php 
+			if (!empty($result)) {
+				$i=0;
+				foreach ($result as $value) { 
+					$decalage = "";
+					for ($i=0; $i<($value['level'] * 10); $i++) {
+						$decalage .= "&nbsp;";
+					}
+				$i++;
+				?>
 				<div class="row">
-					<div class="large-6 medium-6 small-6 columns">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet.
+					<div class="large-4 medium-4 small-4 columns">
+						<?php if (!empty($value['image'])) { ?>
+						<a href="/photos/categories/<?php echo $value['image']?>" class="fancybox" ><img src="photos/categories/thumbs<?php echo $value['image']?>"  alt="" style="max-width: 320px; padding: 20px 20px 20px 20px; " /></a>
+						<?php } ?>	
 					</div>
-					<div class="large-6 medium-6 small-6 columns">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet.
+					<div class="large-8 medium-8 small-8 columns" >
+						<h2><?php echo $value['label']?></h2>
+						<p>
+							<?php echo $value['description']?>
+						</p>
+						<a href="produit-detail.php?categorie=<?php echo $value['id']?>" class="bt-plus">Voir tous les articles de ce rayon</a>
 					</div>
+					
 				</div>
-			</div>
-		</div>
+			<?php } ?>
+		<?php } ?>	
+		
 	</div>
-	<!-- Fin Produit -->
-	
-	<!-- Listing produits -->
-	<div class="row">
-		<div class="large-4 medium-4 small-6 columns products-list fuchsia">
-			<div>
-				<span></span>
-				<img src="img/pain.jpg" alt="" />
-				<h2>nos pains</h2>
-				<p>Découvrez un choix particulier de pains : céréales, maïs, tournesol...</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list vert">
-			<div>
-				<span></span>
-				<img src="img/produits-frais.jpg" alt="" />
-				<h2>produits frais</h2>
-				<p>Légumes ou fruits de saison, produits laitiers...</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list bleu">
-			<div>
-				<span></span>
-				<img src="img/epicerie.jpg" alt="" />
-				<h2>épicerie</h2>
-				<p>Découvrez notre épicerie avec un large choix d’huile, épices, pâtes...</p>
-			</div>
-		</div>
-	</div>
-	<!-- Fin Listing produits -->
-	
+	<!-- Fin Actualités -->
 	
 <?php include('inc/footer.php'); ?>
+	<script>
+		$('.header ul li:nth-child(3)').addClass('active');
+	</script>
 	
 </body>
 </html>

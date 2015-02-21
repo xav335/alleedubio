@@ -42,7 +42,7 @@ if (!empty($result)) {
 		            <div class="form-group" style=" border:6px ridge white; padding: 30px 10px 30px 10px; ">
 		            	<a href="javascript:openCustomRoxy('pdf')"><img src="/admin/img/imgPDF.png" id="customRoxyImage" style="max-width:700px;"></a>
 		            	<input type="hidden"  name="pdf"  id="pdfpdf" value="<?php echo $pdf ?>"><br>
-		            	<h3><a id="customRoxyImagepdf" href="<?php echo $pdf ?>" target="_blank"><?php echo $pdf ?></a></h3>
+		            	<h3><a id="customRoxyImagepdf" href="<?php echo '/photos/bdc'.$pdf ?>" target="_blank"><?php echo $pdf ?></a></h3>
 					<br>
 					</div>
 					
@@ -63,24 +63,21 @@ if (!empty($result)) {
 					<script type="text/javascript">
 						function openCustomRoxy(idImage){
 							$('#idImage').val(idImage);
-						 	$('#roxyCustomPanel').dialog({modal:true, width:875,height:600});
+							$('#roxyCustomPanel').dialog({modal:true, width:875,height:600});
 						}
 						function closeCustomRoxy(){
 						  	$('#roxyCustomPanel').dialog('close');
 						}
-	
 						function clearImage(idImage){
 							$('#customRoxyImage'+idImage).attr('src', '/img/ajoutImage.jpg');
 							$('#url'+idImage).val('');
 						}
-						
 					</script>
 			</div>
 		</div>
-	</div>
-					<div id="roxyCustomPanel" style="display: none;">
-  							<iframe src="/admin/fileman2/index.html?integration=custom" style="width:100%;height:100%" frameborder="0"></iframe>
-					</div>
+		<div id="roxyCustomPanel" style="display: none;">
+  			<iframe src="/admin/fileman2/index.html?integration=custom" style="width:100%;height:100%" frameborder="0"></iframe>
+		</div>
 </body>
 </html>
 

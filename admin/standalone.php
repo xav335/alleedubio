@@ -6,12 +6,13 @@ $categories = array( 11 ,9 ,2 ,33  );
 
 
 $catproduct = new Catproduct();
-$url ='/uploads/Images categories/IMG_1008.jpg';
+$url ='/uploads/Screen Shot 2015-02-20 at 09.55.23.png';
+$fil= strrchr($url,'/');
+$deb=substr($fil, 0,strrpos($fil,"."));
+$ext= strrchr($url,'.');
+$filename = $deb.'-234'.$ext;
 
-$ch=explode('.', strrchr($url,'/'));
-$filename = $ch[0].'-234.'.$ch[1];
-
-if(strstr($url,'uploads')) print_r('dfdff');
+print_r($filename);
 /*
 $catproduct = new Catproduct();
 $catproduct->catproduitViewIterative(null);

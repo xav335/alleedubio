@@ -3,12 +3,13 @@
 		<div class="row content">
 			<div class="large-3 medium-3 small-3 columns">
 				<a href="/">Accueil</a>
-				<a href="#">La boutique</a>
-				<a href="#">Nos produits</a>
-				<a href="#">Prestations</a>
+				<a href="qsn.php">Qui sommes nous</a>
+				<a href="produit.php">Nos produits</a>
+				<a href="bienetre.php">Espace bien être</a>
 				<a href="actualites.php">Actualités</a>
-				<a href="#">Livre d’or</a>
+				<a href="goldbook.php">Livre d’or</a>
 				<a href="contact.php">Contact</a>
+				<a href="mentions.php">mentions légales</a>
 			</div>
 			<div class="large-6 medium-6 small-6 columns">
 				<img src="img/logo-bottom.png" alt="" title="Allée du Bio" />
@@ -21,53 +22,3 @@
 		</div>
 	</div>
 	<!-- Fin Footer -->
-	
-	<script src="js/vendor/jquery.js"></script>
-	<script src="js/foundation.min.js"></script>
-	<script src="js/vendor/jquery.mousewheel-3.0.6.pack.js"></script>
-	<script src="js/vendor/fancybox/jquery.fancybox.js?v=2.1.5"></script>
-	<script src="js/vendor/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-	<script src="js/vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-	<script src="js/vendor/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-	<script src="js/scripts.js"></script>
-	<script src="js/vendor/slick/slick.min.js"></script>
-	
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-			 *  Simple image gallery. Uses default settings
-			 */
-
-			/* Slider références */
-			$('.autoplay').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				autoplay: true,
-				autoplaySpeed: 5000,
-				pauseOnHover: true,
-				speed:1000
-			});
-
-			$('.autoplay2').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				autoplay: true,
-				autoplaySpeed: 2000,
-				pauseOnHover: true,
-				speed:1000
-			});
-
-			$('.fade').slick({
-				  dots: true,
-				  autoplay: true,
-				  infinite: true,
-				  speed: 500,
-				  fade: true,
-				  slide: 'div',
-				  cssEase: 'linear'
-			});
-
-			
-		});
-
-	</script>

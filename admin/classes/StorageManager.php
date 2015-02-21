@@ -9,7 +9,7 @@ class StorageManager{
 	
 	////////////////// UTILS UTILS UTILS UTILS UTILS UTILS UTILS UTILS UTILS UTILS UTILS //////////////////////////
 	protected function inserer_date($date) {
-		$tab = split("/", $date);
+		$tab = explode("/", $date);
 		return $tab[2] . "-" . $tab[1] . "-" . $tab[0];
 	}
 	

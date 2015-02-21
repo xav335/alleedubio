@@ -36,13 +36,16 @@ require 'classes/News.php';
 								Titre
 							</th>
 							<th class="col-md-2" style="">
-								Accroche
+								lien 
 							</th>
 							<th class="col-md-5" style="">
 								Contenu
 							</th>
 							<th class="col-md-1" style="">
 								Photo
+							</th>
+							<th class="col-md-1" style="">
+								A la une
 							</th>
 							<th class="col-md-1" colspan="2" style="">
 								Actions
@@ -56,6 +59,11 @@ require 'classes/News.php';
 							$i=0;
 							foreach ($result as $value) { 
 							$i++;
+							if($value['online']=='1') {
+								$online = 'check';
+							} else {
+								$online = 'vide';
+							}
 							?>
 							<tr class="<?php if ($i%2!=0) echo 'info'?>">
 								
@@ -64,6 +72,7 @@ require 'classes/News.php';
 								<td><?php echo $value['accroche']?></td>
 								<td><?php echo $value['contenu']?></td>
 								<td><?php if(isset($value['image1'])) echo 'image OK' ?></td>
+								<td><img src="img/<?php echo $online ?>.png" width="30" ></td>
 								<td><a href="news-edit.php?id=<?php echo $value['id_news'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a></td>
 								<td>
 									<div style="display: none;" class="supp<?php echo $value['id_news']?> alert alert-warning alert-dismissible fade in" role="alert">

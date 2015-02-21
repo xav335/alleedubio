@@ -57,4 +57,12 @@ class ImageManager {
 		
 	}
 	
+	public function fileDestManagement($source,$id){
+		$fil= strrchr($source,'/');
+		$deb=substr($fil, 0,strrpos($fil,"."));
+		$ext= strrchr($fil,'.');
+		$filename = $deb.'-'.$id.$ext;
+		return $filename;
+	}
+	
 }

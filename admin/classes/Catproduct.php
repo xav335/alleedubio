@@ -12,55 +12,6 @@ class Catproduct extends StorageManager {
 		
 	}
 	
-	public function imageResize($source, $destination, $width, $height){
-		$image = new Zebra_Image();
-		
-		$image->source_path = $source;
-		$image->target_path = $destination;
-		$image->jpeg_quality = 90;
-		
-		$image->preserve_aspect_ratio = true;
-		$image->enlarge_smaller_images = true;
-		$image->preserve_time = true;
-		
-		if (!$image->resize($width, $height, ZEBRA_IMAGE_NOT_BOXED, '#FFFFFF')) {
-		
-			// if there was an error, let's see what the error is about
-			switch ($image->error) {
-		
-				case 1:
-					echo 'Source file could not be found!';
-					break;
-				case 2:
-					echo 'Source file is not readable!';
-					break;
-				case 3:
-					echo 'Could not write target file!';
-					break;
-				case 4:
-					echo 'Unsupported source file format!';
-					break;
-				case 5:
-					echo 'Unsupported target file format!';
-					break;
-				case 6:
-					echo 'GD library version does not support target file format!';
-					break;
-				case 7:
-					echo 'GD library is not installed!';
-					break;
-		
-			}
-		
-			// if no errors
-		} else {
-		
-			echo 'Success!';
-		
-		}
-		
-	}
-	
 	public function catproductByParentGet($id){
 		$this->dbConnect();
 		$requete = "SELECT * FROM `catproduct` WHERE parent=". $id ." ORDER BY label" ;
@@ -76,10 +27,13 @@ class Catproduct extends StorageManager {
 	
 	public function getProductsByCategorie($id){
 		$this->dbConnect();
-		$requete = "SELECT product.id,product.reference,product.prix,product.label
-				FROM product 
-				INNER JOIN product_categorie 
-				WHERE product_categorie.id_categorie=". $id ;
+		$requete = "SELECT product.id,product.reference,product.prix,product.libprix,product.label,product.accroche,
+					product.titreaccroche,product.description,product.image1,product.image2,product.image3,
+					catproduct.label as catlabel
+					FROM product 
+					INNER JOIN product_categorie ON product.id = product_categorie.id_product
+					INNER JOIN catproduct ON catproduct.id = product_categorie.id_categorie
+					WHERE product_categorie.id_categorie=". $id ;
 		//print_r($requete);exit();
 		$new_array = null;
 		$result = mysqli_query($this->mysqli,$requete);
@@ -261,13 +215,13 @@ class Catproduct extends StorageManager {
 		try {
 			if (!isset($id)){
 				if (empty($categorie) && isset($offset) && isset($count)) {
-					$sql = "SELECT product.id,product.reference,product.prix,product.label
+					$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
 								FROM product 
 								ORDER BY  product.label
 								ASC LIMIT ". $offset .",". $count .";" ;
 					
 				} elseif (!empty($categorie) && isset($offset) && isset($count)) {
-					$sql = "SELECT product.id,product.reference,product.prix,product.label
+					$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
 								FROM product
 								INNER JOIN product_categorie 
 								ON product_categorie.id_product=product.id
@@ -309,8 +263,11 @@ class Catproduct extends StorageManager {
 		
 		$sql = "UPDATE  .`product` SET
 				`label`='". addslashes($value['label']) ."',
+				`reference`='". addslashes($value['ref']) ."',
+				`titreaccroche`='". addslashes($value['titreaccroche']) ."',
 				`accroche`='". addslashes($value['accroche']) ."',
 				`prix`='". addslashes($value['prix']) ."',
+				`libprix`='". addslashes($value['libprix']) ."',		
 				`description`='". addslashes($value['description']) ."',
 				`image1`='". addslashes($value['url1']) ."',
 				`image2`='". addslashes($value['url2']) ."',
@@ -372,15 +329,17 @@ class Catproduct extends StorageManager {
 		$this->begin();
 	
 		$sql = "INSERT INTO  .`product`
-					(`label`, `reference`, `accroche`, `description`, `image1`, `image2`, `image3`,`prix`)
+					(`label`, `reference`, `titreaccroche`, `accroche`, `description`, `image1`, `image2`, `image3`,`libprix`,`prix`)
 					VALUES (
 					'". addslashes($value['label']) ."',
 					'". addslashes($value['ref']) ."',
+					'". addslashes($value['titreaccroche']) ."',
 					'". addslashes($value['accroche']) ."',
 					'". addslashes($value['description']) ."',
 					'". addslashes($value['url1']) ."',
 					'". addslashes($value['url2']) ."',
 					'". addslashes($value['url3']) ."',
+					'". addslashes($value['libprix']) ."',
 					". $value['prix'] ."
 				);";
 		$result = mysqli_query($this->mysqli,$sql);

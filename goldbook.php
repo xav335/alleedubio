@@ -89,7 +89,7 @@
 	
 <?php include('inc/footer.php'); ?>
 	<script>
-		$('.header ul li:last-child').addClass('active');
+	$('.header ul li:nth-child(6)').addClass('active');
 	</script>
 </body>
 </html>
