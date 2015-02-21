@@ -29,13 +29,13 @@
 			</div>	
 		</div>
 		<div class="large-12 medium-12 small-12 columns actualites">
-			<div class="large-7 medium-7 small-7 columns">
+			<div class="large-7 medium-7 small-12 columns">
 				<h2>Des massages relaxants avec Nathalie Pulon</h2><h4>Tél. 05 56 56 56 56</h4>
 				<p>
 					Le massage relaxation s'illustre comme une véritable source de détente, en enlevant les nœuds musculaires et en optimisant la circulation sanguine et lymphatique, il élimine stress et anxiété.
 				</p>
 			</div>
-			<div class="large-5 medium-5 small-5 columns">
+			<div class="large-5 medium-5 small-12 columns">
 				<img src="img/massage.jpg" alt="" />
 			</div>
 		</div>

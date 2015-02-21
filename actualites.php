@@ -42,10 +42,10 @@ if (!empty($_GET)){
 				$i++;
 				?>
 				<div class="row">
-					<div class="large-3 medium-3 small-3 columns">
+					<div class="large-3 medium-4 small-12 columns">
 						<a href="photos/news<?php echo $value['image1']?>" class="fancybox"><img src="photos/news/thumbs<?php echo $value['image1']?>"  alt="" style="max-width: 220px; padding: 20px 20px 20px 20px; " /></a>
 					</div>
-					<div class="large-9 medium-9 small-9 columns" >
+					<div class="large-9 medium-8 small-12 columns" >
 						<h5><?php echo traitement_datetime_affiche($value['date_news'])?></h5><h2><?php echo $value['titre']?></h2>
 						<p>
 							<?php echo $value['contenu']?>

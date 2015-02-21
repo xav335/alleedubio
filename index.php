@@ -45,7 +45,7 @@ if (!empty($result2)) {
 	
 	<!-- Produit du mois -->
 	<div class="row ">
-		<div class="large-9 medium-9 small-12 columns  slider fade ">
+		<div class="large-9 medium-12 small-12 columns  slider fade ">
 		<?php 
 		if (!empty($result)) {
 			$i=0;
@@ -69,7 +69,7 @@ if (!empty($result2)) {
 			<?php } ?>
 		<?php } ?>	
 		</div>
-		<div class="large-3 medium-3 small-12 columns encart" style="width:15rem; background-color: #FFF;">
+		<div class="large-3 medium-12 small-12 columns bdc" >
 			<h4>Bon de commande</h4>
 			Un bon de commande est à votre disposition afin de commander des articles sur le site. (Toutes les informations pratiques sont détaillées sur le bon de commande)
 			<br><br>
