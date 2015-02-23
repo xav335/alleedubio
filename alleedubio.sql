@@ -79,7 +79,7 @@ CREATE TABLE `catproduct` (
   `image` varchar(250) DEFAULT NULL,
   `level` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,11 +105,12 @@ CREATE TABLE `contact` (
   `name` varchar(250) DEFAULT NULL,
   `email` varchar(250) DEFAULT NULL,
   `tel` varchar(50) DEFAULT NULL,
+  `message` text,
   `newsletter` tinyint(4) NOT NULL DEFAULT '0',
   `fromgoldbook` tinyint(4) NOT NULL DEFAULT '0',
   `fromcontact` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25437 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25450 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,7 +119,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (3344,'','Gonzalez','xavier@gonzalez.pm',NULL,1,1,0),(25431,'Jav','gonz','jav_gonz@yahoo.fr',NULL,1,0,0),(25432,'xav','gonza','xavier.gonzalez@free.fr',NULL,1,0,0),(25433,'x','gg','xavier.gonzalez@laposte.net',NULL,1,0,0),(25434,'xavi','gonz','xavier@gonzalez.pm',NULL,1,0,0),(25435,'xavier','gonzalez','fjavi.gonzalez@gmail.com',NULL,1,0,0),(25436,'x','g','xav335@hotmail.com',NULL,1,0,0);
+INSERT INTO `contact` VALUES (3344,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,1,0),(25438,'Jav','gonz','jav_gonz@yahoo.fr',NULL,NULL,1,0,0),(25439,'xav','gonza','xavier.gonzalez@free.fr',NULL,NULL,1,0,0),(25441,'xavi','gonz','xavier@gonzalez.pm',NULL,NULL,1,0,0),(25442,'xavier','gonzalez','fjavi.gonzalez@gmail.com',NULL,NULL,1,0,0),(25445,'','Fred Lesca','fredericlesca@iconeo.fr',NULL,NULL,1,1,0),(25446,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,1,0),(25447,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,0,1),(25448,'jhonny','guitar','jav_gonz@yahoo.com',NULL,NULL,1,0,1),(25449,'robert','Redford','rob.red@free.fr',NULL,'POuet l\'es copain école',1,0,1);
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +160,7 @@ CREATE TABLE `goldbook` (
   `message` text,
   `online` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +169,7 @@ CREATE TABLE `goldbook` (
 
 LOCK TABLES `goldbook` WRITE;
 /*!40000 ALTER TABLE `goldbook` DISABLE KEYS */;
-INSERT INTO `goldbook` VALUES (2,'2014-12-10 00:00:00','Frederic Lesca','fredericlesca@iconeo.fr','Un accueil et un suivi hors paire, très beau lieu, très convivial',0);
+INSERT INTO `goldbook` VALUES (2,'2014-12-10 00:00:00','Xavier Gonzalez (Latresne)','xavier@gonzalez.pm','Produits de grande qualité, j\'ai retrouvé le gout des fruits et des légumes.\r\nL\'accueil et les conseils sont vraiment pertinents.\r\n\r\nEt la livraison à domicile c\'est juste parfait !',1),(3,'2015-02-23 00:00:00','Gonzalez','xavier@gonzalez.pm','sdfsdf sd fs',0),(4,'2015-02-23 00:00:00','Fred Lesca','fredericlesca@iconeo.fr','Un accueil super, des conseils et des produits d\'une qualité top. \r\nJe recommande fortement !!',1),(5,'2015-02-23 00:00:00','Gonzalez','xavier@gonzalez.pm','qsqds qdqsd qs',0);
 /*!40000 ALTER TABLE `goldbook` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,7 +304,7 @@ CREATE TABLE `planning` (
 
 LOCK TABLES `planning` WRITE;
 /*!40000 ALTER TABLE `planning` DISABLE KEYS */;
-INSERT INTO `planning` VALUES (1,'Période 2014 - 2015','','/CV2015_V1.8-20150220.pdf');
+INSERT INTO `planning` VALUES (1,'Période 2014 - 2015','','/BonDeCommande-20150223.pdf');
 /*!40000 ALTER TABLE `planning` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -336,7 +337,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (4,'23ZE',12.00,'€ ','huile d\'arachide','Les + produit','<p>L\'huile d\'arachide industrielle &eacute;tant hautement raffin&eacute;e, elle ne contient plus de prot&eacute;ine allerg&eacute;nique et n\'est g&eacute;n&eacute;ralement pas d&eacute;conseill&eacute;e aux personnes allergiques aux cacahu&egrave;tes<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"http://fr.wikipedia.org/wiki/Huile_d%27arachide#cite_note-2\">2</a></sup>.</p>','<p>L\'<strong>huile d\'arachide</strong> est une <a title=\"Huile alimentaire\" href=\"http://fr.wikipedia.org/wiki/Huile_alimentaire\">huile v&eacute;g&eacute;tale</a> pr&eacute;par&eacute;e et extraite &agrave; partir d\'arachide (<a title=\"Arachide\" href=\"http://fr.wikipedia.org/wiki/Arachide\">arachides</a>, <em>arachis hypogaea</em>) au moyen d\'une <a title=\"Presse hydraulique\" href=\"http://fr.wikipedia.org/wiki/Presse_hydraulique\">presse hydraulique</a>. Il s\'agit d\'une <a title=\"Huile alimentaire\" href=\"http://fr.wikipedia.org/wiki/Huile_alimentaire\">huile alimentaire</a> d\'apparence tr&egrave;s limpide et id&eacute;ale pour les cuissons &agrave; haute temp&eacute;rature. Particuli&egrave;rement appropri&eacute;e pour faire frire les aliments, elle peut aussi &ecirc;tre employ&eacute;e pour la pr&eacute;paration de <a title=\"Mayonnaise\" href=\"http://fr.wikipedia.org/wiki/Mayonnaise\">mayonnaises</a> ou encore de <a title=\"Vinaigrette (sauce)\" href=\"http://fr.wikipedia.org/wiki/Vinaigrette_%28sauce%29\">vinaigrettes</a> pour assaisonnement.&nbsp;</p>','/IMG_1005-4.jpg','/IMG_0998-4.jpg',''),(23,'Uniquement en magasin',12.45,'€','Extrait de violette','Promo : 1+1 = 3','<p>Se Conserve &agrave; l\'abri de la lumi&egrave;re et de la chaleur. Se consomme dilu&eacute;.</p>','<h4>Description ar&ocirc;me alimentaire naturel violette</h4>\r\n<div class=\"text1\">L\'ar&ocirc;me alimentaire naturel violette donnera &agrave; tous vos desserts une saveur originale. Utilis&eacute; par les chefs, l\'ar&ocirc;me alimentaire naturel permet une grande possibilit&eacute; de cr&eacute;ation, un gain de temps et une garantie de r&eacute;sultat.<br />L\'ar&ocirc;me alimentaire naturel violette a un fort pouvoir aromatisant, quelques gouttes suffisent.</div>\r\n<div class=\"clear\">&nbsp;L\'ar&ocirc;me alimentaire naturel violette donnera &agrave; tous vos desserts une saveur originale. Utilis&eacute; par les chefs, l\'ar&ocirc;me alimentaire naturel permet une grande..</div>\r\n<h4>Caract&eacute;ristiques ar&ocirc;me alimentaire naturel violette</h4>\r\n<div class=\"text1\">Contenance 50 ml. Ingr&eacute;dients : Sirop de sucre inverti, farine de graine de guar, gomme de xanthane, ar&ocirc;me naturel violette.<br />Pour aromatiser vos g&acirc;teaux, cr&egrave;mes, entremets, macarons, chocolats ou glaces.<br />Se Conserve &agrave; l\'abri de la lumi&egrave;re et de la chaleur. Se consomme dilu&eacute;.</div>','/none_4384_350x350-.jpg','',''),(24,'C37782',11.10,'€ les 2 flacons','Crême de nuit ','Les + produit','<p>Sans paraben sans oxydants</p>','<p>Super produit</p>','/IMG_0994-24.jpg','/IMG_0995-24.jpg',''),(25,'Dispo en magasin seulement',23.56,'€','Lotion bio ','Promo : 1+1 = 3','<p>Pour 2 produits acht&eacute;s un deuxi&egrave;me est offert .</p>','<p>q sdqsdqsd qsdqsdq sdqsdq sd</p>','/HF_sieste_e1385893223675-.jpg','',''),(26,'PA2345',12.00,'€ au lieu de 24€','Pain aux noix','PROMO','<div class=\"copy-paste-block\">Pour 2 achet&eacute;s le 2&egrave;me offert !</div>','<div class=\"copy-paste-block\">Un pain tr&egrave;s gourmand pour accompagner toutes vos envies.</div>','/IMG_1014-.jpg','/IMG_0996-26.jpg',''),(27,'Dispo en magasin seulement',2.50,'€ / Kg','Bananes','Les + produit','<p>Tr&egrave;s belle vari&eacute;t&eacute;</p>','<p>Bananes bio cultiv&eacute;es dasn les r&egrave;gles de l\'agriculture raisonn&eacute;e.</p>','/Screen_Shot_2015_02_21_at_17.35.39-.png','','');
+INSERT INTO `product` VALUES (4,'23ZE',12.00,'€ ','huile d\'arachide','Les + produit','<p>L\'huile d\'arachide industrielle &eacute;tant hautement raffin&eacute;e, elle ne contient plus de prot&eacute;ine allerg&eacute;nique et n\'est g&eacute;n&eacute;ralement pas d&eacute;conseill&eacute;e aux personnes allergiques aux cacahu&egrave;tes<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"http://fr.wikipedia.org/wiki/Huile_d%27arachide#cite_note-2\">2</a></sup>.</p>','<p>L\'<strong>huile d\'arachide</strong> est une <a title=\"Huile alimentaire\" href=\"http://fr.wikipedia.org/wiki/Huile_alimentaire\">huile v&eacute;g&eacute;tale</a> pr&eacute;par&eacute;e et extraite &agrave; partir d\'arachide (<a title=\"Arachide\" href=\"http://fr.wikipedia.org/wiki/Arachide\">arachides</a>, <em>arachis hypogaea</em>) au moyen d\'une <a title=\"Presse hydraulique\" href=\"http://fr.wikipedia.org/wiki/Presse_hydraulique\">presse hydraulique</a>. Il s\'agit d\'une <a title=\"Huile alimentaire\" href=\"http://fr.wikipedia.org/wiki/Huile_alimentaire\">huile alimentaire</a> d\'apparence tr&egrave;s limpide et id&eacute;ale pour les cuissons &agrave; haute temp&eacute;rature. Particuli&egrave;rement appropri&eacute;e pour faire frire les aliments, elle peut aussi &ecirc;tre employ&eacute;e pour la pr&eacute;paration de <a title=\"Mayonnaise\" href=\"http://fr.wikipedia.org/wiki/Mayonnaise\">mayonnaises</a> ou encore de <a title=\"Vinaigrette (sauce)\" href=\"http://fr.wikipedia.org/wiki/Vinaigrette_%28sauce%29\">vinaigrettes</a> pour assaisonnement.&nbsp;</p>','/IMG_1005-4.jpg','/IMG_0998-4.jpg',''),(23,'Uniquement en magasin',12.45,'€','Extrait de violette','Promo : 1+1 = 3','<p>Se Conserve &agrave; l\'abri de la lumi&egrave;re et de la chaleur. Se consomme dilu&eacute;.</p>','<h4>Description ar&ocirc;me alimentaire naturel violette</h4>\r\n<div class=\"text1\">L\'ar&ocirc;me alimentaire naturel violette donnera &agrave; tous vos desserts une saveur originale. Utilis&eacute; par les chefs, l\'ar&ocirc;me alimentaire naturel permet une grande possibilit&eacute; de cr&eacute;ation, un gain de temps et une garantie de r&eacute;sultat.<br />L\'ar&ocirc;me alimentaire naturel violette a un fort pouvoir aromatisant, quelques gouttes suffisent.</div>\r\n<div class=\"clear\">&nbsp;L\'ar&ocirc;me alimentaire naturel violette donnera &agrave; tous vos desserts une saveur originale. Utilis&eacute; par les chefs, l\'ar&ocirc;me alimentaire naturel permet une grande..</div>\r\n<h4>Caract&eacute;ristiques ar&ocirc;me alimentaire naturel violette</h4>\r\n<div class=\"text1\">Contenance 50 ml. Ingr&eacute;dients : Sirop de sucre inverti, farine de graine de guar, gomme de xanthane, ar&ocirc;me naturel violette.<br />Pour aromatiser vos g&acirc;teaux, cr&egrave;mes, entremets, macarons, chocolats ou glaces.<br />Se Conserve &agrave; l\'abri de la lumi&egrave;re et de la chaleur. Se consomme dilu&eacute;.</div>','/none_4384_350x350-.jpg','',''),(24,'C37782',11.10,'€ les 2 flacons','Crême de nuit ','Les + produit','<p>Sans paraben sans oxydants</p>','<p>Super produit</p>','/IMG_0994-24.jpg','/IMG_0995-24.jpg',''),(25,'Dispo en magasin seulement',23.56,'€','Lotion bio ','Promo : 1+1 = 3','<p>Pour 2 produits acht&eacute;s un deuxi&egrave;me est offert .</p>','<p>q sdqsdqsd qsdqsdq sdqsdq sd</p>','/HF_sieste_e1385893223675-.jpg','',''),(26,'PA2345',12.00,'€ au lieu de 24€','Pain aux noix','PROMO','<div class=\"copy-paste-block\">Pour 2 achet&eacute;s le 2&egrave;me offert !</div>','<div class=\"copy-paste-block\">Un pain tr&egrave;s gourmand pour accompagner toutes vos envies.</div>','/IMG_1014-.jpg','/IMG_0996-26.jpg','/a08a8401-26.jpg'),(27,'Dispo en magasin seulement',2.50,'€ / Kg','Bananes','Les + produit','<p>Tr&egrave;s belle vari&eacute;t&eacute;</p>','<p>Bananes bio cultiv&eacute;es dasn les r&egrave;gles de l\'agriculture raisonn&eacute;e.</p>','/Screen_Shot_2015_02_21_at_17.35.39-.png','','');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -373,4 +374,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-02-21 19:00:01
+-- Dump completed on 2015-02-23 17:17:31
