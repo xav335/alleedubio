@@ -50,7 +50,7 @@ if (!empty($_GET)){
 				$i++;
 				?>
 				<div class="row produit">
-					<div class="large-5 medium-5 small-5 columns">
+					<div class="large-4 medium-4 small-4 columns">
 						<img src="/photos/products<?php echo $value['image1']?>" alt=""  class="img-produit<?php echo $value['id']?>" />
 						<div class="row thumb">
 							<div class="large-4 medium-4 small-4 columns">
@@ -95,7 +95,7 @@ if (!empty($_GET)){
 						</div>
 					</div>
 					
-					<div class="large-7 medium-7 small-7 columns">
+					<div class="large-8 medium-8 small-8 columns">
 						<h1><?php echo $value['label']?></h1>
 						<h3>Réf. : <?php echo $value['reference']?></h3>
 						<p>

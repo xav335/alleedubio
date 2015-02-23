@@ -66,18 +66,19 @@ if (!empty($result)) {
 					}
 				$i++;
 				?>
-				<div class="row">
-					<div class="large-4 medium-4 small-4 columns">
+				<div class="row" style="border-bottom: 1px solid #61a141;">
+					<br>
+					<div class="large-4 medium-6 small-12 columns" >
 						<?php if (!empty($value['image'])) { ?>
-						<a href="/photos/categories/<?php echo $value['image']?>" class="fancybox" ><img src="photos/categories/thumbs<?php echo $value['image']?>"  alt="" style="max-width: 320px; padding: 20px 20px 20px 20px; " /></a>
+						<a href="produit-detail.php?categorie=<?php echo $value['id']?>"  ><img src="photos/categories/thumbs<?php echo $value['image']?>"  alt="" style="max-width: 320px; padding: 20px 20px 20px 20px; " /></a>
 						<?php } ?>	
 					</div>
-					<div class="large-8 medium-8 small-8 columns" >
-						<h2><?php echo $value['label']?></h2>
+					<div class="large-8 medium-6 small-12 columns" >
+						<h2><a href="produit-detail.php?categorie=<?php echo $value['id']?>" ><?php echo $value['label']?></a></h2>
 						<p>
 							<?php echo $value['description']?>
 						</p>
-						<a href="produit-detail.php?categorie=<?php echo $value['id']?>" class="bt-plus">Voir tous les articles de ce rayon</a>
+						
 					</div>
 					
 				</div>
