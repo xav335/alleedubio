@@ -122,6 +122,8 @@ if (!empty($_GET)){
 	
 	
 <?php include('inc/footer.php'); ?>
-	
+	<script>
+		$('.header ul li:nth-child(3)').addClass('active');
+	</script>
 </body>
 </html>

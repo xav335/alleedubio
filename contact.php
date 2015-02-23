@@ -8,77 +8,120 @@
 	
 <?php include('inc/header.php'); ?>
 	
-	<!-- Contact -->
-	<div class="row contact">
-		<div class="large-12 columns">
-			<h1>Contactez-nous</h1>
-			<form>
-				<div class="row">
-					<div class="large-6 medium-6 columns">
-						<label>Nom
-							<input type="text" placeholder="Nom" />
-						</label>
-					</div>
-					<div class="large-6 medium-6 columns">
-						<label>Prénom
-							<input type="text" placeholder="Prénom" />
-						</label>
-					</div>
+	<!-- Content -->
+<div class="row contact">
+	<div class="large-8 medium-8 small-12 columns">
+		<h1>Contactez mous</h1>
+	
+		<div id="resultat">
+		
+    	</div>
+		<form data-abide id="formulaire">
+			<div class="row">
+				<div class="large-6 columns">
+					<label>Nom
+						<input type="text" id="nom" name="name" placeholder="Nom" required pattern="[a-zA-Z]+" />
+					</label>
+					<small class="error">Votre nom est obligatoire</small>
 				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<label>Adresse
-							<input type="text" placeholder="Adresse" />
-						</label>
-					</div>
+				<div class="large-6 columns">
+					<label>Prénom
+						<input id="prenom" type="text" name="firstname" placeholder="Prénom" />
+					</label>
 				</div>
-				<div class="row">
-					<div class="large-4 medium-4 columns">
-						<label>Code postal
-							<input type="text" placeholder="Code postal" />
-						</label>
-					</div>
-					<div class="large-8 medium-8 columns">
-						<label>Ville
-							<input type="text" placeholder="Ville" />
-						</label>
-					</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns">
+					<label>Téléphone
+						<input type="text" id="tel" name="tel" placeholder="Téléphone" />
+					</label>
+					<small class="error">Votre téléphone est obligatoire</small>
 				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<label>Question sur
-							<select>
-								<option value="les produits">les produits ?</option>
-								<option value="les horaires">les horaires ?</option>
-								<option value="la livraison">la livraison ?</option>
-								<option value="autre">toute autre chose ?</option>
-							</select>
-						</label>
-					</div>
+				<div class="large-6 columns">
+					<label>e-mail
+						<input type="text" id="email" name="email" placeholder="e-mail" required />
+					</label>
+					<small class="error">Votre e-mail est obligatoire</small>
 				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<label>Inscription à la newsletter</label>
-						<input type="radio" name="newsletter" value="Oui" id="newsletterOui"><label for="newsletterOui">Oui</label>
-						<input type="radio" name="newsletter" value="Non" id="newsletterNon"><label for="newsletterNon">Non</label>
-					</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<label>Sujet
+						<select required id="sujet" name="sujet" >
+							<option value="les produits">les produits</option>
+							<option value="les horaires">les horaires</option>
+							<option value="la livraison">la livraison</option>
+							<option value="autre">toute autre chose</option>
+						</select>
+					</label>
+					<small class="error">Merci de choisir un sujet</small>
 				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<label>Votre message
-							<textarea placeholder="Votre message"></textarea>
-						</label>
-					</div>
+			</div>
+			
+			<div class="row">
+				<div class="large-12 columns">
+					<label>Message
+						<textarea id="message" name="message" placeholder="Votre message" required></textarea>
+					</label>
+					<small class="error">Merci de saisir votre message</small>
 				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<button>Envoyer le message</button>
-					</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<input type="checkbox" id="newsletter" name="newsletter"  checked/> J'accepte de recevoir la newsletter.
 				</div>
-			</form>
-		</div>
+			</div>
+			<button type="submit">Envoyer votre message</button>
+		</form>
 	</div>
-	<!-- Fin Contact -->
+	<div class="large-4 medium-4 small-12 columns">
+		<div class="large-12 columns">
+			<img src="img/facebooklogo.png" alt="" />
+				<p>
+					Toutes les nouvelles, les évenements et les infos de dernières minutes.
+					<div class="fb-like" data-href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+				</p>
+				<a class="suite" target="_blank" href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030"><img src="img/facebooksmall.png" alt="" />  Visitez notre page Facebook</a>
+			
+		</div>
+		
+	</div>
+</div>
+<!-- /Content -->
+<script type="text/javascript">
+
+	$(document).on('submit','#formulaire',function(e) {
+	  e.preventDefault();
+	  data = $(this).serializeArray();
+
+	  data.push({
+	   		name: 'action',
+	    	value: 'sendMail'
+	  	})
+
+	  console.log(data);
+
+	    /* I put the above code for check data before send to ajax*/
+	    $.ajax({
+		        url: '/ajax/contact.php',
+		        type: 'post',
+		        data: data,
+		        success: function (data) {
+		            $("#resultat").html("<h4>Merci pour votre message - Nous allons y donner suite rapidement</h4>");
+		        	$("#nom").val("");
+		        	$("#prenom").val("");
+		        	$("#email").val("");
+		        	$("#tel").val("");
+		           	$("#message").val("");
+		        },
+		        error: function() {
+		        	 $("#resultat").html("<h3>Une erreur s'est produite !</h3>");
+		        }
+		   	});
+	return false;
+	})
+
+</script>
 	
 	<!-- Google maps -->
 	<div class="row">

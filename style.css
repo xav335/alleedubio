@@ -16,10 +16,13 @@
 body {background:url('img/background.jpg') center top;font-family:'museo300';}
 h1, h2, h3, h4, h5, h6 {font-family:inherit;font-weight:normal;}
 h1 {border-bottom:1px solid #61a141;}
-button {font-family:inherit;}
+button, input {font-family:inherit;}
 .fullwidth {max-width:100%;}
 .row .row.content {max-width:62.5rem;margin:0 auto;position:relative;display:block;height:100%;}
 /* End Communs */
+
+.suite {font-size: 16px; ;background:#61A141;padding:10px;color:#fff;}
+.suite:hover {background:#4E8134;color:#fff;}
 
 /* Header */
 .header {margin-top:1.75em;height:13.6875rem;background:url('img/bg-header.jpg') center center #295e34 repeat-x;-moz-box-shadow: 3px 4px 13px 3px rgba(138,107,67,.91);-webkit-box-shadow: 3px 4px 13px 3px rgba(138,107,67,.91);box-shadow: 3px 4px 13px 3px rgba(138,107,67,.91);}

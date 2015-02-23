@@ -1,3 +1,12 @@
+<?php 
+require 'admin/classes/Goldbook.php';
+require 'admin/classes/utils.php';
+session_start();
+$goldbook = new Goldbook();
+$result = $goldbook->goldbookValidGet();
+$goldbook = null;
+//print_r($result);
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -8,83 +17,101 @@
 	
 <?php include('inc/header.php'); ?>
 	
-	<!-- Contact -->
-	<div class="row contact">
-		<div class="large-12 columns">
-			<h1>Contactez-nous</h1>
-			<form>
-				<div class="row">
-					<div class="large-6 medium-6 columns">
-						<label>Nom
-							<input type="text" placeholder="Nom" />
-						</label>
-					</div>
-					<div class="large-6 medium-6 columns">
-						<label>Prénom
-							<input type="text" placeholder="Prénom" />
-						</label>
-					</div>
+<div class="row contact">
+	<div class="large-5 medium-5 small-12 columns">
+		<br>
+		<h2>Signez le livre d'or</h2>
+		<div id="resultat">
+		
+    	</div>
+    	<form data-abide id="formulaire">
+    		<input type="hidden" name="datepicker" id="datepicker"  value="<?php echo date("d/m/Y")?>">
+			<div class="row">
+				<div class="large-12 columns">
+					<label>Nom
+						<input name="name" id="nom" type="text" placeholder="Nom"  />
+					</label>
+					<small class="error">Votre nom est obligatoire</small>
 				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<label>Adresse
-							<input type="text" placeholder="Adresse" />
-						</label>
-					</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<label>e-mail
+						<input name="email" id="email" type="email" placeholder="e-mail" required />
+					</label>
+					<small class="error">Votre e-mail est obligatoire</small>
 				</div>
-				<div class="row">
-					<div class="large-4 medium-4 columns">
-						<label>Code postal
-							<input type="text" placeholder="Code postal" />
-						</label>
-					</div>
-					<div class="large-8 medium-8 columns">
-						<label>Ville
-							<input type="text" placeholder="Ville" />
-						</label>
-					</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<label>Message
+						<textarea name="message" id="message" placeholder="Votre message" required></textarea>
+					</label>
+					<small class="error">Merci de saisir votre message</small>
 				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<label>Question sur
-							<select>
-								<option value="les produits">les produits ?</option>
-								<option value="les horaires">les horaires ?</option>
-								<option value="la livraison">la livraison ?</option>
-								<option value="autre">toute autre chose ?</option>
-							</select>
-						</label>
-					</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<input type="checkbox" id="newsletter" name="newsletter"  checked/> J'accepte de recevoir notre newsletter.
 				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<label>Inscription à la newsletter</label>
-						<input type="radio" name="newsletter" value="Oui" id="newsletterOui"><label for="newsletterOui">Oui</label>
-						<input type="radio" name="newsletter" value="Non" id="newsletterNon"><label for="newsletterNon">Non</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<label>Votre message
-							<textarea placeholder="Votre message"></textarea>
-						</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="large-12 columns">
-						<button>Envoyer le message</button>
-					</div>
-				</div>
-			</form>
-		</div>
+			</div>
+			<input class="suite" type="submit" value="Laissez nous votre témoignage"/>
+		</form>
 	</div>
-	<!-- Fin Contact -->
+	<div class="large-7 medium-7 small-12 columns">
+		<h1>Le Livre d'or Allée du Bio</h1>
+		<p>Retrouvez ici les témoignages de nos adhérents</p>
+			<div style=";border-bottom : 4px ridge white;padding:0px 4px 4px 4px; " >
+			</div>
+			<?php 
+			if (!empty($result)) {
+				$i=0;
+				foreach ($result as $value) { 
+				$i++;
+				?>
+				<div style=";border-bottom : 4px ridge white;padding:24px 4px 24px 4px; <?php if ($i%2==0) echo 'background: #FFF;'?>" >
+					Message publiée le: <b><?php echo traitement_datetime_affiche($value['date'])?></b><br>
+					<h4><?php echo $value['nom']?></h4>
+					<p><?php echo nl2br($value['message'])?></p>
+				</div>
+				<?php } ?>
+			<?php } ?>	
+	</div>
 	
-	<!-- Google maps -->
-	<div class="row">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2825.5787808515875!2d-0.3935797!3d44.91156420000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5531420a3b61a1%3A0x9187996c4e9373e3!2s20+Avenue+de+Maucaillou%2C+33450+Saint-Sulpice-et-Cameyrac!5e0!3m2!1sfr!2sfr!4v1422202196329" frameborder="0" class="gmaps"></iframe>
-	</div>
-	<!-- Fin Google maps -->
+</div>
+<!-- /Content -->
+<script type="text/javascript">
+
+	$(document).on('submit','#formulaire',function(e) {
+	  e.preventDefault();
+	  data = $(this).serializeArray();
+
+	  data.push({
+	   		name: 'action',
+	    	value: 'sendMail'
+	  	})
+
+	  console.log(data);
+
+	    /* I put the above code for check data before send to ajax*/
+	    $.ajax({
+		        url: '/ajax/goldbook.php',
+		        type: 'post',
+		        data: data,
+		        success: function (data) {
+		            $("#resultat").html("<h3>Merci pour votre message</h3>");
+		        	$("#nom").val("");
+		           	$("#email").val("");
+		           	$("#message").val("");
+		        },
+		        error: function() {
+		        	 $("#resultat").html("<h3>Une erreur s'est produite !</h3>");
+		        }
+		   	});
+	return false;
+	})
+
+</script>
 	
 	
 <?php include('inc/footer.php'); ?>

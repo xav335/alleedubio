@@ -61,11 +61,12 @@ class Contact extends StorageManager {
 			($value['fromcontact']=='on') ? $fromcontact = 1 : $fromcontact = 0;
 
 			$sql = "INSERT INTO  .`contact`
-						(`name`, `email`, `firstname`,`newsletter`,`fromgoldbook`,`fromcontact`)
+						(`name`, `email`, `firstname`, `message`,`newsletter`,`fromgoldbook`,`fromcontact`)
 						VALUES (
 						'". addslashes($value['name']) ."',
 						'". addslashes($value['email']) ."',
 						'". addslashes($value['firstname']) ."',
+						'". addslashes($value['message']) ."',
 						". $newsletter .",
 						". $fromgoldbook .",
 						". $fromcontact ."
@@ -127,8 +128,7 @@ class Contact extends StorageManager {
 	
 	
 	public function contactDelete($value){
-		//print_r($value);
-		//exit();
+		//print_r($value);exit();
 	
 		 $this->dbConnect();
 		$this->begin();

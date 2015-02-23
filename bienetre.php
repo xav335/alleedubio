@@ -46,7 +46,7 @@
 	
 <?php include('inc/footer.php'); ?>
 	<script>
-		$('.header ul li:first-child').addClass('active');
+		$('.header ul li:nth-child(4)').addClass('active');
 	</script>
 	
 </body>

@@ -1,6 +1,7 @@
 <?php
 require 'classes/Authentication.php';
 require 'classes/News.php';
+require 'classes/Contact.php';
 require 'classes/Goldbook.php';
 require 'classes/Catproduct.php';
 require 'classes/Planning.php';
@@ -21,6 +22,33 @@ if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
 //print_r($_POST);exit();
 //Forms processing
 if (!empty($_POST)){
+	
+	// traitement des Contact
+	if ($_POST['reference'] == 'contact'){
+		$contact = new Contact();
+		if ($_POST['action'] == 'modif') { //Modifier
+			try {
+				$result = $contact->contactModify($_POST);
+				$contact = null;
+				header('Location: /admin/contact-list.php');
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+				$contact = null;
+				exit();
+			}
+	
+		} else {  //ajouter
+			try {
+				$result = $contact->contactAdd($_POST);
+				$contact = null;
+				header('Location: /admin/contact-edit.php?id='.$result);
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+				$contact = null;
+				exit();
+			}
+		}
+	}
 	
 	// traitement du Bon de commande /planning
 	$planning = new Planning();
@@ -217,6 +245,20 @@ if (!empty($_POST)){
 	
 	
 } elseif (!empty($_GET)) { // GET GET GET
+	if ($_GET['reference'] == 'contact'){ //supprimer
+		$contact = new Contact();
+		if ($_GET['action'] == 'delete'){
+			try {
+				$result = $contact->contactDelete($_GET['id']);
+				$contact = null;
+				header('Location: /admin/contact-list.php');
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+				$contact = null;
+				exit();
+			}
+		}
+	}
 	if ($_GET['reference'] == 'news'){ //supprimer
 		$news = new News();
 		if ($_GET['action'] == 'delete'){

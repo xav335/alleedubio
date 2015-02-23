@@ -37,7 +37,7 @@ class Goldbook extends StorageManager {
 	}
 	
 	public function goldbookValidGet(){
-		 $this->dbConnect();
+		$this->dbConnect();
 		$requete = "SELECT * FROM `goldbook` WHERE online=1 ORDER BY `date` DESC" ;
 		//print_r($requete);
 		$new_array = null;
