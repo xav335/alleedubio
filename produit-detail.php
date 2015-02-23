@@ -27,7 +27,9 @@ if (!empty($_GET)){
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio | Produit</title>
+	<title>Allée du Bio : <?php echo $result[0]['catlabel']?></title>
+	<meta name="description" content="consultez nos produits: <?php echo $result[0]['catlabel']?>" />
+	<meta name="keywords" content="Alimentation, cosmétiques, légumes bio, fruits bio, épicerie, légumes bio, complément alimentaire, elixir floral, huile essencielle, huile végétale, huile florale, pain, pains, plante médicinale, propolis" />
 <?php include('inc/meta.php'); ?>
 </head>
 <body>
@@ -36,7 +38,7 @@ if (!empty($_GET)){
 	<div class="row actualites">
 		<?php if (!empty($result)) { ?>
 			<h1>Rayon : <?php echo $result[0]['catlabel']?></h1>
-			<a href="produit.php" class="bt-plus">Retour aux Catégories</a>
+			<a href="produit.php" class="suite"><- Retour aux Catégories de produits</a>
 			<?php } else { ?>
 				<h2>Aucun produit dans ce rayon pour le moment !</h2>
 			<?php } ?>	
@@ -115,7 +117,7 @@ if (!empty($_GET)){
 			<?php } ?>
 		<?php } ?>		
 		<br>
-		<a href="produit.php" class="bt-plus">Retour aux Catégories</a>
+		<a href="produit.php" class="suite"><- Retour aux Catégories de produits</a>
 	</div>
 		
 		<!-- Fin Produit -->

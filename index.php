@@ -36,7 +36,10 @@ if (!empty($result2)) {
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio - Alimentation, cosmétiques et compléments alimentaires</title>
+	<title>Allée du Bio:Alimentation, cosmétiques et compléments alimentaires à Saint Sulpice et Cameyrac près de Bordeaux (33)</title>
+	<meta name="description" content="Allée du Bio, votre boutique certifiée AB Agriculture Biologique : alimentation, cosmétiques et compléments alimentaires à Saint Sulpice et Cameyrac près de Bordeaux (33)" />
+	<meta name="keywords" content="Alimentation, cosmétiques, légumes bio, fruits bio, produits alimentaires bio, boutiques bio, magasin bio, épicerie bio, produits biologiques" />
+	
 <?php include('inc/meta.php'); ?>
 </head>
 <body>

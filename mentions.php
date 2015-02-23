@@ -1,7 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio | Contact</title>
+	<title>Allée du Bio:Mentions légales</title>
+	<meta name="description" content="mentions du site internet" />
+	<meta name="keywords" content="mentions légales" />
+	
 <?php include('inc/meta.php'); ?>
 </head>
 <body>

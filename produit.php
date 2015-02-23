@@ -28,7 +28,9 @@ if (!empty($result)) {
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio - Actualités</title>
+	<title>Allée du Bio : Tous nos produits bio</title>
+	<meta name="description" content="consultez nos produits alimentaire, cosmétiques" />
+	<meta name="keywords" content="Alimentation, cosmétiques, légumes bio, fruits bio, épicerie, légumes bio, complément alimentaire, elixir floral, huile essencielle, huile végétale, huile florale, pain, pains, plante médicinale, propolis" />
 <?php include('inc/meta.php'); ?>
 </head>
 <body>
@@ -53,7 +55,7 @@ if (!empty($result)) {
 					
 				</div>
 				<div class="large-3 medium-3 small-3 columns">
-					<img src="/img/bdc.jpg"  alt="" style="max-width: 220px; padding: 20px 20px 20px 20px; " />
+					<a href="<?php echo $pdf ?>" target="_blank"><img src="/img/bdc.jpg"  alt="" style="max-width: 220px; padding: 20px 20px 20px 20px; " /></a>
 				</div>
 			</div>
 		<?php 

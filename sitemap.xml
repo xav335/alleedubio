@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.alleedubio.fr/</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/qsn.php</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/produit.php</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/bienetre.php</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/actualites.php</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/goldbook.php</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/contact.php</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/photos/bdc/BonDeCommande-20150223.pdf</loc>
+  <lastmod>2015-02-23T16:20:33+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/mentions.php</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/produit-detail.php?categorie=39</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/produit-detail.php?categorie=38</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/produit-detail.php?categorie=40</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/produit-detail.php?categorie=37</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/produit-detail.php?categorie=35</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/produit-detail.php?categorie=1</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>google
+  <loc>http://www.alleedubio.fr/produit-detail.php?categorie=13</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/produit-detail.php?categorie=4</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.alleedubio.fr/produit-detail.php?categorie=36</loc>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>

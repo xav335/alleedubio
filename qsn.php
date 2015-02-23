@@ -1,8 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio - Alimentation, cosmétiques et compléments alimentaires</title>
-<?php include('inc/meta.php'); ?>
+	<title>Allée du Bio : Qui sommes nous ?</title>
+	<meta name="description" content="Pourquoi devons nous mangez, privilégier les produits biologiques" />
+	<meta name="keywords" content="Alimentation, cosmétiques, légumes bio, fruits bio, produits alimentaires bio, boutiques bio, magasin bio, épicerie bio, produits biologiques" />
+	<?php include('inc/meta.php'); ?>
 </head>
 <body>
 	
@@ -34,6 +36,7 @@
 			</p>
 		</div>
 		<div class="large-5 medium-5 small-5 columns">
+			<br><br><br>
 			<img src="img/IMG_1013.jpg" alt="" />
 		</div>
 	</div>

@@ -1,7 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio | Contact</title>
+	<title>Allée du Bio: Contact - Plan d'accès</title>
+	<meta name="description" content="Contactez nous ! retrouvez nous sur Facebook !" />
+	<meta name="keywords" content="contact, plan, facebook, formulaire de contact, telephone, email, adresse" />
 <?php include('inc/meta.php'); ?>
 </head>
 <body>

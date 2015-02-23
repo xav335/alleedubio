@@ -10,7 +10,9 @@ $goldbook = null;
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio | Contact</title>
+	<title>Allée du Bio: Livre d'or</title>
+	<meta name="description" content="Consulter les avis, les remarqeus et les commentaires des clients et des internautes" />
+	<meta name="keywords" content="livre d'or, avis, remarques, informations, information" />
 <?php include('inc/meta.php'); ?>
 </head>
 <body>

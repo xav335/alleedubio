@@ -1,7 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio - Alimentation, cosmétiques et compléments alimentaires</title>
+	<title>Allée du Bio:Espace détente et bien être à Saint Sulpice et Cameyrac près de Bordeaux (33)</title>
+	<meta name="description" content="Profiter de notre espace détente et bien être avec des massages et de al médecine chinoise" />
+	<meta name="keywords" content="detente, bien être, medecine chinoise, medecine chinoise traditionnelle, massages, massage relaxant, anti-stress, medecine douce" />
 <?php include('inc/meta.php'); ?>
 </head>
 <body>

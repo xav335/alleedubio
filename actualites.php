@@ -24,7 +24,9 @@ if (!empty($_GET)){
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Allée du Bio - Actualités</title>
+	<title>Allée du Bio: Actualité du magasin</title>
+	<meta name="description" content="Consulter les actualités, les promos et les évènements de la boutique alimentaire" />
+	<meta name="keywords" content="actualité, actualités, évènements, promos, promo, informations, information" />
 <?php include('inc/meta.php'); ?>
 </head>
 <body>
