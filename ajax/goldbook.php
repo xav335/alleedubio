@@ -32,7 +32,7 @@ if ($_POST["action"] == "sendMail") {
 	$sujet = "Allée du bio - Nv message Livre d'or ";
 	//echo "Envoi du message à " . $_to . "<br>";
 		
-	$entete = "From:Bsport <contact@alleedubio.fr>\n";
+	$entete = "From:AlleeDuBio <contact@alleedubio.fr>\n";
 	$entete .= "MIME-version: 1.0\n";
 	$entete .= "Content-type: text/html; charset= iso-8859-1\n";
 	$entete .= "Bcc: xav335@hotmail.com\n";
