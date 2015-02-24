@@ -33,16 +33,6 @@
 					            	<li><a href="goldbook-list.php">Modif / Suppr</a></li>
 					          	</ul>
 					        </li>
-					        <li class="dropdown">
-					          	<a href="contact-list.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contacts <span class="caret"></span></a>
-					          	<ul class="dropdown-menu" role="menu">
-					            	<li><a href="contact-edit.php">Ajout</a></li>
-					            	<li><a href="contact-list.php">Modif / Suppr</a></li>
-					            	<li class="divider"></li>
-					            	<li><a href="contact-import.php">Import / Export</a></li>
-					          	</ul>
-					        </li>
-	                      
 					         <li class="dropdown">
 					          	<a href="bdc.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bon de commande <span class="caret"></span></a>
 					          	<ul class="dropdown-menu" role="menu">

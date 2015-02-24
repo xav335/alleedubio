@@ -40,24 +40,23 @@ if (!empty($result)) {
 	<!-- Actualités -->
 	<div class="row actualites">
 		<h1>Nos Produits</h1>
-		<div class="row" style="border-bottom:1px solid #61a141; margin-bottom: 20px;">
+		<div class="row bdc" style="border-bottom:1px solid #61a141; margin-bottom: 20px;">
+			<div class="large-9 medium-9 small-9 columns" >
+				<h3>Téléchargez notre bon de commande</h2>
+				<p>
+					Vous avez un bon de commande à votre disposition afin de commancer en ligne.
+					Il suffit de l'imprimer et de renseigner la réference et la quantité des produits que vous souhaitez commander, joindre un chéque et hop c'est fait !
+					Vous trouverez les conditions de vente et toutes les information pour le paiement et
+					 la livraison sur le bon de commande 
+					 à télécharger ici  :  <a href="<?php echo $pdf ?>" target="_blank"><img src="img/pdf-icon.png" width="50" alt="" /></a>  <br>
+					<strong>Livraison à domicile possible</strong>, contacter nous par téléphone au : 05 56 30 55 08
+				</p>
 				
-				<div class="large-9 medium-9 small-9 columns" >
-					<h3>Téléchargez notre bon de commande</h2>
-					<p>
-						Vous avez un bon de commande à votre disposition afin de commancer en ligne.
-						Il suffit de l'imprimer et de renseigner la réference et la quantité des produits que vous souhaitez commander, joindre un chéque et hop c'est fait !
-						Vous trouverez les conditions de vente et toutes les information pour le paiement et
-						 la livraison sur le bon de commande 
-						 à télécharger ici  :  <a href="<?php echo $pdf ?>" target="_blank"><img src="img/pdf-icon.png" width="50" alt="" /></a>  <br>
-						<strong>Livraison à domicile possible</strong>, contacter nous par téléphone au : 05 56 30 55 08
-					</p>
-					
-				</div>
-				<div class="large-3 medium-3 small-3 columns">
-					<a href="<?php echo $pdf ?>" target="_blank"><img src="/img/bdc.jpg"  alt="" style="max-width: 220px; padding: 20px 20px 20px 20px; " /></a>
-				</div>
 			</div>
+			<div class="large-3 medium-3 small-3 columns">
+				<a href="<?php echo $pdf ?>" target="_blank"><img src="/img/bdc.jpg"  alt="" style="max-width: 220px; padding: 20px 20px 20px 20px; " /></a>
+			</div>
+		</div>
 		<?php 
 			if (!empty($result)) {
 				$i=0;
