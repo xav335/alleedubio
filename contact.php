@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="large-6 columns">
 					<label>Nom
-						<input type="text" id="nom" name="name" placeholder="Nom" required pattern="[a-zA-Z]+" />
+						<input type="text" id="nom" name="name" placeholder="Nom" required  />
 					</label>
 					<small class="error">Votre nom est obligatoire</small>
 				</div>
@@ -98,12 +98,16 @@
 		</div>	
 		<div class="encart" style="margin-top: 0px;padding-left: 15px;padding-right: 15px;">
 			<img src="img/facebooklogo.png" alt="" />
-					<p>
-						Toutes les nouvelles, les évenements et les infos de dernières minutes.
-						<div class="fb-like" data-href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-					</p>
-					<a class="suite" target="_blank" href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030"><img src="img/facebooksmall.png" alt="" />  Visitez notre page Facebook</a>
-		</div>		
+			<p>
+				Toutes les nouvelles, les évenements et les infos de dernières minutes.
+				<div class="fb-like" data-href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+			</p>
+			<a class="suite" target="_blank" href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030"><img src="img/facebooksmall.png" alt="" />  Visitez notre page Facebook</a>
+		</div>	
+		<div class="actualites" style="margin-top: 0px;padding-left: 15px;padding-right: 15px;">
+			<h2>Liens partenaires</h2>
+			<a href="partenaires.php"  class="bt-plus">Liens partenaires</a>
+		</div>	
 	</div>
 </div>
 <!-- /Content -->

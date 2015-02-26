@@ -11,35 +11,64 @@
 <?php include('inc/header.php'); ?>
 	
 	<!-- Produit du mois -->
-	<div class="row ">
-		<div class="large-12 medium-12 small-12 columns actualites">
-			<h1>Le magasin vous propose 2 espaces soins et bien-être</h1>
-			<h5>Cet espace est à votre disposition <strong>du mardi au samedi sur rendez-vous.</strong> 
-			Vous pouvez contacter directement les praticiennes pour de plus amples renseignements
-			et connaître leurs disponibilités.</h5>
-		</div>
-		<div class="large-12 medium-12 small-12 columns actualites">
-			<div class="row actualites">
-					<h2>La médecine traditionnelle chinoise avec Chloé Castelnau</h2><h4>Tél. 05 56 56 56 56</h4>
-					<p>
-						La médecine traditionnelle chinoise (zhōng yī – 中医) existe environ depuis 3000 ans. C’est un système médical complet, cohérent qui possède une représentation globale de l’être humain. Elle est née de l’observation de la nature, de l’homme et de l’expérience de nombreuses générations de médecins.
-						La médecine traditionnelle chinoise englobe une théorie fondamentale qui explique comment un être humain fonctionne lorsque tout va bien (anatomie, physiologie, psychologie…), qu’elles sont les différentes causes des maladies et les mécanismes pathologiques qui en découlent.
-					</p>
-			</div>
-			<div class="row actualites">	
-					<img src="img/china.jpg" alt="" />
+	<div class="row" >
+		<div class="large-12 medium-12 small-12 columns ">
+			<div class="actualites">
+				<h1>Espace détente et bien-être</h1>
+				<h5><b>Le magasin vous propose 2 espaces soins et bien-être</b></h5>
+				<p>Cet espace est à votre disposition du mardi au samedi sur rendez-vous.
+				Vous pouvez contacter directement les praticiennes pour de plus amples renseignements
+				et connaître leurs disponibilités.</p>
 			</div>	
 		</div>
-		<div class="large-12 medium-12 small-12 columns actualites">
-			<div class="large-7 medium-7 small-12 columns">
-				<h2>Des massages relaxants avec Nathalie Pulon</h2><h4>Tél. 05 56 56 56 56</h4>
-				<p>
-					Le massage relaxation s'illustre comme une véritable source de détente, en enlevant les nœuds musculaires et en optimisant la circulation sanguine et lymphatique, il élimine stress et anxiété.
+		<div class="large-6 medium-6 small-12 columns ">
+			<div class="actualites">
+					<h2>Des massages relaxants</h2>
+					<h4>Chloé Castelnau</h4>
+					<p style="text-align: justify;">
+						Ici et Main Tenant ......Nathalie Pulon	<br>				
+						Praticienne Bien-être en massage-relaxant	<br>		
+											
+						Je suis présente au magasin du <b>mardi au jeudi sur RDV au 06.82.16.14.06</b>	<br>			
+											
+						Le massage-relaxant a de nombreux bienfaits sur le corps et l'esprit.		
+						Il va activer la circulation sanguine et énergétique, favoriser l'élimination des toxines,					
+						aider à drainer la circulation lymphatique …				
+						Les tensions liées au stress vont s'apaiser, l'esprit va se calmer afin de libérer les blocages.	<br>			
+											
+						Pensez enfin à vous et offrez vous cette parenthèse tant attendue .....	<br>		
+											
+						<h6>Discutons ensemble de vos besoins afin que je puisse vous proposer le massage-relaxant					
+						qui correspondra le mieux à vos attentes.</h6>		
+											
+						<em>Le massage-relaxant n'est en aucun cas à vocation médicale/thérapeutique</em>	
+					</p>
+					
+					<img src="img/massage.jpg" alt="" /><br><br>
+					<a href="" class="bt-plus">Aller sur le site internet</a>
+			</div>
+		</div>
+		<div class="large-6 medium-6 small-12 columns" >
+				<div class="actualites">
+				<h2>La médecine traditionnelle chinoise</h2>
+				<h4>Nathalie Pulon</h2>
+					<p style="text-align: justify;">
+					Chloé Castelnau, praticienne de Médecine Traditionnelle Chinoise (MTC), titulaire du Dipôme					
+					National de MTC (DNMTC) délivré par la Fédération Nationale de MTC, vous accueille					
+					tous les vendredi et samedi, sur RDV à l'Allée du Bio.	<br>				
+										
+					Vous y trouverez, au delà d'un bilan énergétique, des outils afin de réguler votre mécanisme					
+					énergétique. La première séance nous permettant de faire un constat, le suivi quant à lui					
+					permet de réguler, dans le temps, un dysfonctionnement énergétique souvent bien établi,					
+					et selon la pensée chinoise, responsable des désagréments du quotidien.	<br>				
+										
+					<h6>N'hésitez pas à me contacter pour de plus amples renseignements au <b>06.89.29.18.19</b></h6>					
+										
+						<em>La médecine traditionnelle chinoise n'est en aucun cas à vocation médicale et toute question de santé				
+						doit être avant tout abordée avec votre médecin traitant</em>	
 				</p>
-			</div>
-			<div class="large-5 medium-5 small-12 columns">
-				<img src="img/massage.jpg" alt="" />
-			</div>
+				<img src="img/china.jpg" alt="" /><br><br>
+				<a href="" class="bt-plus">Aller sur le site internet</a>
 		</div>
 	</div>
 	<!-- Fin Produit du mois -->
