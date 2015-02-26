@@ -170,18 +170,18 @@ class Contact extends StorageManager {
 					STARTING BY ''
 					TERMINATED BY '\\r'
 				FROM contact;";
-			echo $sql;
+			//echo $sql;
 				
 			$result = mysqli_query($this->mysqli,$sql) or die(mysql_error());
 			if (!$result) {
-				throw new Exception($sql);
+				throw new Exception("Erreur Mysql contactExportCSV". $sql);
 			}
 			$this->commit();
 			return $result;
 	
 		} catch (Exception $e) {
 			$this->rollback();
-			throw new Exception("Erreur Mysql contactImportCSV". $e->getMessage());
+			throw new Exception("Erreur Mysql contactExportCSV". $e->getMessage());
 			return "errrrrrrooooOOor";
 		}
 	

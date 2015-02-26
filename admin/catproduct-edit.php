@@ -50,7 +50,7 @@ if (!empty($_GET)){ //Modif
 					</div>
 					<div class="form-group">
 						<label for="accroche">Description :</label><br>
-		           		<textarea class="editme" name="description" id="contenu" rows="6" ><?php echo $description ?></textarea>
+		           		<textarea class="col-sm-11" name="description" id="contenu" rows="6"  ><?php echo $description ?></textarea>
 		            </div>
 		            <div class="form-group"><br>
 						<label  for="titre">Choisissez une image pour la catégorie: </label>

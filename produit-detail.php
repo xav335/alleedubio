@@ -101,14 +101,14 @@ if (!empty($_GET)){
 						<h1><?php echo $value['label']?></h1>
 						<h3>Réf. : <?php echo $value['reference']?></h3>
 						<p>
-							<?php echo $value['description']?>
+							<?php echo nl2br($value['description'])?>
 						</p>
 						<a href="<?php echo $pdf ?>" target="_blank" class="bt-plus"><strong><?php echo $value['prix']?></strong>&nbsp;<?php echo $value['libprix']?></a>
 						<div class="plus-produit">
 							<h3><?php echo $value['titreaccroche']?></h3>
 							<div class="row">
 								<div class="large-12 medium-12 small-12 columns plus-produit">
-									<?php echo $value['accroche']?>
+									<?php echo nl2br($value['accroche'])?>
 								</div>
 							</div>
 						</div>

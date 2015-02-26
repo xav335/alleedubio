@@ -64,7 +64,7 @@ class Newsletter extends StorageManager {
 			$result = mysqli_query($this->mysqli,$sql);
 				
 			if (!$result) {
-				throw new Exception($sql);
+				throw new Exception("Erreur Mysql newsletterAdd". $sql);
 			}
 			$id_record = mysqli_insert_id($this->mysqli);
 			

@@ -13,6 +13,9 @@ class Authentication extends StorageManager {
 		$requete .= " AND mdp = '" . mysqli_real_escape_string($this->mysqli, $mdp ) . "'";
 		//echo $requete . "<br><br>";exit();
 		$result = mysqli_query($this->mysqli,$requete);
+		if (!$result) {
+			throw new Exception("Erreur Mysql grantAccess". $sql);
+		}
 		$num_rows = mysqli_num_rows($result);
 		$this->dbDisConnect();
 		if ($num_rows > 0)  {

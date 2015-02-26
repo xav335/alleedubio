@@ -1,6 +1,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="apple-mobile-web-app-title" content="Allée du Bio" />
+	
+	<meta name="Content-Language" content="fr">
+	<meta name="publisher" content="iconeo.fr">
+	<meta name="author" content="iconeo.fr">
+	<meta name="Revisit-After" content="16 days">
+	<meta name="Robots" content="all">
+	
 	<link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico" />
 	<link rel="apple-touch-icon" href="img/favicon.png" />
 	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />

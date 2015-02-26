@@ -13,7 +13,7 @@
 			</div>
 			<div class="large-6 medium-6 small-6 columns">
 				<img src="img/logo-bottom.png" alt="" title="Allée du Bio" />
-				<p>20 Avenue Maucaillou - SAINT&nbsp;SULPICE&nbsp;ET&nbsp;CAMEYRAC</p>
+				<p>20 Avenue Maucaillou - 33450 SAINT&nbsp;SULPICE&nbsp;ET&nbsp;CAMEYRAC</p>
 				<p class="telephone">05 56 30 55 08</p>
 				<a href="http://www.iconeo.fr" target="_blank" style="font-size: 12px;">Powered by iconeo.fr</a>
 			</div>

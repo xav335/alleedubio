@@ -11,12 +11,27 @@
 <?php include('inc/header.php'); ?>
 	
 	<!-- Content -->
-<div class="row contact">
-	<div class="large-8 medium-8 small-12 columns">
-		<h1>Contactez mous</h1>
-	
+<div class="row ">
+	<div class="large-8 medium-8 small-12 columns contact">
+		<h1>Contactez nous</h1>
+		<div class="row bdc" style="border-bottom:1px solid #61a141; margin-bottom: 20px;">
+			<div class="large-8 medium-8 small-8 columns" >
+				<h3>Alléé du Bio</h2>
+				<p>
+					 20 Avenue Maucaillou <br>
+					 33450 SAINT SULPICE ET CAMEYRAC<br>
+					 tél. <b>05 56 30 55 08</b><br>
+					 <b>Horaire d'ouverture:</b>
+					  9h - 19h du Mardi au Vendredi<br>
+					 Samedi : 14h - 20h
+				</p>
+				
+			</div>
+			<div class="large-4 medium-4 small-4 columns">
+				<a href="<?php echo $pdf ?>" target="_blank"><img src="/img/livreur.png"  alt=""  /></a>
+			</div>
+		</div>
 		<div id="resultat">
-		
     	</div>
 		<form data-abide id="formulaire">
 			<div class="row">
@@ -76,17 +91,19 @@
 			<button type="submit">Envoyer votre message</button>
 		</form>
 	</div>
-	<div class="large-4 medium-4 small-12 columns">
-		<div class="large-12 columns">
+	<div class="large-4 medium-4 small-12 columns " >
+		<div class="encart" style="margin-top: 17px;padding-left: 15px;padding-right: 15px;">
+			<h1>Plan d'accès</h1>
+			<a href="https://www.google.com/maps/place/20+Avenue+de+Maucaillou,+33450+Saint-Sulpice-et-Cameyrac,+France/@44.911564,-0.39358,16z/data=!4m2!3m1!1s0xd5531420a3b61a1:0x9187996c4e9373e3?hl=en-US" target="_blank"><img src="img/plan.png" alt="" /></a>
+		</div>	
+		<div class="encart" style="margin-top: 0px;padding-left: 15px;padding-right: 15px;">
 			<img src="img/facebooklogo.png" alt="" />
-				<p>
-					Toutes les nouvelles, les évenements et les infos de dernières minutes.
-					<div class="fb-like" data-href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-				</p>
-				<a class="suite" target="_blank" href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030"><img src="img/facebooksmall.png" alt="" />  Visitez notre page Facebook</a>
-			
-		</div>
-		
+					<p>
+						Toutes les nouvelles, les évenements et les infos de dernières minutes.
+						<div class="fb-like" data-href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+					</p>
+					<a class="suite" target="_blank" href="https://fr-fr.facebook.com/pages/all%C3%A9e-du-bio/248912365125030"><img src="img/facebooksmall.png" alt="" />  Visitez notre page Facebook</a>
+		</div>		
 	</div>
 </div>
 <!-- /Content -->
@@ -125,11 +142,7 @@
 
 </script>
 	
-	<!-- Google maps -->
-	<div class="row">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2825.5787808515875!2d-0.3935797!3d44.91156420000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5531420a3b61a1%3A0x9187996c4e9373e3!2s20+Avenue+de+Maucaillou%2C+33450+Saint-Sulpice-et-Cameyrac!5e0!3m2!1sfr!2sfr!4v1422202196329" frameborder="0" class="gmaps"></iframe>
-	</div>
-	<!-- Fin Google maps -->
+	
 	
 	
 <?php include('inc/footer.php'); ?>

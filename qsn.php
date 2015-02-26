@@ -14,9 +14,8 @@
 	<div class="row encart">
 		<div class="large-7 medium-7 small-7 columns">
 			<h1>Qui sommes nous</h1>
-			<p>
-				J'ai ouvert le magasin en avril 2009 et j'ai souhaité qu'il soit à dimension humaine, 		
-				de proximité et ainsi favoriser les échanges avec mes clients.<br>		
+			<p style="text-align: justify;">
+				J'ai ouvert le magasin en avril 2009 et j'ai souhaité qu'il soit à dimension humaine, de proximité et ainsi favoriser les échanges avec mes clients.<br>		
 				On y trouve une large gamme d'articles et aussi du conseil, du service et de la bonne humeur.		
 				Je connais mes produits et sais comment les utiliser. J'apporte du conseil sur les huiles 		
 				essentielles, les élixirs floraux (fleur de Bach), les vitamines, les plantes, ou les compléments		
@@ -44,54 +43,11 @@
 	
 		<!-- Listing produits -->
 	<div class="row">
-		<div class="large-4 medium-4 small-6 columns products-list fuchsia">
-			<div onclick="javascript:location.href='/produit-detail.php?categorie=1';">
-				<span></span>
-				<img src="img/produits-frais.jpg" alt="" />
-				<h2>huiles essentielles</h2>
-				<p>Les huiles essentielles pures et naturelles...</p>
-			</div>
+		<div class="large-6 medium-6 small-12 columns" style="text-align: center;">
+			<a href="img/IMG_1013.jpg" class="fancybox"><img src="img/IMG_1013.jpg" alt="" /></a>
 		</div>
-		
-		<div class="large-4 medium-4 small-6 columns products-list vert">
-			<div onclick="javascript:location.href='/produit-detail.php?categorie=13';">
-				<span></span>
-				<img src="img/pain.jpg" alt="" />
-				<h2>pains</h2>
-				<p>Découvrez un choix particulier de pains : céréales, maïs, tournesol...</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list bleu">
-			<div onclick="javascript:location.href='/produit-detail.php?categorie=39';">
-				<span></span>
-				<img src="img/beaute.jpg" alt="" />
-				<h2>cosmétique</h2>
-				<p>Crème de jour, de nuit, soin du visage, soin des mains...</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list fuchsia">
-			<div onclick="javascript:location.href='/produit-detail.php?categorie=37';">
-				<span></span>
-				<img src="img/complements.jpg" alt="" />
-				<h2>compléments alimentaires</h2>
-				<p>Découvrez un large choix de compléments pour améliorer votre quotidien...</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list vert">
-			<div onclick="javascript:location.href='/produit-detail.php?categorie=4';">
-				<span></span>
-				<img src="img/tisanes.jpg" alt="" />
-				<h2>tisanes</h2>
-				<p>Nous avons sélectionne un très large choix de mélanges afin de satisfaire toutes les envies.</p>
-			</div>
-		</div>
-		<div class="large-4 medium-4 small-6 columns products-list bleu">
-			<div onclick="javascript:location.href='/produit-detail.php?categorie=38';">
-				<span></span>
-				<img src="img/epicerie.jpg" alt="" />
-				<h2>épicerie</h2>
-				<p>Découvrez notre épicerie avec un large choix d’huile, épices, pâtes...</p>
-			</div>
+		<div class="large-6 medium-6 small-12 columns" style="text-align: center;">
+			<a href="img/IMG_0995.jpg" class="fancybox"><img src="img/IMG_0995.jpg" alt="" /></a>
 		</div>
 	</div>
 	<!-- Fin Listing produits -->

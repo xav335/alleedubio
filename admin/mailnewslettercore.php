@@ -23,6 +23,8 @@ if (!empty($_GET)){ //Modif
 ?>
 
 <?php
+$urlSite = $_SERVER['HTTP_HOST'];
+
 //$_to = "contact@bsport.fr";
 $_to = "fjavi.gonzalez@gmail.com";
 $sujet = "Bsport - Newsletter ";
@@ -58,7 +60,7 @@ $corps = <<<EOD
 		    <td align="center">
 				<div style="text-align:center;  margin-left:auto;margin-right:auto; width: 640px; border: 4px ridge white; padding:20px 20px 20px 20px; ">
 					
-					<a href="http://dev.bsport.fr"><img  src="http://dev.bsport.fr/newsletter/logo.png"></a>
+					<a href="http://$urlSite"><img  src="http://$urlSite/newsletter/logo.png"></a>
 				
 					<h1>$titre</h1>
 					<br><br>
@@ -75,7 +77,7 @@ if(isset($detail)) {
 		$link = $value['link'];
 		$url = $value['url'];
 		if ($url!='' & $url != '/img/ajoutImage.jpg') {
-			$url = "<a href=\"". $link ."\"><img width=\"640\" src=\"http://dev.bsport.fr". $url ."\"></a><br>";
+			$url = "<a href=\"". $link ."\"><img width=\"640\" src=\"http://$urlSite". $url ."\"></a><br>";
 		} else {
 			$url= '';
 		}
@@ -85,7 +87,7 @@ if(isset($detail)) {
 					$titre
 					$url
 					<p >$texte</p>
-					<img  src="http://dev.bsport.fr/newsletter/sep.png">
+					<img  src="http://$urlSite/newsletter/sep.png">
 					<br><br><br>
 EOD;
 		}
@@ -93,10 +95,10 @@ EOD;
 }
 $corps .= <<<EOD
 
-					<a href="http://dev.bsport.fr"><img  src="http://dev.bsport.fr/newsletter/pano.png"></a><br>
+					<a href="http://$urlSite"><img  src="http://$urlSite/newsletter/pano.png"></a><br>
 					<p>$bas_page</p>
-					<a><img src="http://dev.bsport.fr/newsletter/log2.png"></a><br>
-					<p class="bas">Si vous souhaitez vous désinscrire de cette newslettrer suivez le lien suivant : <a href="http://dev.bsport.fr/newsletter/desinscription.php?id=" >désinscription</a></p>
+					<a><img src="http://$urlSite/newsletter/log2.png"></a><br>
+					<p class="bas">Si vous souhaitez vous désinscrire de cette newslettrer suivez le lien suivant : <a href="http://$urlSite/newsletter/desinscription.php?id=" >désinscription</a></p>
 					
 				</div>
 			</td>

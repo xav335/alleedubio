@@ -14,7 +14,7 @@ class Catproduct extends StorageManager {
 	
 	public function catproductByParentGet($id){
 		$this->dbConnect();
-		$requete = "SELECT * FROM `catproduct` WHERE parent=". $id ." ORDER BY label" ;
+		$requete = "SELECT * FROM `catproduct` WHERE parent=". $id ." ORDER BY ordre" ;
 		//print_r($requete);
 		$new_array = null;
 		$result = mysqli_query($this->mysqli,$requete);

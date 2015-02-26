@@ -99,7 +99,7 @@ if (!empty($_GET)){ //Modif
 					
 					<div class="form-group">
 						<label for="accroche">Description :</label><br>
-		           		<textarea class="editme" name="description" id="description" rows="6" ><?php echo $description ?></textarea>
+		           		<textarea class="col-sm-11" name="description" id="description" rows="6" ><?php echo $description ?></textarea>
 		            </div>
 		            <div class="form-group" >
 						<label class="col-sm-2" for="titre">Titre encard Vert. :</label>
@@ -107,7 +107,7 @@ if (!empty($_GET)){ //Modif
 					</div>
 		            <div class="form-group">
 						<label for="accroche">Encart Vert :</label><br>
-		           		<textarea class="editme" name="accroche" id="accroche" rows="3" ><?php echo $accroche ?></textarea>
+		           		<textarea class="col-sm-11" name="accroche" id="accroche" rows="3" ><?php echo $accroche ?></textarea>
 		            </div>
 		            <div class="form-group"><br>
 						<label  for="titre">Choisissez les photos du produit: </label>
