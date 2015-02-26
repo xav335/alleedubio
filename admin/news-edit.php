@@ -81,7 +81,7 @@ if (!empty($_GET)){ //Modif
 					
 					<div class="form-group">
 						<label for="accroche">Contenu :</label><br>
-		           		<textarea class="editme" name="contenu" id="contenu" rows="5" ><?php echo $contenu ?></textarea>
+		           		<textarea class="col-sm-11" name="contenu" id="contenu" rows="5" ><?php echo $contenu ?></textarea>
 		            </div>
 		            
 		            <div class="form-group" >
