@@ -12,19 +12,23 @@
 	
 	<!-- Produit du mois -->
 	<div class="row" >
-		<div class="large-12 medium-12 small-12 columns ">
-			<div class="actualites">
-				<h1>Espace détente et bien-être</h1>
-				<h5><b>Le magasin vous propose 2 espaces soins et bien-être</b></h5>
-				<p>Cet espace est à votre disposition du mardi au samedi sur rendez-vous.
+		<div class="large-12 medium-12 small-12 columns actualites">
+			<div class="large-8 medium-8 small-12 columns ">
+				<h1>Espace bien-être</h1>
+				<h5><b>Le magasin vous propose un espace soin et bien-être</b></h5>
+				<p>Cet espace est à votre disposition du <b>mardi au samedi sur rendez-vous</b>.
 				Vous pouvez contacter directement les praticiennes pour de plus amples renseignements
 				et connaître leurs disponibilités.</p>
+				
 			</div>	
+			<div class="large-4 medium-4 small-12 columns ">
+				<a href="img/IMG_1013.jpg" class="fancybox" ><img src="img/IMG_1013.jpg"  alt="" /></a> 
+			</div>
 		</div>
-		<div class="large-6 medium-6 small-12 columns ">
-			<div class="actualites">
-					<h2>Des massages relaxants</h2>
-					<h4>Chloé Castelnau</h4>
+		<div class="large-12 medium-12 small-12 columns actualites">
+			<h2>Des massages relaxants</h2>
+			<div class="large-7 medium-7 small-12 columns ">
+				
 					<p style="text-align: justify;">
 						Ici et Main Tenant ......Nathalie Pulon	<br>				
 						Praticienne Bien-être en massage-relaxant	<br>		
@@ -41,21 +45,24 @@
 						<h6>Discutons ensemble de vos besoins afin que je puisse vous proposer le massage-relaxant					
 						qui correspondra le mieux à vos attentes.</h6>		
 											
-						<em>Le massage-relaxant n'est en aucun cas à vocation médicale/thérapeutique</em>	
+						
 					</p>
-					
-					<img src="img/massage.jpg" alt="" /><br><br>
-					<a href="" class="bt-plus">Aller sur le site internet</a>
+				<p style="font-size: 12px;"><em>Le massage-relaxant n'est en aucun cas à vocation médicale/thérapeutique</em>	</p>
+			</div>	
+			<div class="large-5 medium-5 small-12 columns ">
+				<img src="img/massage.jpg" alt="" /><br><br>
+				<a href="http://www.npulon.com" class="bt-plus" target="_blank">Aller sur le site internet</a>
 			</div>
 		</div>
-		<div class="large-6 medium-6 small-12 columns" >
-				<div class="actualites">
-				<h2>La médecine traditionnelle chinoise</h2>
-				<h4>Nathalie Pulon</h2>
+		
+		<div class="large-12 medium-12 small-12 columns actualites">
+			<h2>La médecine traditionnelle chinoise</h2>
+			<div class="large-7 medium-7 small-12 columns ">
+				
 					<p style="text-align: justify;">
 					Chloé Castelnau, praticienne de Médecine Traditionnelle Chinoise (MTC), titulaire du Dipôme					
 					National de MTC (DNMTC) délivré par la Fédération Nationale de MTC, vous accueille					
-					tous les vendredi et samedi, sur RDV à l'Allée du Bio.	<br>				
+					tous <b>les vendredi et samedi, sur RDV</b> à l'Allée du Bio.	<br>				
 										
 					Vous y trouverez, au delà d'un bilan énergétique, des outils afin de réguler votre mécanisme					
 					énergétique. La première séance nous permettant de faire un constat, le suivi quant à lui					
@@ -63,13 +70,15 @@
 					et selon la pensée chinoise, responsable des désagréments du quotidien.	<br>				
 										
 					<h6>N'hésitez pas à me contacter pour de plus amples renseignements au <b>06.89.29.18.19</b></h6>					
-										
-						<em>La médecine traditionnelle chinoise n'est en aucun cas à vocation médicale et toute question de santé				
-						doit être avant tout abordée avec votre médecin traitant</em>	
 				</p>
+				<p style="font-size: 12px;"><em>La médecine traditionnelle chinoise n'est en aucun cas à 
+				vocation médicale et toute question de santé doit être avant tout abordée avec votre médecin traitant</em>	</p>
+			</div>	
+			<div class="large-5 medium-5 small-12 columns ">
 				<img src="img/china.jpg" alt="" /><br><br>
-				<a href="" class="bt-plus">Aller sur le site internet</a>
-		</div>
+				<a href="http://chloecastelnau-medecinechinoise.com" class="bt-plus" target="_blank">Aller sur le site internet</a>
+			</div>
+		
 	</div>
 	<!-- Fin Produit du mois -->
 	

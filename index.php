@@ -55,7 +55,7 @@ if (!empty($result2)) {
 				<span></span>
 				<img src="img/produits-frais.jpg" alt="" />
 				<h2>Huiles essentielles</h2>
-				<p>Les huiles essentielles pures et naturelles...</p>
+				<p>Tous les conseils en aromathérapie...</p>
 			</div>
 		</div>
 		
@@ -64,7 +64,7 @@ if (!empty($result2)) {
 				<span></span>
 				<img src="img/pain.jpg" alt="" />
 				<h2>Pains</h2>
-				<p>Découvrez un choix particulier de pains : céréales, maïs, tournesol...</p>
+				<p>Complet, demi-complet, graines et <b>Montignac</b>.</p>
 			</div>
 		</div>
 		<div class="large-4 medium-4 small-6 columns products-list bleu">
@@ -72,7 +72,7 @@ if (!empty($result2)) {
 				<span></span>
 				<img src="img/beaute.jpg" alt="" />
 				<h2>Cosmétique</h2>
-				<p>Crème de jour, de nuit, soin du visage, soin des mains...</p>
+				<p>Soins visage et corps, gammes complètes...</p>
 			</div>
 		</div>
 		<div class="large-4 medium-4 small-6 columns products-list bleu">
@@ -80,7 +80,7 @@ if (!empty($result2)) {
 				<span></span>
 				<img src="img/complements.jpg" alt="" />
 				<h2>Compléments alimentaires</h2>
-				<p>Découvrez un large choix de compléments pour améliorer votre quotidien...</p>
+				<p> Un large choix de compléments pour votre santé...</p>
 			</div>
 		</div>
 		<div class="large-4 medium-4 small-6 columns products-list vert">
@@ -88,7 +88,7 @@ if (!empty($result2)) {
 				<span></span>
 				<img src="img/tisanes.jpg" alt="" />
 				<h2>Tisanes</h2>
-				<p>Nous avons sélectionne un très large choix de mélanges afin de satisfaire toutes les envies.</p>
+				<p>Plus de 70 plantes à découvrir.</p>
 			</div>
 		</div>
 		<div class="large-4 medium-4 small-6 columns products-list fuchsia">
@@ -96,7 +96,7 @@ if (!empty($result2)) {
 				<span></span>
 				<img src="img/epicerie.jpg" alt="" />
 				<h2>Epicerie</h2>
-				<p>Découvrez notre épicerie avec un large choix d’huile, épices, pâtes...</p>
+				<p>Un large choix de produits sains...</p>
 			</div>
 		</div>
 	</div>
@@ -104,7 +104,7 @@ if (!empty($result2)) {
 	
 	<!-- Produit du mois -->
 	<div class="row ">
-		<div class="large-8 medium-12 small-12 columns  slider fade ">
+		<div class="large-12 medium-12 small-12 columns  slider fade ">
 		<?php 
 		if (!empty($result)) {
 			$i=0;
@@ -115,38 +115,37 @@ if (!empty($result2)) {
 				<div class="large-7 medium-7 small-7 columns ">
 					<h2><?php echo $value['titre']?></h2><h5><?php echo traitement_datetime_affiche($value['date_news'])?></h5>
 					<p>
-						<?php echo $value['contenu']?>
+						<?php echo nl2br($value['contenu'])?>
 					</p>
 					<?php if (!empty($value['accroche'])) {?>
 						<a href="<?php echo $value['accroche']?>" class="bt-plus">en savoir +</a>
 					<?php } ?>
 				</div>
-				<div class="large-5 medium-5 small-5 columns">
+				<div class="large-5 medium-5 small-5 columns" style="text-align: center;">
 					<a href="photos/news<?php echo $value['image1']?>" class="fancybox"><img src="photos/news/thumbs<?php echo $value['image1']?>"  alt=""  /></a>
 				</div>
 			</div>
 			<?php } ?>
 		<?php } ?>	
 		</div>
-		<div class="large-4 medium-12 small-12 columns bdc" >
-			<h3>Bon de commande</h3>
-			Un bon de commande est à votre disposition afin de commander des articles sur le site. (Toutes les informations pratiques sont détaillées sur le bon de commande)
-			<br><br>
-			<div class="row ">
+		<div class="large-12 medium-12 small-12 columns fade ">
+			<div class="bdc">
 				<div class="large-9 medium-9 small-9 columns">
-				<a href="<?php echo $pdf ?>" target="_blank">Télécharger le bon de commande : </a>
+					<h3>Bon de commande</h3>
+						
+					Un bon de commande est à votre disposition afin de commander des articles sur le site. 
+					(Toutes les informations pratiques sont détaillées sur le bon de commande)
+					<br><br>
+					<a href="<?php echo $pdf ?>" target="_blank">
+					Télécharger le bon de commande : </a><a href="<?php echo $pdf ?>" target="_blank"><img src="img/pdf-icon.png" width="50" alt="" /></a>
 				</div>
-				<div style="padding: 10px 10px 10px 10px ;" >
-					<a href="<?php echo $pdf ?>" target="_blank"><img src="img/pdf-icon.png" width="50" alt="" /></a><br>
-				</div>	
-			</div>	
-			<div class="row ">
-				<div class="large-12 medium-12 small-12 columns">
+					
+				<div class="large-3 medium-12 small-12 columns">
 					<img src="img/livreur.png" alt="" />
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
 	<!-- Fin Produit du mois -->
 	
 <?php include('inc/footer.php'); ?>

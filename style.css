@@ -32,7 +32,7 @@ button, input {font-family:inherit;}
 .header ul {position:absolute;margin:0;bottom:-0.75em;}
 .header ul:before {content:url('img/menu-left.png');float:left;}
 .header ul:after {content:url('img/menu-right.png');float:left;}
-.header ul li {list-style-type:none;float:left;padding:0 1.10em;background:#fffc00;line-height:2.0625em;font-family:'museo300';}
+.header ul li {list-style-type:none;float:left;padding:0 1.45em;background:#fffc00;line-height:2.0625em;font-family:'museo300';}
 .header ul li a {font-family:'museo300';color:#295e34;padding-bottom:0.4em;}
 .header ul li a:hover, .header ul li.active a {color:#000;border-bottom:3px solid #000;}
 /* Fin Header */
@@ -64,9 +64,7 @@ button, input {font-family:inherit;}
 .bt-plus:hover {color:#000;}
 .bt-plus:before {content:url('img/bt-plus-before.png');display:inline-block; float:left;}
 .bt-plus:after {content:url('img/bt-plus-after.png');display:inline-block;position:absolute;}
-.bdc { padding-top:1.8125rem;padding-bottom:0.8125rem;
-		margin-top:1rem;margin-bottom:1.2rem; 
-		 background-color: #FFF;}
+.bdc {background:white;padding-top:2.8125rem;padding-bottom:2.8125rem;margin-top:1rem;margin-bottom:1.2rem;}
 
 /* Fin Contenu page */
 

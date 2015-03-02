@@ -21,9 +21,8 @@
 					 20 Avenue Maucaillou <br>
 					 33450 SAINT SULPICE ET CAMEYRAC<br>
 					 tél. <b>05 56 30 55 08</b><br>
-					 <b>Horaire d'ouverture:</b>
-					  9h - 19h du Mardi au Vendredi<br>
-					 Samedi : 14h - 20h
+					 <b>Horaires:</b><br>
+					 du mardi au vendredi de 9h30 à 12h30 et de 15h30 à 19h00 et le samedi de 9h30 à 13h00 et 15h30 à 19h00.
 				</p>
 				
 			</div>
@@ -106,6 +105,7 @@
 		</div>	
 		<div class="actualites" style="margin-top: 0px;padding-left: 15px;padding-right: 15px;">
 			<h2>Liens partenaires</h2>
+			<br>
 			<a href="partenaires.php"  class="bt-plus">Liens partenaires</a>
 		</div>	
 	</div>
