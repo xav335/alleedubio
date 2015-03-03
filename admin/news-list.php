@@ -71,7 +71,7 @@ require 'classes/News.php';
 								<td><?php echo $value['titre']?></td>
 								<td><?php echo $value['accroche']?></td>
 								<td><?php echo $value['contenu']?></td>
-								<td><?php if(isset($value['image1'])) echo 'image OK' ?></td>
+								<td><?php if(!empty($value['image1']) && isset($value['image1'])) echo 'image OK' ?></td>
 								<td><img src="img/<?php echo $online ?>.png" width="30" ></td>
 								<td><a href="news-edit.php?id=<?php echo $value['id_news'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a></td>
 								<td>
