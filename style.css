@@ -32,7 +32,7 @@ button, input {font-family:inherit;}
 .header ul {position:absolute;margin:0;bottom:-0.75em;}
 .header ul:before {content:url('img/menu-left.png');float:left;}
 .header ul:after {content:url('img/menu-right.png');float:left;}
-.header ul li {list-style-type:none;float:left;padding:0 1.45em;background:#fffc00;line-height:2.0625em;font-family:'museo300';}
+.header ul li {list-style-type:none;float:left;padding:0 1.40em;background:#fffc00;line-height:2.0625em;font-family:'museo300';}
 .header ul li a {font-family:'museo300';color:#295e34;padding-bottom:0.4em;}
 .header ul li a:hover, .header ul li.active a {color:#000;border-bottom:3px solid #000;}
 /* Fin Header */
