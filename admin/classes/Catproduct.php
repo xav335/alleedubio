@@ -280,7 +280,11 @@ class Catproduct extends StorageManager {
 			throw new Exception('Erreur Mysql productModify sql = : '.$sql);
 		}
 		
-		$this->categoriesProductModify($_POST['categories'], $value['id']);
+		if (!empty($value['categories'])) {
+			$this->categoriesProductModify($value['categories'], $value['id']);
+		} else {
+			$this->categoriesProductDel($value['id']);
+		}
 		
 		$this->commit();
 	
