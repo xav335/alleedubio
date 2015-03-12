@@ -38,7 +38,7 @@ if (!empty($result2)) {
 <head>
 	<title>Allée du Bio:Alimentation, cosmétiques et compléments alimentaires à Saint Sulpice et Cameyrac près de Bordeaux (33)</title>
 	<meta name="description" content="Allée du Bio, votre boutique certifiée AB Agriculture Biologique : alimentation, cosmétiques et compléments alimentaires à Saint Sulpice et Cameyrac près de Bordeaux (33)" />
-	<meta name="keywords" content="Alimentation, cosmétiques, légumes bio, fruits bio, produits alimentaires bio, boutiques bio, magasin bio, épicerie bio, produits biologiques" />
+	<meta name="keywords" content="Alimentation, cosmétiques, légumes bio, fruits bio, produits alimentaires bio, boutiques bio, magasin bio, épicerie bio, produits biologiquesmontignac, propolis, solgar, atelier bio, bien être ,compléments alimentaires ,huiles essentielles ,aloe arborescens ,bio ,ladrome ,silicium ,pain bio ,commerce bio ,argent colloïdal ,fleur de bach ,quinton ,produits ayourvediques ,encens, seve de bouleau" />
 	
 <?php include('inc/meta.php'); ?>
 </head>
