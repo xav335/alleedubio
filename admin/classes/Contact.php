@@ -11,16 +11,16 @@ class Contact extends StorageManager {
 		try {
 			if (!isset($id)){
 				if (isset($offset) && isset($count)) {
-					$requete = "SELECT * FROM `contact` ORDER BY `name` ASC LIMIT ". $offset .",". $count .";" ;
+					$sql = "SELECT * FROM `contact` ORDER BY `name` ASC LIMIT ". $offset .",". $count .";" ;
 				} else {
-					$requete = "SELECT * FROM `contact` ORDER BY `name`;" ;
+					$sql = "SELECT * FROM `contact` ORDER BY `name`;" ;
 				}
 			} else {
-				$requete = "SELECT * FROM `contact` WHERE id=". $id;
+				$sql = "SELECT * FROM `contact` WHERE id=". $id;
 			}
 			//print_r($requete);
 			$new_array = null;
-			$result = mysqli_query($this->mysqli,$requete);
+			$result = mysqli_query($this->mysqli,$sql);
 			while( $row = mysqli_fetch_assoc( $result)){
 				$new_array[] = $row;
 			}

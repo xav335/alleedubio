@@ -22,14 +22,14 @@
 				
 			</div>	
 			<div class="large-4 medium-4 small-12 columns ">
-				<a href="img/IMG_1013.jpg" class="fancybox" ><img src="img/IMG_1013.jpg"  alt="" /></a> 
+				<a href="img/exter1.jpg" class="fancybox" ><img src="img/exter1.jpg"  alt="" /></a> 
 			</div>
 		</div>
 		<div class="large-12 medium-12 small-12 columns actualites">
 			<h2>Des massages relaxants</h2>
 			<div class="large-7 medium-7 small-12 columns ">
 				
-					<p style="text-align: justify;">
+					<p>
 						Ici et Main Tenant ......Nathalie Pulon	<br>				
 						Praticienne Bien-être en massage-relaxant	<br>		
 											
@@ -59,7 +59,7 @@
 			<h2>La médecine traditionnelle chinoise</h2>
 			<div class="large-7 medium-7 small-12 columns ">
 				
-					<p style="text-align: justify;">
+					<p>
 					Chloé Castelnau, praticienne de Médecine Traditionnelle Chinoise (MTC), titulaire du Dipôme					
 					National de MTC (DNMTC) délivré par la Fédération Nationale de MTC, vous accueille					
 					tous <b>les vendredi et samedi, sur RDV</b> à l'Allée du Bio.	<br>				

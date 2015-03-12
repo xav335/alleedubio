@@ -14,7 +14,7 @@
 	<div class="row encart">
 		<div class="large-7 medium-7 small-7 columns">
 			<h1>Qui sommes nous</h1>
-			<p style="text-align: justify;">
+			<p>
 				J'ai ouvert le magasin en avril 2009 et j'ai souhaité qu'il soit à dimension humaine, de proximité et ainsi favoriser les échanges avec mes clients.<br>		
 				On y trouve une large gamme d'articles et aussi du conseil, du service et de la bonne humeur.		
 				Je connais mes produits et sais comment les utiliser. J'apporte du conseil sur les huiles 		
@@ -36,7 +36,8 @@
 		</div>
 		<div class="large-5 medium-5 small-5 columns">
 			<br><br><br>
-			<img src="img/IMG_1013.jpg" alt="" />
+			<a href="img/exter1.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/exter1.jpg" alt="" /></a>&nbsp;
+			<a href="img/exter2.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/exter2.jpg" alt="" /></a>
 		</div>
 	</div>
 	<!-- Fin Produit du mois -->
@@ -44,12 +45,13 @@
 		<!-- Listing produits -->
 	<div class="row">
 		<div class="large-6 medium-6 small-12 columns" style="text-align: center;">
-			<a href="img/IMG_1013.jpg" class="fancybox"><img src="img/IMG_1013.jpg" alt="" /></a>
+			<a href="img/inter1.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/inter1.jpg" alt="" /></a>
 		</div>
 		<div class="large-6 medium-6 small-12 columns" style="text-align: center;">
-			<a href="img/IMG_0995.jpg" class="fancybox"><img src="img/IMG_0995.jpg" alt="" /></a>
+			<a href="img/inter2.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/inter2.jpg" alt="" /></a>
 		</div>
 	</div>
+	
 	<!-- Fin Listing produits -->
 	
 <?php include('inc/footer.php'); ?>
