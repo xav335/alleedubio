@@ -22,7 +22,7 @@
 				
 			</div>	
 			<div class="large-4 medium-4 small-12 columns ">
-				<a href="img/exter1.jpg" class="fancybox" ><img src="img/exter1.jpg"  alt="" /></a> 
+				<a href="img/sallebienetre.jpg" class="fancybox" ><img src="img/sallebienetre.jpg"  alt="" /></a> 
 			</div>
 		</div>
 		<div class="large-12 medium-12 small-12 columns actualites">
