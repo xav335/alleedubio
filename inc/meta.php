@@ -1,3 +1,5 @@
+	<meta name="google-site-verification" content="r62lnt6PB2BWW-5kZLBmSocaY6savT26GlaSd6FcckM" />
+	<meta name="msvalidate.01" content="0F652D91935F25317C22102440B50132" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="apple-mobile-web-app-title" content="Allée du Bio" />
