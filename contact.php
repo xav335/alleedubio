@@ -16,7 +16,7 @@
 		<h1>Contactez nous</h1>
 		<div class="row bdc" style="border-bottom:1px solid #61a141; margin-bottom: 20px;">
 			<div class="large-8 medium-8 small-8 columns" >
-				<h3>Alléé du Bio</h2>
+				<h3>Allée du Bio</h2>
 				<p>
 					 20 Avenue Maucaillou <br>
 					 33450 SAINT SULPICE ET CAMEYRAC<br>
