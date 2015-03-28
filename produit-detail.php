@@ -53,7 +53,7 @@ if (!empty($_GET)){
 				?>
 				<div class="row produit">
 					<div class="large-4 medium-4 small-4 columns">
-						<img src="/photos/products<?php echo $value['image1']?>" alt=""  class="img-produit<?php echo $value['id']?>" />
+						<a href="/photos/products<?php echo $value['image1']?>"  class="fancybox lnk-produit<?php echo $value['id']?>"><img src="/photos/products<?php echo $value['image1']?>" alt=""  class="img-produit<?php echo $value['id']?>" /></a> 
 						<div class="row thumb">
 							<div class="large-4 medium-4 small-4 columns">
 							<?php if (!empty($value['image1'])) { ?>
@@ -63,6 +63,7 @@ if (!empty($_GET)){
 										$('#thumblink1<?php echo $value['id']?>').mouseover(function() {
 											var lien = $('#thumblink1<?php echo $value['id']?>').attr('href');
 											$('.img-produit<?php echo $value['id']?>').attr('src', lien);
+											$('.lnk-produit<?php echo $value['id']?>').attr('href', lien);
 										});
 									});	
 								</script>
@@ -76,6 +77,7 @@ if (!empty($_GET)){
 										$('#thumblink2<?php echo $value['id']?>').mouseover(function() {
 											var lien = $('#thumblink2<?php echo $value['id']?>').attr('href');
 											$('.img-produit<?php echo $value['id']?>').attr('src', lien);
+											$('.lnk-produit<?php echo $value['id']?>').attr('href', lien);
 										});
 									});	
 								</script>
@@ -89,6 +91,7 @@ if (!empty($_GET)){
 										$('#thumblink3<?php echo $value['id']?>').mouseover(function() {
 											var lien = $('#thumblink3<?php echo $value['id']?>').attr('href');
 											$('.img-produit<?php echo $value['id']?>').attr('src', lien);
+											$('.lnk-produit<?php echo $value['id']?>').attr('href', lien);
 										});
 									});	
 								</script>
