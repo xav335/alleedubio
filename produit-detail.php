@@ -106,7 +106,9 @@ if (!empty($_GET)){
 						<p>
 							<?php echo nl2br($value['description'])?>
 						</p>
-						<a href="<?php echo $pdf ?>" target="_blank" class="bt-plus"><strong><?php echo $value['prix']?></strong>&nbsp;<?php echo $value['libprix']?></a>
+						<?php if ($value['prix'] !=0) {?>
+							<a href="<?php echo $pdf ?>" target="_blank" class="bt-plus"><strong><?php echo $value['prix']?></strong>&nbsp;<?php echo $value['libprix']?></a>
+						<?php  } ?>
 						<div class="plus-produit">
 							<h3><?php echo $value['titreaccroche']?></h3>
 							<div class="row">
