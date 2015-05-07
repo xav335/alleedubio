@@ -31,7 +31,7 @@
 				Indien Mohawk		<br>	<br>	
 						
 						
-				Céline Reynaert		
+				Céline Reynaert&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/celine.jpg" alt="" />
 			</p>
 		</div>
 		<div class="large-5 medium-5 small-5 columns">
