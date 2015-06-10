@@ -75,7 +75,7 @@
 				vocation médicale et toute question de santé doit être avant tout abordée avec votre médecin traitant</em>	</p>
 			</div>	
 			<div class="large-5 medium-5 small-12 columns ">
-				<img src="img/china.jpg" alt="" /><br><br>
+				<img src="img/chinoise.png" alt="" /><br><br>
 				<a href="http://chloecastelnau-medecinechinoise.com" class="bt-plus" target="_blank">Aller sur le site internet</a>
 			</div>
 		

@@ -57,7 +57,7 @@ $goldbook = null;
 					<input type="checkbox" id="newsletter" name="newsletter"  checked/> J'accepte de recevoir notre newsletter.
 				</div>
 			</div>
-			<input class="suite" type="submit" value="Laissez nous votre témoignage"/>
+			<input type="submit" value="Laissez nous votre témoignage"/>
 		</form>
 	</div>
 	<div class="large-7 medium-7 small-12 columns">

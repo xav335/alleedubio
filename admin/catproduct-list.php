@@ -93,9 +93,9 @@ require 'classes/Catproduct.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($result)) {
+						if (!empty($result)) :
 							$i=0;
-							foreach ($result as $value) { 
+							foreach ($result as $value) : 
 								$decalage = "";
 								for ($i=0; $i<($value['level'] * 10); $i++) {
 									$decalage .= "&nbsp;";
@@ -117,8 +117,12 @@ require 'classes/Catproduct.php';
 									<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> 
 								</td>
 							</tr>
-							<?php } ?>
-						<?php } ?>	
+							<?php 
+							endforeach; 
+							?>
+						<?php 
+						endif;
+						?>	
 					</tbody>
 				</table>
 
