@@ -31,8 +31,12 @@
 				Indien Mohawk		<br>	<br>	
 						
 						
-				Céline Reynaert&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/celine.jpg" alt="" />
 			</p>
+			<div class="row">
+        		<div class="large-7 medium-7 small-12 columns" style="text-align: center;">
+        				Céline Reynaert&nbsp;&nbsp;&nbsp;&nbsp; <a href="img/celine2.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/celine2.jpg" alt="" /></a>
+        		</div>
+        	</div>
 		</div>
 		<div class="large-5 medium-5 small-5 columns">
 			<br><br><br>
@@ -41,6 +45,7 @@
 		</div>
 	</div>
 	<!-- Fin Produit du mois -->
+	
 	
 		<!-- Listing produits -->
 	<div class="row">
