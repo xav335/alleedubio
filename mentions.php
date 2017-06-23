@@ -145,7 +145,10 @@
 					tiers.</p>
 				<p>Tout lien vers le présent site doit faire l’objet d’une
 					autorisation expresse et préalable de , lequel se réserve la
-					possibilité de faire supprimer ce lien à tout moment.</p>
+					possibilité de faire supprimer ce lien à tout momen.<br><br><br>
+					Siret : 510 289 861 et TVA intracom : FR 75 510 289 861
+
+				</p>
 			</div>
 		</div>
 	</div>
