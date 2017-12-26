@@ -55,31 +55,7 @@
 			</div>
 		</div>
 		
-		<div class="large-12 medium-12 small-12 columns actualites">
-			<h2>La médecine traditionnelle chinoise</h2>
-			<div class="large-7 medium-7 small-12 columns ">
-				
-					<p>
-					Chloé Castelnau, praticienne de Médecine Traditionnelle Chinoise (MTC), titulaire du Dipôme					
-					National de MTC (DNMTC) délivré par la Fédération Nationale de MTC, vous accueille					
-					tous <b>les vendredi et samedi, sur RDV</b> à l'Allée du Bio.	<br>				
-										
-					Vous y trouverez, au delà d'un bilan énergétique, des outils afin de réguler votre mécanisme					
-					énergétique. La première séance nous permettant de faire un constat, le suivi quant à lui					
-					permet de réguler, dans le temps, un dysfonctionnement énergétique souvent bien établi,					
-					et selon la pensée chinoise, responsable des désagréments du quotidien.	<br>				
-										
-					<h6>N'hésitez pas à me contacter pour de plus amples renseignements au <b>06.89.29.18.19</b></h6>					
-				</p>
-				<p style="font-size: 12px;"><em>La médecine traditionnelle chinoise n'est en aucun cas à 
-				vocation médicale et toute question de santé doit être avant tout abordée avec votre médecin traitant</em>	</p>
-			</div>	
-			<div class="large-5 medium-5 small-12 columns ">
-				<img src="img/chinoise.png" alt="" /><br><br>
-				<a href="http://chloecastelnau-medecinechinoise.com" class="bt-plus" target="_blank">Aller sur le site internet</a>
-			</div>
 		
-	</div>
 	<!-- Fin Produit du mois -->
 	
 	
