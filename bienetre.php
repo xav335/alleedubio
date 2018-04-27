@@ -26,6 +26,30 @@
 			</div>
 		</div>
 		<div class="large-12 medium-12 small-12 columns actualites">
+			<h2>Conseils Santé</h2>
+			<div class="large-5 medium-5 small-12 columns ">
+				<a href="img/soins.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/soins.jpg" alt="" /></a><br><br>
+			</div>
+			<div class="large-7 medium-7 small-12 columns ">
+				
+					<p>
+                        Je m’adresse à toutes les personnes désireuses d’utiliser les plantes et produits naturels pour leur santé. 
+                        Je vous propose une approche différente et holistique qui utilise les bienfaits des huiles essentielles, oligo-élément, 
+                        bourgeons de plantes, acides aminés, vitamines et minéraux (…..) et tous les autres composés issus de la nature.
+                        Forte et riche de mes dix années d’expérience dans le domaine de la santé au naturel, je vous propose de vous 
+                        accompagner dans vos démarches de soins et suis à l’écoute de votre corps.</br></br>
+                        
+                        Oui ! Il est possible d’accompagner, de soulager, de prévenir les risques sur votre santé et aussi de vous soutenir vers la guérison.</br></br>
+                        
+                        Je vous reçois sur RDV du lundi au samedi.		</br>
+                        Céline Reynaert	06.18.56.27.34</br>
+                        Contact@conseils-sante-celine.fr</br>
+                 						
+					</p>
+			</div>	
+			
+		</div>
+		<div class="large-12 medium-12 small-12 columns actualites">
 			<h2>Des massages relaxants</h2>
 			<div class="large-7 medium-7 small-12 columns ">
 				
