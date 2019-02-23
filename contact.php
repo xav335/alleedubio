@@ -21,6 +21,7 @@
 					 20 Avenue Maucaillou <br>
 					 33450 SAINT SULPICE ET CAMEYRAC<br>
 					 tél. <b>05 56 30 55 08</b><br>
+					 <b>Email : <a href="mailto:contact@alleedubio.fr">contact@alleedubio.fr</a></b><br>
 					 <b>Horaires:</b><br>
 					 du mardi au vendredi de 9h30 à 12h30 et de 15h30 à 19h00 et le samedi de 9h30 à 13h00 et 15h30 à 19h00.
 				</p>

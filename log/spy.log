@@ -465,3 +465,22 @@ Cordialement
 2018-11-28 21:34:42 : 
 2018-11-28 21:34:42 : Message NON envoyé ! 
 2018-11-28 21:34:42 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  
+2019-02-23 16:24:59 : sendMail
+2019-02-23 16:24:59 : GONZALEZ
+2019-02-23 16:24:59 : Javier
+2019-02-23 16:24:59 : fjavi.gonzalez@gmail.com
+2019-02-23 16:24:59 : +33681731870
+2019-02-23 16:24:59 : les produits
+2019-02-23 16:24:59 : test
+2019-02-23 16:24:59 : 
+2019-02-23 16:24:59 Erreur: Erreur Mysql contactAdd INSERT INTO  .`contact`
+						(`name`, `email`, `firstname`, `message`,`newsletter`,`fromgoldbook`,`fromcontact`)
+						VALUES (
+						'GONZALEZ',
+						'fjavi.gonzalez@gmail.com',
+						'Javier',
+						'test',
+						0,
+						0,
+						1
+					);

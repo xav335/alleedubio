@@ -15,7 +15,7 @@
 				<img src="img/logo-bottom.png" alt="" title="Allée du Bio" />
 				<p>20 Avenue Maucaillou - 33450 SAINT&nbsp;SULPICE&nbsp;ET&nbsp;CAMEYRAC</p>
 				<p class="telephone">05 56 30 55 08</p>
-				<a href="http://www.iconeo.fr" target="_blank" style="font-size: 12px;">Powered by iconeo.fr</a>
+				<a href="mailto:contact@alleedubio.fr">contact@alleedubio.fr</a></b>
 			</div>
 			<div class="large-3 medium-3 small-3 columns">
 				<img src="img/logo-ab.png" alt="" class="logo-ab" title="Certifié AB Agriculture Biologique" />
