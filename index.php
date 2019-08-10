@@ -52,7 +52,7 @@ if (!empty($result2)) {
 		<div class="large-4 medium-4 small-6 columns products-list fuchsia">
 			<div onclick="javascript:location.href='/produit-detail.php?categorie=1';">
 				<span></span>
-				<img src="img/produits-frais.jpg" alt="" />
+				<img src="img/huilesNew.jpg" alt="" />
 				<h2>Huiles essentielles</h2>
 				<p>Tous les conseils en aromathérapie...</p>
 			</div>
@@ -61,7 +61,7 @@ if (!empty($result2)) {
 		<div class="large-4 medium-4 small-6 columns products-list vert">
 			<div onclick="javascript:location.href='/produit-detail.php?categorie=13';">
 				<span></span>
-				<img src="img/pain.jpg" alt="" />
+				<img src="img/painsNew.jpg" alt="" />
 				<h2>Pains</h2>
 				<p>Complet, demi-complet, graines et <b>Montignac</b>.</p>
 			</div>
@@ -69,7 +69,7 @@ if (!empty($result2)) {
 		<div class="large-4 medium-4 small-6 columns products-list bleu">
 			<div onclick="javascript:location.href='/produit-detail.php?categorie=39';">
 				<span></span>
-				<img src="img/beaute.jpg" alt="" />
+				<img src="img/cosmeticNew.jpg" alt="" />
 				<h2>Cosmétique</h2>
 				<p>Soins visage et corps, gammes complètes...</p>
 			</div>
@@ -77,7 +77,7 @@ if (!empty($result2)) {
 		<div class="large-4 medium-4 small-6 columns products-list bleu">
 			<div onclick="javascript:location.href='/produit-detail.php?categorie=37';">
 				<span></span>
-				<img src="img/complements.jpg" alt="" />
+				<img src="img/complementsNew.jpg" alt="" />
 				<h2>Compléments alimentaires</h2>
 				<p> Un large choix de compléments pour votre santé...</p>
 			</div>
@@ -85,7 +85,7 @@ if (!empty($result2)) {
 		<div class="large-4 medium-4 small-6 columns products-list vert">
 			<div onclick="javascript:location.href='/produit-detail.php?categorie=4';">
 				<span></span>
-				<img src="img/tisanes.jpg" alt="" />
+				<img src="img/tisanesNew.jpg" alt="" />
 				<h2>Tisanes</h2>
 				<p>Plus de 70 plantes à découvrir.</p>
 			</div>
@@ -93,7 +93,7 @@ if (!empty($result2)) {
 		<div class="large-4 medium-4 small-6 columns products-list fuchsia">
 			<div onclick="javascript:location.href='/produit-detail.php?categorie=38';">
 				<span></span>
-				<img src="img/epicerie.jpg" alt="" />
+				<img src="img/epicerieNew.jpg" alt="" />
 				<h2>Epicerie</h2>
 				<p>Un large choix de produits sains...</p>
 			</div>

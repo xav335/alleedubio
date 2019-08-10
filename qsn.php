@@ -40,8 +40,8 @@
 		</div>
 		<div class="large-5 medium-5 small-5 columns">
 			<br><br><br>
-			<a href="img/exter1.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/exter1.jpg" alt="" /></a>&nbsp;
-			<a href="img/exter2.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/exter2.jpg" alt="" /></a>
+			<a href="img/exter1-new.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/exter1-new.jpg" alt="" /></a>&nbsp;
+			<a href="img/exter2-new.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/exter2-new.jpg" alt="" /></a>
 		</div>
 	</div>
 	<!-- Fin Produit du mois -->
@@ -50,10 +50,10 @@
 		<!-- Listing produits -->
 	<div class="row">
 		<div class="large-6 medium-6 small-12 columns" style="text-align: center;">
-			<a href="img/inter1.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/inter1.jpg" alt="" /></a>
+			<a href="img/inter1-new.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/inter1-new.jpg" alt="" /></a>
 		</div>
 		<div class="large-6 medium-6 small-12 columns" style="text-align: center;">
-			<a href="img/inter2.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/inter2.jpg" alt="" /></a>
+			<a href="img/inter2-new.jpg" class="fancybox" data-fancybox-group="qsn"><img src="img/inter2-new.jpg" alt="" /></a>
 		</div>
 	</div>
 	
