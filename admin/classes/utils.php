@@ -1,4 +1,4 @@
-<?
+<?php
 	// Génération d'un nom de fichier temporaire aléatoire
 	function aleatoire($val=64) {
 		$rep_temp = "";
